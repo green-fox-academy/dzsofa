@@ -1,0 +1,21 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 25%;
+}
+
+.first {
+    height: 1em;
+    background-color: #ff5421;
+}
+
+.second {
+    height: 2em;
+    background-color: #6b0079;
+}
+
+.third {
+    height: 3em;
+    background-color: #7f7f7f;
+}
