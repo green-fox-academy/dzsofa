@@ -1,0 +1,22 @@
+h1 {
+    color: #ff6347;
+}
+
+h2 {
+    color: #8a2be2;
+}
+
+p {
+    width: 400px;
+}
+
+ol {
+    list-style-type: upper-roman;
+    color: #ff0eff;
+    text-decoration: underline;
+}
+
+ol li:last-of-type {
+    color: black;
+    text-decoration: underline;
+}
