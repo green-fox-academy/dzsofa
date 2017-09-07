@@ -1,20 +1,24 @@
-body {
-    font-size: 36px;
-    font-family: sans-serif;
-}
+
 
 div {
     width: 381px;
     border: 16px solid #4285f4;
-    /*border-right: 16px solid #4285f4;
-    border-top: 16px solid #4285f4;
-    border-bottom: 16px solid #4285f4;
+    margin: 5px;
+    font-size: 36px;
+    font-family: sans-serif;
+    color: #ffffff;
 }
 
-p.first {
-    border-top: 16px solid #4285f4;
+p {
+    line-height: 100px; /* was originally 128px*/
+    vertical-align: middle;
+    text-align: center;
 }
 
-p.second {
-    border-bottom: 16px solid #4285f4;
-} */
+.box1 {
+    background-color: #e67676;
+}
+
+.box2 {
+    background-color: #a9e6e6;
+}
