@@ -1,0 +1,24 @@
+body {
+    margin-left: 20px;
+}
+
+div {
+    width: 340px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 1.5em;
+}
+
+div:first-of-type {
+    border-top: none;
+}
+ 
+div:last-of-type {
+    border-bottom: none;
+}
+
+div:hover {
+    background-color: #ec6842;
+}
