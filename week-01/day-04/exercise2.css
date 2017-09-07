@@ -1,4 +1,27 @@
-p.box {
-    width: 385px;
+* {
+    margin: 0px;
 }
 
+p.box {
+    width: 385px;
+    border-left: 16px solid #5d45f8;
+    border-right: 16px solid #5d45f8;
+}
+
+p.first {
+    background-color: #eb696b;
+    border-top: 16px solid #5d45f8;
+}
+
+p.second {
+    background-color: #e8ff55;
+}
+
+p.third {
+    background-color: #a2e9e8;
+}
+
+p.fourth {
+    background-color: #816de7;
+    border-bottom: 16px solid #5d45f8;
+}
