@@ -3,12 +3,16 @@
 }
 
 p.box {
+    font-family: sans-serif;
     font-size: 36px;
     text-align: center;
+    line-height: 128px;
+    vertical-align: middle;
     color: #ffffff;
     width: 385px;
     border-left: 16px solid #5d45f8;
     border-right: 16px solid #5d45f8;
+
 }
 
 p.first {
