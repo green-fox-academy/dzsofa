@@ -1,0 +1,26 @@
+body {
+    width: 550px;
+}
+
+span {
+    margin: 10px;
+    width: 140px;
+    height: 140px;
+    display: inline-block;
+    background-color: #0cebde;
+    border-radius: 70px;
+    text-align: center;
+    line-height: 140px;
+    vertical-align: middle;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+body span:first-child {
+    background-color: #B80AEB;
+}
+
+body span:last-child {
+    background-color: #ebbe0c;
+}
