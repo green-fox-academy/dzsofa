@@ -3,6 +3,8 @@
 }
 
 p.box {
+    font-size: 36px;
+    text-align: center;
     width: 385px;
     border-left: 16px solid #5d45f8;
     border-right: 16px solid #5d45f8;
