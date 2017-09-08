@@ -18,7 +18,7 @@ header {
     position: relative;
 }
 
-div {
+div.firstdiv, div.seconddiv  {
     display: inline-block;
     box-sizing: content-box;
     float: none;
@@ -27,13 +27,24 @@ div {
     width: 385px;
     align-self: auto;
     padding: 12px;
-    margin: 17px 0 0 0; 
+    margin: 17px 0 17px 0; 
 }
 
-.firstdiv {
+div.firstdiv {
     float: left;
 }
 
-.seconddiv {
+div.seconddiv {
     float: right;
+}
+
+div.third {
+        display: inline-block;
+        box-sizing: content-box;
+        height: 184px;
+        width: 820px;
+        align-self: auto;
+        padding: 12px;
+        position: relative;
+        margin-bottom: 250px;
 }
