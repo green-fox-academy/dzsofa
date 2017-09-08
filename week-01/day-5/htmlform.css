@@ -13,9 +13,14 @@ header {
     width: auto;
     align-self: auto;
     padding: 12px;
-    border: 1px solid black;
     margin-top: 12px;
-    position: relative;
+    position: relative; 
+}
+
+h1 {
+    margin-top: 4px;
+    margin-left: 2em;
+    color: #4f3862;
 }
 
 div.firstdiv, div.seconddiv  {
