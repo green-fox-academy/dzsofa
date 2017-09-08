@@ -1,0 +1,39 @@
+main {
+    box-sizing: border-box;
+    height: 1000px;
+    width: 820px;
+    background-color: #dbd7cb;
+    margin: 0 auto;
+    position: absolute;
+}
+
+header {
+    box-sizing: content-box;
+    height: 42px;
+    width: auto;
+    align-self: auto;
+    padding: 12px;
+    border: 1px solid black;
+    margin-top: 12px;
+    position: relative;
+}
+
+div {
+    display: inline-block;
+    box-sizing: content-box;
+    float: none;
+    position: relative;
+    height: 435px;
+    width: 385px;
+    align-self: auto;
+    padding: 12px;
+    margin: 17px 0 0 0; 
+}
+
+.firstdiv {
+    float: left;
+}
+
+.seconddiv {
+    float: right;
+}
