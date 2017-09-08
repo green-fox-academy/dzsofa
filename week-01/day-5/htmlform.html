@@ -24,24 +24,28 @@
                 <input type="text" id="szulev" placeholder="pl.:1980" maxlength="4" size="4"/>
             </div>
             <div class="nem">Nemed<br>
-                <label for="ferfi"></label>
-                <input type="radio" id="ferfi" name="gender" value="male" checked> Ferfi<br>
-                <label for="no"></label>
-                <input type="radio" id="no" name="gender" value="female"> No<br>
+                <span>
+                    <label for="ferfi"></label>
+                    <input type="radio" id="ferfi" name="gender" value="male" checked> Ferfi<br>
+                </span>
+                <span>
+                    <label for="no"></label>
+                    <input type="radio" id="no" name="gender" value="female"> No<br>
+                </span>
             </div>
-            <div class="checkbox">
-                <div class="checkbox-grid1">Erdeklodesi kor <br>
+            <div class="checkbox">Erdeklodesi kor <br>
+                <span class="checkbox-grid1"> 
                     <input type="checkbox" name="text1" value="value1" /><label for="text1">Szamitogepek</label>
                     <input type="checkbox" name="text2" value="value2" /><label for="text2">Jatekok</label>
                     <input type="checkbox" name="text3" value="value3" /><label for="text3">Zenekeszites</label>
                     <input type="checkbox" name="text4" value="value4" /><label for="text4">Videok vagasa</label>
-                </div>
-                <div class="checkbox-grid2"> 
+                </span>
+                <span class="checkbox-grid2"> 
                     <input type="checkbox" name="text5" value="value5" /><label for="text5">Masok munkainak nezegetese</label>
                     <input type="checkbox" name="text6" value="value6" /><label for="text6">Posztolas</label>
                     <input type="checkbox" name="text7" value="value7" /><label for="text7">Fotozas</label>
                     <input type="checkbox" name="text8" value="value8" /><label for="text8">Kepmanipulacio</label>
-                </div>
+                </span>
             </div>
             <div>Tobbet is megjelolhetsz</div>
         </section>
@@ -78,16 +82,14 @@
             <div>
                 <input type="file" name="pic" accept="image/*" value="Fajl feltoltese">
             </div>
-            <input type="checkbox" name="feltetelek" value="agreement"> Elolvastam a felhasznalasi felteteleket es egyetertek vele <br>
-            <input class="elfogad" type="button" onclick="submit" value="Elfogadom">
+            <input type="checkbox" name="feltetelek" value="agreement" required> Elolvastam a <a href="https://www.w3schools.com/" target="_blank">felhasznalasi felteteleket</a> es egyetertek vele <br>
+            <input class="elfogad" type="button" onclick="submit" value="Mehet">
             <input type="reset" value="Ujrakezdem">  
         </section>
 
-
       </form>
     </main>
-    
-    
+  
   </body>
 
 </html>
