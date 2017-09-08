@@ -5,6 +5,7 @@ main {
     background-color: #dbd7cb;
     margin: 0 auto;
     position: absolute;
+    color: #4f3862;
 }
 
 header {
@@ -20,30 +21,30 @@ header {
 h1 {
     margin-top: 4px;
     margin-left: 2em;
-    color: #4f3862;
+
 }
 
-div.firstdiv, div.seconddiv  {
+section.firstsection, section.secondsection  {
     display: inline-block;
     box-sizing: content-box;
     float: none;
     position: relative;
     height: 435px;
-    width: 385px;
+    width: 383px;
     align-self: auto;
     padding: 12px;
     margin: 17px 0 17px 0; 
 }
 
-div.firstdiv {
+section.firstsection {
     float: left;
 }
 
-div.seconddiv {
+section.secondsection {
     float: right;
 }
 
-div.third {
+section.thirdsection {
         display: inline-block;
         box-sizing: content-box;
         height: 184px;

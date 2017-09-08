@@ -9,20 +9,70 @@
   <body>
     <main>
       <header>
-        <h1>Profil</h1>
+        <h1>Hibajelzes</h1>
       </header>
-      <div class="firstdiv">
+      <form action="##" method="get">
 
-      </div>
-      <div class="seconddiv">
+        <section class="firstsection">
+            <h3>Szemelyes adatok</h3>
+            <div>
+                <label for="name">Nev * :</label><br>
+                <input type="text" id="name" name="user_name" required>
+            </div>
+            <div class="szulev">
+                <label for="szulev">Szuletesi ev</label> <br>
+                <input type="text" id="szulev" placeholder="pl.:1980" />
+            </div>
+            <div class="nem">Nemed<br>
+                <label for="ferfi"></label>
+                <input type="radio" id="ferfi" name="gender" value="male" checked> Ferfi<br>
+                <label for="no"></label>
+                <input type="radio" id="no" name="gender" value="female"> No<br>
+            </div>
+            <div>
+                
+            </div>
+        </section>
 
-      </div>
-      
-      <div class="third">
+        <section class="secondsection"> 
+            <h3>Kapcsolat</h3>       
+            <div>
+                <label for="mail">E-mail cimed * :</label><br>
+                <input type="email" id="mail" name="user_mail"></br>
+            </div>
+            <div>
+                <label for="phonenumber"> Telefonszam * :</label> <br>
+                <input type="phone" name="user_phone" required>
+            </div>
+            <div>
+                Problemas site: <br>
+                <input type="url">
+            </div>
+            <div>
+                Milyen jellegu problemat tapasztaltal? <br>
+                <select name="hibajelleg">
+                    <option value="betolt">Nem tolt be</option>
+                    <option value="tartalom">Rossz tartalom</option>
+                    <option value="nofind">Nem talalhato, amit keresek</option>
+                </select><br>
+            </div>
+        </section>
 
-      </div>
+        <section class="thirdsection">
+            <div>
+                Uzenet * :<br>
+                <textarea id="message" cols="30" rows="10" placeholder="Ide ird az uzeneted" required></textarea>
+            </div>
+            <div>
+                <input type="file" name="pic" accept="image/*">
+            </div>
+            <input type="checkbox" name="feltetelek" value="agreement"> Elolvastam a felhasznalasi felteteleket es egyetertek vele <br>
+            <input class="elfogad" type="button" onclick="submit" value="Elfogadom">
+            <input type="reset" value="Ujrakezdem">  
+        </section>
 
 
+      </form>
     </main>
     
     
