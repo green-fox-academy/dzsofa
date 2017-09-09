@@ -1,21 +1,40 @@
 body {
     margin: 0px;
     padding: 0px;
-    height: 100%;
-    width: 25%;
+    margin: auto auto;
+    position: absolute;
 }
 
+
+div {
+    margin-bottom: 8px;
+    width: 253px;
+    background-image: url(assets/duck.png);
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    vertical-align: middle
+}
 .first {
-    height: 1em;
+    height: 100px;
+    align-self: auto;
     background-color: #ff5421;
+    background-position: center left;
+    background-size: 100px;
+    
 }
 
 .second {
-    height: 2em;
+    height: 200px;
     background-color: #6b0079;
+    background-position: center center;
+    background-size: 250px;
+
 }
 
 .third {
-    height: 3em;
+    height: 300px;
     background-color: #7f7f7f;
+    background-position: bottom right;
+    background-size: 100px;
 }
