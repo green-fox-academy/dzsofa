@@ -1,9 +1,10 @@
+
 main {
     box-sizing: border-box;
     height: 1000px;
     width: 820px;
     background-color: #dbd7cb;
-    margin: 0 auto;
+    /* margin: auto auto; */
     position: absolute;
     color: #4f3862;
 }
@@ -69,7 +70,7 @@ span.checkbox-grid1, span.checkbox-grid2 {
     display: inline-block;
     box-sizing: content-box;
     line-height: 12px;
-    font-size: 12px;
+    font-size: 10px;
     width: 130px;
 }
 
