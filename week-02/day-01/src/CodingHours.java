@@ -7,10 +7,10 @@ public class CodingHours {
         // if the attendee only codes on workdays.
         int weeklyCodedHours; // can be done like this : int weeklyCodedHours = 5 * 6;
         weeklyCodedHours= 5 * 6;
-        System.out.println(17 * weeklyCodedHours);
+        System.out.println(17 * weeklyCodedHours + " is the total hours a GFA attendee codes during the 17-week semester.");
         //
         // Print the percentage of the coding hours in the semester if the average
         // work hours weekly is 52
-        System.out.println(weeklyCodedHours / 52. * 100);
+        System.out.println(weeklyCodedHours / 52. * 100 + " % of an attendees week is spent with coding.");
     }
 }
