@@ -3,7 +3,7 @@ public class Swap {
         int a = 123;
         int b = 526;
         // Swap the values of the variables
-        
+
         a = 526;
         b = 123;
 
