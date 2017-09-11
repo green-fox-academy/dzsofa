@@ -17,16 +17,19 @@ public class OneTwoALot {
             System.out.println("Not enough");
 
         // If the number is one it should print: One
-        else if (userInput == 1)
+        else if (userInput == 1) {
             System.out.println("One");
+        }
 
         // If the number is two it should print: Two
-        else if (userInput == 2)
+        else if (userInput == 2) {
             System.out.println("Two");
+        }
 
         // If the number is more than two it should print: A lot
-        else
+        else {
             System.out.println("A Lot");
+        }
 
     }
 }

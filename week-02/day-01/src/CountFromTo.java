@@ -28,9 +28,9 @@ public class CountFromTo {
 
         int secondNumber = scanner.nextInt();
 
-        if (secondNumber <= firstNumber)
+        if (secondNumber <= firstNumber) {
             System.out.println("The second number should be bigger!");
-        else
+        } else
             for (int i = firstNumber; i < secondNumber; i++) {
                 System.out.println(i);
             }

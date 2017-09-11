@@ -23,7 +23,8 @@ public class MultiplicationTable {
 
         int multiplyable = scanner.nextInt();
 
-        for (int i = 0; i <= 10; i++)
-            System.out.println(i + " * " + multiplyable + " = " + i * multiplyable );
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(i + " * " + multiplyable + " = " + i * multiplyable);
+        }
     }
 }
