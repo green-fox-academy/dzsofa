@@ -10,8 +10,11 @@ public class OddEven {
 
         int inputNumber = scanner.nextInt();
 
+        //if its even
         if (inputNumber % 2 == 0)
             System.out.println("Yay, it's an even number!");
+
+        //if its not even
         else
             System.out.println("You seem kinda odd to me.");
     }
