@@ -12,21 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VariableMutation.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/VariableMutation.java">
+      <file leaf-file-name="SecondsInADay.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SecondsInADay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Swap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Swap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="10" column="89" lean-forward="false" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -60,6 +50,7 @@
         <option value="$PROJECT_DIR$/src/DefineBasicInfo.java" />
         <option value="$PROJECT_DIR$/src/Swap.java" />
         <option value="$PROJECT_DIR$/src/VariableMutation.java" />
+        <option value="$PROJECT_DIR$/src/SecondsInADay.java" />
       </list>
     </option>
   </component>
@@ -128,7 +119,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.VariableMutation">
+  <component name="RunManager" selected="Application.SecondsInADay">
     <configuration name="BMI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="BMI" />
@@ -143,9 +134,9 @@
       <module name="day-01" />
       <envs />
     </configuration>
-    <configuration name="CodingHours" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="DefineBasicInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="CodingHours" />
+      <option name="MAIN_CLASS_NAME" value="DefineBasicInfo" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -157,9 +148,9 @@
       <module name="day-01" />
       <envs />
     </configuration>
-    <configuration name="DefineBasicInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="SecondsInADay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="DefineBasicInfo" />
+      <option name="MAIN_CLASS_NAME" value="SecondsInADay" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" />
@@ -215,19 +206,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.CodingHours" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Swap" />
-      <item index="2" class="java.lang.String" itemvalue="Application.BMI" />
-      <item index="3" class="java.lang.String" itemvalue="Application.DefineBasicInfo" />
-      <item index="4" class="java.lang.String" itemvalue="Application.VariableMutation" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Swap" />
+      <item index="1" class="java.lang.String" itemvalue="Application.BMI" />
+      <item index="2" class="java.lang.String" itemvalue="Application.DefineBasicInfo" />
+      <item index="3" class="java.lang.String" itemvalue="Application.VariableMutation" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SecondsInADay" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.VariableMutation" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Swap" />
-        <item index="2" class="java.lang.String" itemvalue="Application.DefineBasicInfo" />
-        <item index="3" class="java.lang.String" itemvalue="Application.BMI" />
-        <item index="4" class="java.lang.String" itemvalue="Application.CodingHours" />
+        <item index="0" class="java.lang.String" itemvalue="Application.SecondsInADay" />
+        <item index="1" class="java.lang.String" itemvalue="Application.VariableMutation" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Swap" />
+        <item index="3" class="java.lang.String" itemvalue="Application.DefineBasicInfo" />
+        <item index="4" class="java.lang.String" itemvalue="Application.BMI" />
       </list>
     </recent_temporary>
   </component>
@@ -241,12 +232,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505127667193</updated>
-      <workItem from="1505127673290" duration="7476000" />
+      <workItem from="1505127673290" duration="7937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7476000" />
+    <option name="totallyTimeSpent" value="7937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
@@ -295,8 +286,13 @@
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SecondsInADay.java</url>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -387,6 +383,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/VariableMutation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="101" column="0" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Swap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -395,10 +399,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VariableMutation.java">
+    <entry file="file://$PROJECT_DIR$/src/SecondsInADay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="10" column="89" lean-forward="false" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
           <folding />
         </state>
       </provider>
