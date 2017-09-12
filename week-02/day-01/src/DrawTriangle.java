@@ -12,14 +12,18 @@ public class DrawTriangle {
 // ****
 //
 // The triangle should have as many lines as the number was
-        Scanner triangleLine = new Scanner(System.in);
+        Scanner intScanner = new Scanner(System.in);
 
         System.out.println("Give me a number: ");
 
-        int lineLength = triangleLine.nextInt();
+        int rowCount = intScanner.nextInt();
 
-        for (int i = 0; i < lineLength; i++)
-            System.out.println("*" * lineLength);
+        for (int i = 1; i <= rowCount; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
 
     }
 }
