@@ -8,7 +8,7 @@ public class Doubling {
         System.out.println(doubling(ak));
     }
 
-    public static int doubling(int input) {
-        return input * 2;
-        }
+    public static int doubling(int myNumber) {
+        return myNumber * 2;
+    }
 }
