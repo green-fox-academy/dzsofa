@@ -16,7 +16,7 @@ public class PrintArguments {
     public static void main(String[] args) {
        // String whatever = {"kid", "zero", "ilikeyou"};
 
-        printer("hello", "dog");
+        printer("hello", "dog1, ");
 
     }
     public static void printer(String... strings) {
