@@ -6,14 +6,5 @@ public class BMI {
 
         System.out.println("Your BMI is: " + massInKg / (heightInM * heightInM) + ".");
 
-        massInKg = 75.2;
-        heightInM = 1.78;
-
-        System.out.println("Your BMI is: " + massInKg / (heightInM * heightInM) + ".");
-
-        massInKg = 75.2;
-        heightInM = 1.78;
-
-        System.out.println("Your BMI is: " + massInKg / (heightInM * heightInM) + ".");
     }
 }
