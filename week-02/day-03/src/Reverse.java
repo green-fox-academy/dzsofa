@@ -5,12 +5,20 @@ public class Reverse {
         // Create a function that can reverse a String, which is passed as the parameter
         // Use it on this reversed string to check it!
         // Try to solve this using charAt() first, and optionally anything else after.
-//
-//        System.out.println(reversed.charAt(int index));
-//        index--;
-    }
-    public static void reverse(String[] strings) {
 
-    //    for (int i; i<= ;)
+//        StringBuilder reverse = new StringBuilder();
+//        reverse.append(reversed);
+//        reverse.reverse();
+//        for (int i = 0; i < reverse.length(); i++) {
+//            System.out.print(reverse.charAt(i));
+//        }
+
+    }
+    public static String reverse(String source) {
+        String reverse = "";
+        for (int i = source.length(); i >= 0; i--) {
+            reverse = reverse + source.charAt(i);
+        }
+        return reverse;
     }
 }

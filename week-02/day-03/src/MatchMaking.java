@@ -7,11 +7,6 @@ public class MatchMaking{
         ArrayList<String> boys = new ArrayList<String>(Arrays.asList("Joe","Fred","Béla","Todd","Neef","Jeff"));
         ArrayList<String> order = new ArrayList<String>();
 
-//        for (String shuffle : girls) {
-//            for (String shuffleboys : boys) {
-//
-//            }
-//        }
 
         for (int i = 0; i < girls.size(); i++) {
             for (int j= 0; j < boys.size(); j++) {
