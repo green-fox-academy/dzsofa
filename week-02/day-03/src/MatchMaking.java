@@ -9,14 +9,16 @@ public class MatchMaking{
 
 
         for (int i = 0; i < girls.size(); i++) {
-            for (int j= 0; j < boys.size(); j++) {
-                if (i == j) {
-                    System.out.print(girls.get(i) + ", " + boys.get(j) + ", ");
+           /* for (int j= 0; j < boys.size(); j++) */{
+                if (i == i) {
+                    order.add(girls.get(i) + ", " + boys.get(i));
+                } else {
+                    order.add(girls.get(i) + ", " + boys.get(i));
                 }
             }
         }
         // Join the two lists by matching one girl with one boy in the order list
         // Expected output: "Eve", "Joe", "Ashley", "Fred"...
-        //System.out.println(order);
+        System.out.println(order);
     }
 }
