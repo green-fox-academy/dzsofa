@@ -14,15 +14,17 @@ public class ParametricAverage {
         System.out.print("Give me a number: ");
         int initializer = sc.nextInt();
 
-//        int[] calculate = new int[initializer];
+//        int[] myArray = new int[initializer];
+
+        int sumAll = 0;
+        int averageAll = 0;
 
         for (int i = 0; i < initializer; i++) {
-            Scanner nextNr = new Scanner(System.in);
             System.out.print("Give me another number: ");
-            int myNumbers = nextNr.nextInt();
-            int [] calculate = {myNumbers};
-
+            int myNumbers = sc.nextInt();
+            sumAll += myNumbers;
+            averageAll = sumAll / initializer;
         }
-
+        System.out.println("Sum: " + sumAll + ", Average: " + averageAll);
     }
 }
