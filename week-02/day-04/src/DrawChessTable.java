@@ -22,17 +22,16 @@ public class DrawChessTable {
     }
     public static void chess(int sizeOfTable) {
         for (int i = 0; i < sizeOfTable; i++) {
-
-        }
-//            for (int j = 0; j < sizeOfTable; j++) {
-//                if (j % 2 != 0) {
-//                    System.out.print("%");
-//                } else if (j % 2 == 0 ) {
-//                    System.out.print("%");
-//                } else {
-//                    System.out.print(" ");
-//                }
+            for (int j = 0; j < sizeOfTable; j++) {
+                if (i % 2 == 0) {
+                    System.out.print("%");
+                } else if (j % 2 != 0) {
+                    System.out.print("%");
+                } else {
+                    System.out.print(" ");
+                }
+            }
             System.out.println();
-//        }
+        }
     }
 }
