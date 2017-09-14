@@ -12,8 +12,19 @@ public class ElementFinder {
         } else {
             System.out.println("Noooo");
         }
-
-//        arrayList.get(.intValue(7));
+        if (contains(7, arrayList)) {
+            System.out.println("Hooooray!");
+        } else {
+            System.out.println("Noooo");
+        }
+    }
+    public static boolean contains(int myNumber, ArrayList<Integer> myList) {
+        for (int i = 0; i < myList.size(); i++) {
+            if (myNumber == myList.get(i)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
