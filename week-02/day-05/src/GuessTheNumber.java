@@ -13,8 +13,6 @@ public class GuessTheNumber {
 
         System.out.println("You chose a range between " + randommin + " and " + randommax);
 
-//        randomNumber(randommin, randommax);
-
         System.out.println("Guess the number: ");
         int myGuess = sc.nextInt();
 
@@ -23,14 +21,20 @@ public class GuessTheNumber {
 
     public static void amIRight(int guess, int randomNumber) {
         Scanner scanner = new Scanner(System.in);
-        while (guess < randomNumber || guess > randomNumber) {
-                System.out.println("Guess again: ");
+        while (guess < randomNumber || guess > randomNumber ) {
+            if (guess < randomNumber) {
+                System.out.println("Your guess is lower, than the number sought, guess again: ");
                 guess = scanner.nextInt();
-            } if (guess == randomNumber) {
+            }
+            if (guess > randomNumber) {
+                System.out.println("Your guess is bigger, than the number sought, guess again: ");
+                guess = scanner.nextInt();
+            }
+            if (guess == randomNumber) {
                 System.out.println("Yaay you found it!");
             }
+        }
     }
-
     public static int randomNumber(int randmin, int randmax) {
         Random random = new Random();
         int result = random.nextInt((randmax - randmin) + 1) + randmin;
