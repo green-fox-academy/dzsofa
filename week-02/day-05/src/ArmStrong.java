@@ -7,19 +7,27 @@ public class ArmStrong {
 
         System.out.print("Give me a number: ");
         int initNumber = sc.nextInt();
-
         ArrayList<Integer> initDigits = new ArrayList<Integer>();
+
+        // input number converted to ArrayList to get separate digits
         newList(initNumber, initDigits);
+
+        // ArrayList converted to Array, to have int primitive types instead of Integer objects
         armstrongArray(initDigits);
-        isArmstrong(armstrongArray(initDigits));
+
+        // calculation
+        isArmstrong(armstrongArray(initDigits), initNumber);
     }
 
-    public static void isArmstrong(int[] digits) {
+    public static void isArmstrong(int[] digits, int myNumber) {
         int sum = 0;
         for (int i = 0; i < digits.length; i++) {
             sum += Math.pow(digits[i], digits.length);
+        } if (myNumber == sum) {
+            System.out.println("Your number is an Armstrong number.");
+        } else {
+            System.out.println("It's not an Armstrong number.");
         }
-        System.out.println(sum);
     }
     public static ArrayList<Integer> newList(int myNumber, ArrayList<Integer> myList) {
         int i = 0;
