@@ -11,16 +11,13 @@ public class ArmStrong {
         ArrayList<Integer> initDigits = new ArrayList<Integer>();
         newList(initNumber, initDigits);
         armstrongArray(initDigits);
-
-
         isArmstrong(armstrongArray(initDigits));
     }
-
 
     public static void isArmstrong(int[] digits) {
         int sum = 0;
         for (int i = 0; i < digits.length; i++) {
-            sum += digits[i] + Math.pow(digits[i], digits.length);
+            sum += Math.pow(digits[i], digits.length);
         }
         System.out.println(sum);
     }
