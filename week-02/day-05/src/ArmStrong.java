@@ -18,7 +18,6 @@ public class ArmStrong {
         // calculation
         isArmstrong(armstrongArray(initDigits), initNumber);
     }
-
     public static void isArmstrong(int[] digits, int myNumber) {
         int sum = 0;
         for (int i = 0; i < digits.length; i++) {
