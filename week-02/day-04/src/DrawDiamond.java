@@ -23,12 +23,18 @@ public class DrawDiamond {
     }
     public static void lines(int rows) {
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < rows - i; j++) {
+            for (int j = 0; j < rows - i / 2; j++) {
                 System.out.print(" ");
             }
-            for (int k = 0; k <= i; k++) {
+            for (int k = 0; k <= i / 2; k++) {
                 System.out.print("* ");
             }
+//            for (int j = rows - i / 2; j < rows; j++) {
+//                System.out.print("* ");
+//            }
+//            for (int k = rows - i / 2; k <= i - 1; k++) {
+//                System.out.print(" ");
+//            }
             System.out.println();
         }
     }
