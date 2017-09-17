@@ -4,7 +4,6 @@ public class DrawDiamond {
     // Write a program that reads a number from the standard input, then draws a
     // diamond like this:
     //
-    //
     //    *
     //   ***
     //  *****
@@ -19,25 +18,39 @@ public class DrawDiamond {
         System.out.println("Give me a number: ");
         int rowCount = sc.nextInt();
 
-        lines(rowCount);
-    }
-    public static void lines(int rows) {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < rows - i / 2; j++) {
+
+        for (int i = 0; i < Math.ceil(rowCount / 2.); i++) {
+            int spaceCount = (int)Math.ceil(rowCount / 2.) - (i + 1);
+            for (int j = 0; j < spaceCount; j++) {
                 System.out.print(" ");
             }
-            for (int k = 0; k <= i / 2; k++) {
-                System.out.print("* ");
+            for (int j = 0; j < i * 2 + 1; j++) {
+                System.out.print("*");
             }
-//            for (int j = rows - i / 2; j < rows; j++) {
-//                System.out.print("* ");
-//            }
-//            for (int k = rows - i / 2; k <= i - 1; k++) {
-//                System.out.print(" ");
-//            }
+            System.out.println();
+        }
+        for (int i = rowCount / 2 - 1; i >= 0; i--) {
+            int spaceCount = (int)Math.ceil(rowCount / 2.) - (i + 1);
+            for (int j = 0; j < spaceCount; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < i * 2 + 1; j++) {
+                System.out.print("*");
+            }
             System.out.println();
         }
     }
-
-
+//    public static void lines(int rows) {
+//        for (int i = 0; i < rows; i++) {
+//            for (int j = 0; j < rows - i; j++) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k <= i; k++) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//    }
 }
+
+//+3-i

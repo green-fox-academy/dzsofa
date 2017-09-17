@@ -18,16 +18,7 @@ public class ArmStrong {
         // calculation
         isArmstrong(armstrongArray(initDigits), initNumber);
     }
-    public static void isArmstrong(int[] digits, int myNumber) {
-        int sum = 0;
-        for (int i = 0; i < digits.length; i++) {
-            sum += Math.pow(digits[i], digits.length);
-        } if (myNumber == sum) {
-            System.out.println("Your number is an Armstrong number.");
-        } else {
-            System.out.println("It's not an Armstrong number.");
-        }
-    }
+
     public static ArrayList<Integer> newList(int myNumber, ArrayList<Integer> myList) {
         int i = 0;
         while (myNumber > 0) {
@@ -43,5 +34,15 @@ public class ArmStrong {
             armstrongDigits[j] = myList.get(j).intValue();
         }
         return armstrongDigits;
+    }
+    public static void isArmstrong(int[] digits, int myNumber) {
+        int sum = 0;
+        for (int i = 0; i < digits.length; i++) {
+            sum += Math.pow(digits[i], digits.length);
+        } if (myNumber == sum) {
+            System.out.println("Your number is an Armstrong number.");
+        } else {
+            System.out.println("It's not an Armstrong number.");
+        }
     }
 }
