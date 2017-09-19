@@ -22,7 +22,7 @@ public class Doubled {
             List<String> textContent = Files.readAllLines(myPath);
 
             for (int i = 0; i < textContent.size(); i++) {
-                for (int j = 0; j < textContent.get(i).length() - 1; j++) { // length - 1!!!!!
+                for (int j = 0; j < textContent.get(i).length() - 1; j += 2) { // length - 1!!!!!
                     if (textContent.get(i).charAt(j) == textContent.get(i).charAt(j + 1)) {
                         System.out.print(textContent.get(i).charAt(j));
                     }
