@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class WriteSingleLine {
         Path myPath = Paths.get("src/my-text.txt");
 
         try {
-            Files.write(myPath, myLine);
+            Files.write(myPath, myLine, StandardOpenOption.APPEND);
         } catch (IOException e) {
             System.out.println("Unable to write file: " + myPath);
         }
