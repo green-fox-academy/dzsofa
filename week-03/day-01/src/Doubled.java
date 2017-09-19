@@ -13,7 +13,11 @@ public class Doubled {
 
     public static void main(String[] args) {
         // Create a method that decrypts the duplicated-chars.txt
-        Path myPath = Paths.get("src/duplicated-chars.txt");
+        removeDoubles("src/duplicated-chars.txt");
+    }
+
+    public static void removeDoubles(String myFile) {
+        Path myPath = Paths.get(myFile);
         try {
             List<String> textContent = Files.readAllLines(myPath);
 
@@ -28,7 +32,6 @@ public class Doubled {
         } catch (IOException e) {
             System.out.println("Houston, we have a problem");
         }
-
 
     }
 
