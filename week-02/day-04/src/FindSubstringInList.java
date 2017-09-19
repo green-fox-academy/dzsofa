@@ -10,6 +10,7 @@ public class FindSubstringInList {
 
         System.out.println(isInList(myWord, myArrayList));
     }
+
     public static int isInList(String subString, ArrayList<String> myList) {
         for (int i = 0; i < myList.size(); i++) {
             for (int j = 0; j < myList.get(i).length(); j++) {
