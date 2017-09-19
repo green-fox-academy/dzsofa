@@ -27,7 +27,6 @@ public class EncodedLines {
                     }
                     System.out.print(myText);
                 }
-
                 System.out.println(); // not to be forgotten, or everything will be on one line
             }
         } catch (IOException e) {

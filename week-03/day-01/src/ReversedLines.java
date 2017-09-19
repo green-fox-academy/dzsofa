@@ -16,8 +16,8 @@ public class ReversedLines {
         try {
             List<String> textContent = Files.readAllLines(myPath);
 
-            for (int i = 0; i < textContent.size() - 1; i++) {
-                for (int j = textContent.get(i).length() - 1; j > 0; j--) { // length - 1!!!!!
+            for (int i = 0; i < textContent.size(); i++) {
+                for (int j = textContent.get(i).length() - 1; j >= 0; j--) { // length - 1!!!!!
                     System.out.print(textContent.get(i).charAt(j));
                 }
                 System.out.println(); // not to be forgotten, or everything will be on one line

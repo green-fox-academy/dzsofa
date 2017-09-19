@@ -4,7 +4,7 @@ public class DivideByZero {
     // create a function that takes a number
     // divides ten with it,
     // and prints the result.
-    // it should print "fail" if the parame ter is 0
+    // it should print "fail" if the parameter is 0
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Give me a number, I will divide 10 with it: ");

@@ -17,7 +17,7 @@ public class ReversedOrder {
         try {
             List<String> textContent = Files.readAllLines(myPath);
 
-            for (int i = textContent.size() - 1; i > 0; i--) {// length - 1!!!!!
+            for (int i = textContent.size() - 1; i >= 0; i--) {// length - 1!!!!!
                 System.out.print(textContent.get(i));
                 System.out.println(); // not to be forgotten, or everything will be on one line
             }
