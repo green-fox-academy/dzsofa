@@ -13,15 +13,15 @@ public class RainbowBoxFunction {
         // create a loop that fills the canvas with rainbow colored squares.
         Color[] colors = {Color.black, Color.blue, Color.cyan, Color.darkGray,
                 Color.green, Color.lightGray, Color.magenta, Color.magenta,
-                Color.orange, Color.pink};
-        rainbow(graphics, colors, 340);
+                Color.orange, Color.pink, Color.RED, Color.DARK_GRAY};
+        rainbow(graphics, colors, 320);
 
     }
 
     public static void rainbow(Graphics g, Color[] color, int squareSize) {
 //        g.setColor(color);
 //        g.fillRect(WIDTH / 2 - squareSize / 2, HEIGHT / 2 - squareSize / 2, squareSize, squareSize);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < color.length; i++) {
             g.setColor(color[i]);
             g.fillRect(WIDTH / 2 - squareSize / 2, HEIGHT / 2 - squareSize / 2, squareSize, squareSize);
             squareSize -= 20;
