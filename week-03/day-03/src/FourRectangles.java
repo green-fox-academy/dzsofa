@@ -8,8 +8,17 @@ public class FourRectangles {
 
     public static void mainDraw(Graphics graphics){
       // draw four different size and color rectangles.
+        graphics.setColor(Color.PINK);
+        graphics.fillRect(20, 200, 150, 90);
 
+        graphics.setColor(Color.cyan);
+        graphics.fillRect(150, 50, 20, 200);
 
+        graphics.setColor(Color.RED);
+        graphics.fillRect(260, 100, 60, 80);
+
+        graphics.setColor(Color.YELLOW);
+        graphics.fillRect(230, 280, 60, 40);
 
     }
 
