@@ -11,7 +11,12 @@ public class HorizontalLines {
         // the x and y coordinates of the line's starting point
         // and draws a 50 long horizontal line from that point.
         // draw 3 lines with that function.
-//        drawLine(0, 55);
+        horizontalDraw(graphics, 40, 80);
+        horizontalDraw(graphics, 60, 100);
+        horizontalDraw(graphics, 200, 300);
+    }
+    public static void horizontalDraw(Graphics g, int x, int y) {
+        g.drawLine(x, y, x + 50, y);
     }
 
 

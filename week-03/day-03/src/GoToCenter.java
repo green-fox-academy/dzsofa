@@ -14,6 +14,8 @@ public class GoToCenter {
 
         graphics.setColor(Color.green);
         goToCenter(graphics, 40, 90);
+        goToCenter(graphics, 30, 20);
+        goToCenter(graphics, 120, 80);
     }
 
     public static void goToCenter(Graphics g,int x, int y) {
