@@ -12,7 +12,7 @@ public class RainbowBoxFunction {
         // and draws a square of that size and color to the center of the canvas.
         // create a loop that fills the canvas with rainbow colored squares.
         Color[] colors = {Color.black, Color.blue, Color.cyan, Color.darkGray,
-                Color.green, Color.lightGray, Color.magenta, Color.magenta,
+                Color.green, Color.lightGray, Color.RED, Color.magenta,
                 Color.orange, Color.pink, Color.RED, Color.DARK_GRAY};
         rainbow(graphics, colors, 320);
 
