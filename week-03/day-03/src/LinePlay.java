@@ -9,11 +9,24 @@ public class LinePlay {
     public static void mainDraw(Graphics graphics) {
         // reproduce this:
         // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/line-play/r1.png]
+
+        int x1 = 20;
+        int y2 = 20;
         for (int i = 0; i < 16; i++) {
-            graphics.drawLine(5, 20, 5, 338);
+            graphics.setColor(new Color(226, 0, 116));
+            graphics.drawLine(x1, 5, 315, y2);
+            x1 += 20;
+            y2 += 20;
+
         }
+
+        int x2 = 20;
+        int y1 = 20;
         for (int i = 0; i < 16; i++) {
-            graphics.drawLine(20, 5, 315, 5);
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(5, y1, x2, 338);
+            x2 += 20;
+            y1 += 20;
 
         }
 
