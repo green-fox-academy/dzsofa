@@ -18,7 +18,6 @@ public class Checkerboard {
                     graphics.setColor(Color.PINK);
                 } else {
                     graphics.setColor(Color.BLACK);
-
                 }
                 graphics.fillRect(i * 40, j * 40, 40, 40);
             }
