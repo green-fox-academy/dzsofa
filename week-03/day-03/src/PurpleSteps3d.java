@@ -12,8 +12,6 @@ public class PurpleSteps3d {
         int[] startingPoints = {10, 10};
 
         for (int i = 0; i < 6; i++) {
-            graphics.setColor(Color.BLACK);
-            graphics.drawRect(startingPoints[0], startingPoints[0], startingPoints[1], startingPoints[1]);
             graphics.setColor(new Color(187, 0, 236));
             graphics.fillRect(startingPoints[0], startingPoints[0], startingPoints[1], startingPoints[1]);
             startingPoints[0] += startingPoints[1];
