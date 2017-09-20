@@ -10,30 +10,21 @@ public class Checkerboard {
         // fill the canvas with a checkerboard pattern.
         int[] startingPoint = {0, 0};
 
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                startingPoint[0] += 20;
-                if (startingPoint[0] % 40 == 0) {
-                    graphics.setColor(Color.WHITE);
-                    graphics.fillRect(startingPoint[0], startingPoint[1], 20, 20);
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (i % 2 == 0 && j % 2 == 0) {
+                    graphics.setColor(Color.PINK);
+                } else if (i % 2 == 1 && j % 2 == 1) {
+                    graphics.setColor(Color.PINK);
                 } else {
                     graphics.setColor(Color.BLACK);
-                    graphics.fillRect(startingPoint[0], startingPoint[1], 20, 20);
-                }
-            }
-        }
-        for (int i = 0; i < 16; i++) {
-            startingPoint[1] += 20;
-            if (startingPoint[1] % 40 == 0) {
-                graphics.setColor(Color.WHITE);
-                graphics.fillRect(startingPoint[0], startingPoint[1], 20, 20);
-            } else {
-                graphics.setColor(Color.BLACK);
-                graphics.fillRect(startingPoint[0], startingPoint[1], 20, 20);
-            }
 
+                }
+                graphics.fillRect(i * 40, j * 40, 40, 40);
+            }
         }
     }
+
 
     //    Don't touch the code below
     static int WIDTH = 320;
