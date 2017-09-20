@@ -13,13 +13,18 @@ public class GoToCenter {
         // draw 3 lines with that function.
 
         graphics.setColor(Color.green);
-        goToCenter(graphics, 40, 90);
-        goToCenter(graphics, 30, 20);
-        goToCenter(graphics, 120, 80);
+        int[] startingPoints1 = {40, 90};
+        goToCenter(graphics, startingPoints1);
+
+        int[] startingPoints2 = {30, 20};
+        goToCenter(graphics, startingPoints2);
+
+        int[] startingPoints3 = {120, 80};
+        goToCenter(graphics, startingPoints3);
     }
 
-    public static void goToCenter(Graphics g,int x, int y) {
-        g.drawLine(x, y, WIDTH / 2, HEIGHT / 2);
+    public static void goToCenter(Graphics g, int[] startingPoints) {
+        g.drawLine(startingPoints[0], startingPoints[1], WIDTH / 2, HEIGHT / 2);
 
     }
 
