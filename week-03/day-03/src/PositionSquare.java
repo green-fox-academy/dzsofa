@@ -11,11 +11,21 @@ public class PositionSquare {
       // the x and y coordinates of the square's top left corner
       // and draws a 50x50 square from that point.
       // draw 3 squares with that function.
+        int[] firstSquare = {50, 80};
+        drawSquare(graphics, firstSquare);
 
+        int[] secondSquare = {200, 250};
+        drawSquare(graphics, secondSquare);
+
+        int[] thirdSquare = {260, 100};
+        drawSquare(graphics, thirdSquare);
+
+    }
+    public static void drawSquare(Graphics g, int[] startingPos) {
+        g.drawRect(startingPos[0], startingPos[1], 50, 50);
 
 
     }
-
 //    Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
