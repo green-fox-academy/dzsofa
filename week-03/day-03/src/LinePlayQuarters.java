@@ -12,6 +12,25 @@ public class LinePlayQuarters {
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/line-play/r1.png]
 
 
+        int x1 = 10;
+        int y2 = 10;
+        for (int i = 0; i < 16; i++) {
+            graphics.setColor(new Color(226, 0, 116));
+            graphics.drawLine(x1, 2, 158, y2);
+            x1 += 10;
+            y2 += 10;
+
+        }
+
+        int x2 = 10;
+        int y1 = 10;
+        for (int i = 0; i < 16; i++) {
+            graphics.setColor(Color.GREEN);
+            graphics.drawLine(2, y1, x2, 169);
+            x2 += 10;
+            y1 += 10;
+
+        }
 
     }
 
