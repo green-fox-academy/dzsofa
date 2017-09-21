@@ -6,6 +6,7 @@ public class Power {
         System.out.println(powerN(4, 1));
 
     }
+
     public static int powerN(int base, int power) {
         if (base == 1 || power == 1) {
             return base;
