@@ -6,7 +6,6 @@ public class Counter {
     }
 
     public static int count(int input) {
-        int result = 0;
         for (int i = input; i > 0; i--) {
             System.out.println(input);
             return count(input - 1);
