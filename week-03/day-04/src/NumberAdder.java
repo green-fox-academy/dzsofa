@@ -7,7 +7,6 @@ public class NumberAdder {
         for (int i = 1; i <= inputNumber; i++) {
             //System.out.println(inputNumber); // to check numbers
             return (adder(inputNumber - 1) + inputNumber);
-
         }
         return inputNumber;
     }
