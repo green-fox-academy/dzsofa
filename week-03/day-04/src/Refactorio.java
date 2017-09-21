@@ -1,6 +1,6 @@
 public class Refactorio {
     public static void main(String[] args) {
-        
+
         System.out.println(refactorio(5));
 
     }
