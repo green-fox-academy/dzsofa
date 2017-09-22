@@ -17,9 +17,12 @@ public class Circle {
         if (size < 10) {
             return;
         }
-        graphics.drawOval(x, y, size, size);
+        graphics.fillOval(x, y, size, size);
+        graphics.setColor(Color.PINK);
         circleDraw(graphics, x + size / 4, y, size / 2);
+        graphics.setColor(Color.GREEN);
         circleDraw(graphics, x + size / 24, (int)(y + size / 2.57), size / 2);
+        graphics.setColor(Color.ORANGE);
         circleDraw(graphics, (int)(x + size / 2.18), (int)(y + size / 2.57), size / 2);
     }
 
