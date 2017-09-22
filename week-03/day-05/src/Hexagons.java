@@ -7,7 +7,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Hexagons {
 
     public static void mainDraw(Graphics graphics) {
-        hexagonDraw(graphics, 7, 50, 350, 300);
+        hexagonDraw(graphics, 5, 50, 350, 300);
 
     }
 
@@ -37,17 +37,17 @@ public class Hexagons {
         graphics.drawLine((int) x5, (int) y5, (int) x0, (int) y0);
 
 
-//        int r = 255 - (int) (Math.random() * 255);
-//        int g = 255 - (int) (Math.random() * 255);
-//        int b = 255 - (int) (Math.random() * 255);
+        int r = 255 - (int) (Math.random() * 255);
+        int g = 255 - (int) (Math.random() * 255);
+        int b = 255 - (int) (Math.random() * 255);
 
-//        graphics.setColor(new Color(r, g, b));
+        graphics.setColor(new Color(r, g, b));
         hexagonDraw(graphics, n - 1, x0, y0, size / 3);
-//        graphics.setColor(new Color(r, g, b)F);
         hexagonDraw(graphics, n - 1, x0 + size / 3, y0 - (Math.sqrt(3)) * size / 3, size / 3);
-//        graphics.setColor(new Color(r, g, b));
+        graphics.setColor(new Color(r, g, b));
         hexagonDraw(graphics, n - 1, x0 + size, y0 - (Math.sqrt(3)) * size / 3, size / 3);
         hexagonDraw(graphics, n - 1, x0 + 1.335 * size, y0, size / 3);
+        graphics.setColor(new Color(r, g, b));
         hexagonDraw(graphics, n - 1, x0 + size / 3, y0 + (Math.sqrt(3)) * size / 3, size / 3);
         hexagonDraw(graphics, n - 1, x0 + size, y0 + (Math.sqrt(3)) * size / 3, size / 3);
     }
