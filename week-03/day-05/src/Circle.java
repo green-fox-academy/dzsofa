@@ -17,9 +17,13 @@ public class Circle {
         if (size < 10) {
             return;
         }
+
+        //randomizing colors
         int r = 255 - (int) (Math.random() * 255);
         int g = 255 - (int) (Math.random() * 255);
         int b = 255 - (int) (Math.random() * 255);
+
+        //drawing circles
         graphics.drawOval(x, y, size, size);
         graphics.setColor(new Color(r, g, b));
         circleDraw(graphics, x + size / 4, y, size / 2);

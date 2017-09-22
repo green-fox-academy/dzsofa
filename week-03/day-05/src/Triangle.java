@@ -16,6 +16,7 @@ public class Triangle {
             return;
         }
 
+        //defining coordinates
         double x0 = x;
         double y0 = y;
         double x1 = x0 + size;
@@ -23,6 +24,7 @@ public class Triangle {
         double x2 = x0 + size / 2;
         double y2 = y0 + (Math.sqrt(3)) * size / 2;
 
+        //drawing initial big triangle
         graphics.drawLine((int) x0, (int) y0, (int) x1, (int) y1);
         graphics.drawLine((int) x0, (int) y0, (int) x2, (int) y2);
         graphics.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
@@ -31,6 +33,7 @@ public class Triangle {
         int g = 255 - (int) (Math.random() * 255);
         int b = 255 - (int) (Math.random() * 255);
 
+        //recursing
         graphics.setColor(new Color(r, g, b));
         triangleDraw(graphics, n - 1, x0, y0, size / 2);
         graphics.setColor(new Color(r, g, b));

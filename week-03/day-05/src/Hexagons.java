@@ -16,6 +16,7 @@ public class Hexagons {
             return;
         }
 
+        //defining coordinates
         double x0 = x;
         double y0 = y;
         double x1 = x0 + size / 2;
@@ -29,6 +30,7 @@ public class Hexagons {
         double x5 = x0 + size / 2;
         double y5 = y0 + (Math.sqrt(3)) * size / 2;
 
+        //drawing the initial big hexagon
         graphics.drawLine((int) x0, (int) y0, (int) x1, (int) y1);
         graphics.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
         graphics.drawLine((int) x2, (int) y2, (int) x3, (int) y3);
@@ -41,6 +43,7 @@ public class Hexagons {
         int g = 255 - (int) (Math.random() * 255);
         int b = 255 - (int) (Math.random() * 255);
 
+        //recursing the hell out of it
         graphics.setColor(new Color(r, g, b));
         hexagonDraw(graphics, n - 1, x0, y0, size / 3);
         hexagonDraw(graphics, n - 1, x0 + size / 3, y0 - (Math.sqrt(3)) * size / 3, size / 3);
