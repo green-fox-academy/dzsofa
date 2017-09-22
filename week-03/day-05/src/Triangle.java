@@ -28,12 +28,15 @@ public class Triangle {
         graphics.drawLine((int)x0, (int)y0, (int)x2, (int)y2);
         graphics.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
 
-//        int r = 255 - (int) (Math.random() * 255);
-//        int g = 255 - (int) (Math.random() * 255);
-//        int b = 255 - (int) (Math.random() * 255);
+        int r = 255 - (int) (Math.random() * 255);
+        int g = 255 - (int) (Math.random() * 255);
+        int b = 255 - (int) (Math.random() * 255);
 
+        graphics.setColor(new Color(r, g, b));
         triangleDraw(graphics, n - 1, x0, y0, size / 2);
+        graphics.setColor(new Color(r, g, b));
         triangleDraw(graphics, n - 1, (x0 + x1) / 2, (y0 + y1) / 2, size / 2);
+        graphics.setColor(new Color(r, g, b));
         triangleDraw(graphics, n - 1, (x0 + x2) / 2, (y0 + y2) / 2, size / 2);
 
     }
