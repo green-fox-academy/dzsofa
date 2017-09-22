@@ -49,7 +49,7 @@ public class Hexagons {
         hexagonDraw(graphics, n - 1, x0 + size / 3, y0 - (Math.sqrt(3)) * size / 3, size / 3);
         graphics.setColor(new Color(r, g, b));
         hexagonDraw(graphics, n - 1, x0 + size, y0 - (Math.sqrt(3)) * size / 3, size / 3);
-        hexagonDraw(graphics, n - 1, x0 + 1.335 * size, y0, size / 3);
+        hexagonDraw(graphics, n - 1, x0 + size / 3 * 4, y0, size / 3);
         graphics.setColor(new Color(r, g, b));
         hexagonDraw(graphics, n - 1, x0 + size / 3, y0 + (Math.sqrt(3)) * size / 3, size / 3);
         hexagonDraw(graphics, n - 1, x0 + size, y0 + (Math.sqrt(3)) * size / 3, size / 3);
