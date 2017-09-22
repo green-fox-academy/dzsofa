@@ -8,7 +8,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangle {
 
     public static void mainDraw(Graphics graphics) {
-        triangleDraw(graphics, 10, 35, 60, 540);
+        triangleDraw(graphics, 10, 35, 60, 660);
 
     }
 
@@ -24,9 +24,9 @@ public class Triangle {
         double x2 = x0 + size / 2;
         double y2 = y0 + (Math.sqrt(3)) * size / 2;
 
-        graphics.drawLine((int)x0, (int)y0, (int)x1, (int)y1);
-        graphics.drawLine((int)x0, (int)y0, (int)x2, (int)y2);
-        graphics.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
+        graphics.drawLine((int) x0, (int) y0, (int) x1, (int) y1);
+        graphics.drawLine((int) x0, (int) y0, (int) x2, (int) y2);
+        graphics.drawLine((int) x1, (int) y1, (int) x2, (int) y2);
 
         int r = 255 - (int) (Math.random() * 255);
         int g = 255 - (int) (Math.random() * 255);
@@ -43,8 +43,8 @@ public class Triangle {
 
 
     //    Don't touch the code below
-    static int WIDTH = 600;
-    static int HEIGHT = 600;
+    static int WIDTH = 800;
+    static int HEIGHT = 800;
 
     public static void main(String[] args) {
         JFrame jFrame = new JFrame("Drawing");
