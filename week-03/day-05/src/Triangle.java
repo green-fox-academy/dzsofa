@@ -8,14 +8,18 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangle {
 
     public static void mainDraw(Graphics graphics) {
-
+        int[] xStart = {30, 480, 255};
+        int[] yStart = {30, 30, 420};
+        triangleDraw(graphics, xStart, yStart, 3);
 
     }
 
-    public static void triangleDraw(Graphics graphics, int x, int y, int size) {
-        if (size < 10) {
-            return;
-        }
+    public static void triangleDraw(Graphics graphics, int[] x, int[] y, int depth) {
+//        if (size < 10) {
+//            return;
+//        }
+        graphics.drawPolygon(x, y, 3);
+        triangleDraw(graphics, x / 2, y / 2, );
 
 //        int r = 255 - (int) (Math.random() * 255);
 //        int g = 255 - (int) (Math.random() * 255);
