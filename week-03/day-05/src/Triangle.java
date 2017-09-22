@@ -8,7 +8,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangle {
 
     public static void mainDraw(Graphics graphics) {
-        triangleDraw(graphics, 10, 35, 60, 660);
+        triangleDraw(graphics, 7, 35, 60, 660);
 
     }
 
