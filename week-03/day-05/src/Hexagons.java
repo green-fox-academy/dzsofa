@@ -42,11 +42,12 @@ public class Hexagons {
 //        int b = 255 - (int) (Math.random() * 255);
 
 //        graphics.setColor(new Color(r, g, b));
-//        hexagonDraw(graphics, n - 1, x0, y0, size / 3);
+        hexagonDraw(graphics, n - 1, x0, y0, size / 3);
+//        graphics.setColor(new Color(r, g, b)F);
+        hexagonDraw(graphics, n - 1, x0 + size / 3, y0 - (Math.sqrt(3)) * size / 3, size / 3);
 //        graphics.setColor(new Color(r, g, b));
-//        hexagonDraw(graphics, n - 1, x0 + size / 3, y0 - (Math.sqrt(3)) * size / 3, size / 3);
-//        graphics.setColor(new Color(r, g, b));
-//        hexagonDraw(graphics, n - 1, (x0 + x2) / 2, (y0 + y2) / 2, size / 2);
+        hexagonDraw(graphics, n - 1, x0 + size, y0 - (Math.sqrt(3)) * size / 3, size / 3);
+        hexagonDraw(graphics, n - 1, x0 + 1.335 * size, y0, size / 3);
     }
 
 
