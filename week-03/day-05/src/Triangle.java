@@ -1,7 +1,6 @@
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.HashMap;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
