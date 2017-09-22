@@ -8,22 +8,33 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Triangle {
 
     public static void mainDraw(Graphics graphics) {
-        int[] xStart = {30, 480, 255};
-        int[] yStart = {30, 30, 420};
-        triangleDraw(graphics, xStart, yStart, 3);
+        triangleDraw(graphics, 10, 35, 60, 540);
 
     }
 
-    public static void triangleDraw(Graphics graphics, int[] x, int[] y, int depth) {
-//        if (size < 10) {
-//            return;
-//        }
-        graphics.drawPolygon(x, y, 3);
-        triangleDraw(graphics, x / 2, y / 2, );
+    public static void triangleDraw(Graphics graphics, int n, double x, double y, double size) {
+        if (n == 0) {
+            return;
+        }
+
+        double x0 = x;
+        double y0 = y;
+        double x1 = x0 + size;
+        double y1 = y0;
+        double x2 = x0 + size / 2;
+        double y2 = y0 + (Math.sqrt(3)) * size / 2;
+
+        graphics.drawLine((int)x0, (int)y0, (int)x1, (int)y1);
+        graphics.drawLine((int)x0, (int)y0, (int)x2, (int)y2);
+        graphics.drawLine((int)x1, (int)y1, (int)x2, (int)y2);
 
 //        int r = 255 - (int) (Math.random() * 255);
 //        int g = 255 - (int) (Math.random() * 255);
 //        int b = 255 - (int) (Math.random() * 255);
+
+        triangleDraw(graphics, n - 1, x0, y0, size / 2);
+        triangleDraw(graphics, n - 1, (x0 + x1) / 2, (y0 + y1) / 2, size / 2);
+        triangleDraw(graphics, n - 1, (x0 + x2) / 2, (y0 + y2) / 2, size / 2);
 
     }
 
