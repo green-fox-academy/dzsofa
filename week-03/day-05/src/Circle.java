@@ -17,12 +17,15 @@ public class Circle {
         if (size < 10) {
             return;
         }
-        graphics.fillOval(x, y, size, size);
-        graphics.setColor(Color.PINK);
+        int r = 255 - (int) (Math.random() * 255);
+        int g = 255 - (int) (Math.random() * 255);
+        int b = 255 - (int) (Math.random() * 255);
+        graphics.drawOval(x, y, size, size);
+        graphics.setColor(new Color(r, g, b));
         circleDraw(graphics, x + size / 4, y, size / 2);
-        graphics.setColor(Color.GREEN);
+        graphics.setColor(new Color(r, g, b));
         circleDraw(graphics, x + size / 24, (int)(y + size / 2.57), size / 2);
-        graphics.setColor(Color.ORANGE);
+        graphics.setColor(new Color(r, g, b));
         circleDraw(graphics, (int)(x + size / 2.18), (int)(y + size / 2.57), size / 2);
     }
 
