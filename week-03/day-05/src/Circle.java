@@ -9,7 +9,7 @@ public class Circle {
 
     public static void mainDraw(Graphics graphics) {
 //        graphics.drawOval(110, 110, 10, 10);
-        circleDraw(graphics, WIDTH / 8, HEIGHT / 8, 450);
+        circleDraw(graphics, WIDTH / 8, HEIGHT / 8, 540);
 
     }
 
