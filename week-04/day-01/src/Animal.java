@@ -12,24 +12,31 @@ public class Animal {
         thirst = 50;
     }
 
-    public int eat() {
-        return hunger - 1;
+    public void eat() {
+        hunger--;
     }
 
-    public int drink() {
-        return thirst - 1;
+    public void drink() {
+        thirst--;
     }
 
     public void play() {
         hunger += 1;
         thirst += 1;
+    }
+
+    public void printStatus() {
         System.out.println(hunger + ", " + thirst);
     }
 
     public static void main(String[] args) {
         Animal giraffe = new Animal();
+        giraffe.printStatus();
         giraffe.play();
-        System.out.println(giraffe.drink());
+        giraffe.printStatus();
+        giraffe.drink();
+        giraffe.drink();
+        giraffe.printStatus();
     }
 
 }
