@@ -1,3 +1,5 @@
+import sun.security.provider.SHA;
+
 import java.util.Scanner;
 
 public class Sharpie {
@@ -10,9 +12,9 @@ public class Sharpie {
         this.width = width;
     }
 
-//    public Sharpie() {
-//        this.inkAmount = 100;
-//    }
+    public Sharpie() {
+        this.inkAmount = 100;
+    }
 
     public float use() {
         return inkAmount - (float)0.5;
