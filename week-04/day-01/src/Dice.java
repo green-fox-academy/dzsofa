@@ -36,24 +36,35 @@ public class Dice {
         dices[k] = (int) (Math.random() * 6) + 1;
     }
 
+    public void print() {
+        for (int i = 0; i < dices.length; i++) {
+            System.out.print(getCurrent()[i]);
+            if (i != dices.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
+
+    public boolean isSix() {
+        for (int i = 0; i < dices.length; i++) {
+            if (dices[i] != 6) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         Dice myDice = new Dice();
-        myDice.getCurrent();
         myDice.roll();
-        myDice.getCurrent();
-        myDice.getCurrent(5);
-        myDice.reroll();
-        myDice.getCurrent();
-        myDice.reroll(4);
 
-        for (int i = 0; i < myDice.dices.length; i++) {
-//            System.out.print(myDice.getCurrent()[i] + " ");
-            while (myDice.getCurrent(i) != 6) {
-                myDice.reroll(i);
-                System.out.print(myDice.getCurrent()[i]);
-            }
-            System.out.println();
+        myDice.print();
+        System.out.println(myDice.isSix());
+        while (!myDice.isSix()) {
+            myDice.reroll();
         }
-
+        myDice.print();
     }
+
 }
