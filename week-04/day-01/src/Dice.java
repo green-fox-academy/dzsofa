@@ -10,6 +10,7 @@ public class Dice {
 //    Your task is to get where all dice is a 6
     int[] dices = new int[6];
 
+
     public int[] roll() {
         for (int i = 0; i < dices.length; i++) {
             dices[i] = (int) (Math.random() * 6) + 1;
@@ -44,20 +45,15 @@ public class Dice {
         myDice.reroll();
         myDice.getCurrent();
         myDice.reroll(4);
-        myDice.getCurrent();
-
-        ArrayList<Integer> dice = new ArrayList<>();
 
         for (int i = 0; i < myDice.dices.length; i++) {
-            if (myDice.dices[i] == 6) {
-                dice.add(myDice.dices[i]);
-                myDice.
-            } else {
-                myDice.reroll();
+//            System.out.print(myDice.getCurrent()[i] + " ");
+            while (myDice.getCurrent(i) != 6) {
+                myDice.reroll(i);
+                System.out.print(myDice.getCurrent()[i]);
             }
-            System.out.println(dice);
+            System.out.println();
         }
+
     }
-
-
 }
