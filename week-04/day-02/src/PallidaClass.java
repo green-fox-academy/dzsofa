@@ -7,8 +7,8 @@ public class PallidaClass {
 
     public PallidaClass(String classname) {
         this.classname = classname;
-        ArrayList<Student> students = new ArrayList<>();
-        ArrayList<Mentor> mentors = new ArrayList<>();
+        this.students = new ArrayList<>();
+        this.mentors = new ArrayList<>();
     }
 
     public void addStudent(Student st) {

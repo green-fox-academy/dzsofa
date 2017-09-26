@@ -2,7 +2,10 @@ public class Student extends Person {
     String previousOrganization;
     int skippedDays;
 
-    public Student(String previousOrganization) {
+    public Student(String name, int age, String gender, String previousOrganization) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
         this.previousOrganization = previousOrganization;
         this.skippedDays = 0;
     }
