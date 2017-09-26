@@ -21,5 +21,8 @@ public class Student extends Person {
     public void getGoal() {
         System.out.println("Be a junior software developer.");
     }
-    
+
+    public void skipDays(int numbeOfDays) {
+        skippedDays += numbeOfDays;
+    }
 }
