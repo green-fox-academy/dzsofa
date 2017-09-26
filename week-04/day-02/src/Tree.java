@@ -6,18 +6,19 @@ public class Tree extends Plant {
     }
 
     public Tree() {
-        absorption = 0.4f;
+        super.absorption = 0.4f;
     }
 
-    public void needsWater() {
+    public boolean needsWater() {
         if (currentWaterAmount < 10) {
             System.out.println("The " + name + " tree needs water. The current water amount is " + currentWaterAmount);
+            return true;
         } else {
             System.out.println("The " + name + " tree doesn't need water. The current water amount is " + currentWaterAmount);
+            return false;
         }
     }
 
-    public void watering(float waterAmount) {
-        currentWaterAmount += waterAmount * absorption;
+    public void watering() {
     }
 }

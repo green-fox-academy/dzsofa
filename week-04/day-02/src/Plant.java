@@ -8,19 +8,22 @@ public class Plant {
         this.name = name;
         this.currentWaterAmount = currentWaterAmount;
         this.waterAmount = waterAmount;
-
     }
 
     public Plant() {
         name = "noname";
         currentWaterAmount = 0;
-
     }
 
-    public void needsWater() {
+    public boolean needsWater() {
+        if (true) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public void watering(float waterAmount) {
+    public void watering() {
         currentWaterAmount += waterAmount * absorption;
     }
 
