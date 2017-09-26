@@ -32,6 +32,7 @@ class Dominoes {
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
 
+        //oldversion
         List<Domino> dominoesNew = new ArrayList<>();
         dominoesNew.add(dominoes.get(0));
 
@@ -45,7 +46,21 @@ class Dominoes {
             }
         }
         System.out.println(dominoesNew);
+
+
+        //azeversion without new list
+        for (int i = 0; i < dominoes.size() - 1; i++) {
+            for (int j = i + 1; j < dominoes.size(); j++) {
+                if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0] && j != i+1) {
+                    Domino temp = dominoes.get(i+1);
+                    dominoes.set(i+1, dominoes.get(j));
+                    dominoes.set(j, temp);
+                }
+            }
+        }
+        System.out.println(dominoes);
     }
+
 
     static List<Domino> initializeDominoes() {
         List<Domino> dominoes = new ArrayList<>();
