@@ -18,8 +18,8 @@ public class Student extends Person {
                 + skippedDays + "days from the course already.");
     }
 
-    public static void main(String[] args) {
-        Student st = new Student();
-        st.introduce();
+    public void getGoal() {
+        System.out.println("Be a junior software developer.");
     }
+    
 }
