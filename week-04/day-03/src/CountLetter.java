@@ -3,13 +3,14 @@ import java.util.Map;
 
 public class CountLetter {
     public static void main(String[] args) {
-        String str = "Reference site about Lorem Ipsum, giving information on its origins";
+        String str = "Reference";
         Map<Character, Integer> charCount = new HashMap<>();
 
-        System.out.println(countLetter(str, charCount));
+        System.out.println(countLetter(str));
     }
 
-    public static Map countLetter(String string, Map<Character, Integer> dictionary) {
+    public static String countLetter(String string) {
+        Map<Character, Integer> dictionary = new HashMap<>();
         for (int i = 0; i < string.toLowerCase().length(); i++) {
             char charAt = string.charAt(i);
             if (!dictionary.containsKey(charAt)) {
@@ -18,7 +19,7 @@ public class CountLetter {
                 dictionary.put(charAt, dictionary.get(charAt) + 1);
             }
         }
-        return dictionary;
+        return dictionary.toString();
     }
 }
 
