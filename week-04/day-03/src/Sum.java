@@ -7,16 +7,16 @@ public class Sum {
         return numbers;
     }
 
-    public void setNumbers(ArrayList<Integer> numbers) {
-        this.numbers = numbers;
+    public Sum() {
+        this.numbers = new ArrayList<>();
     }
 
-    public Sum(ArrayList<Integer> numbers) {
-        this.numbers = numbers;
-    }
-
-    public void addNumber(Integer nr) {
+    public void addNumber(int nr) {
         numbers.add(nr);
+    }
+
+    public void removeNumber(int nr) {
+        numbers.remove(nr);
     }
 
     public int sum() {
