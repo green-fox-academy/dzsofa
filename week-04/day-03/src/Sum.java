@@ -20,10 +20,15 @@ public class Sum {
     }
 
     public int sum() {
-        int sumOfList = 0;
-        for (int i = 0; i < numbers.size(); i++) {
-            sumOfList += numbers.get(i);
+        try {
+            int sumOfList = 0;
+            for (int i = 0; i < numbers.size(); i++) {
+                sumOfList += numbers.get(i);
+            }
+            return sumOfList;
+
+        } catch (NullPointerException ex) {
+            return 0;
         }
-        return sumOfList;
     }
 }
