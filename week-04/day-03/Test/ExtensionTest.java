@@ -34,7 +34,7 @@ public class ExtensionTest {
 
     @Test
     void testMedian_five() {
-        assertEquals(4, extension.median(Arrays.asList(1,2,6,4,5)));
+        assertEquals((double)4, extension.median(Arrays.asList(1,2,6,4,5)));
     }
 
     @Test
