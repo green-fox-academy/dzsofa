@@ -2,26 +2,23 @@ import java.util.ArrayList;
 
 public class GardenApp {
     public static void main(String[] args) {
-        ArrayList<Plant> plants = new ArrayList<>();
+        Garden myGarden = new Garden();
 
-        Plant yellow = new Flower("yellow", 4);
-        plants.add(yellow);
-        Plant blue = new Flower("blue", 4);
-        plants.add(blue);
-        Plant orange = new Tree("orange", 5);
-        plants.add(orange);
-        Plant purple = new Tree("purple", 5);
-        plants.add(purple);
+        Plant yellow = new Flower( "yellow flower", 4 );
+        myGarden.plants.add( yellow );
+        Plant blue = new Flower( "blue flower", 4 );
+        myGarden.plants.add( blue );
+        Plant orange = new Tree( "orange tree", 5 );
+        myGarden.plants.add( orange );
+        Plant purple = new Tree( "purple tree", 5 );
+        myGarden.plants.add( purple );
+
+        myGarden.printStatus();
+        myGarden.waterThirsty( 40 );
+        myGarden.printStatus();
+        myGarden.waterThirsty( 70 );
+        myGarden.printStatus();
 
 
-        for (int i = 0; i < plants.size(); i++) {
-            plants.get(i).needsWater();
-        }
-
-
-
-        for (int i = 0; i < plants.size(); i++) {
-            plants.get(i).watering();
-        }
     }
 }

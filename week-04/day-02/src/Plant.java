@@ -1,13 +1,14 @@
-public class Plant {
+public abstract class Plant {
     String name;
     float currentWaterAmount;
     float waterAmount;
     float absorption;
 
-    public Plant(String name, float currentWaterAmount) {
+    public Plant(String name, float currentWaterAmount, float absorption) {
         this.name = name;
         this.currentWaterAmount = currentWaterAmount;
         this.waterAmount = waterAmount;
+        this.absorption = absorption;
     }
 
     public Plant() {
@@ -15,17 +16,22 @@ public class Plant {
         currentWaterAmount = 0;
     }
 
-    public boolean needsWater() {
-        if (true) {
-            return true;
+    public abstract boolean needsWater();
+
+    public void watering(float waterAmount) {
+        if (needsWater()) {
+            currentWaterAmount += waterAmount * absorption;
         } else {
-            return false;
+
         }
     }
 
-    public void watering() {
-        currentWaterAmount += waterAmount * absorption;
+    public void printStatus() {
+        if (needsWater()) {
+            System.out.println( "The " + name + " needs water. The current water amount is " + currentWaterAmount );
+        } else {
+            System.out.println( "The " + name + " doesn't need water. The current water amount is " + currentWaterAmount );
+        }
     }
-
 
 }
