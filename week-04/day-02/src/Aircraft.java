@@ -1,8 +1,8 @@
 public class Aircraft {
     int maxAmmo;
-    int initAmmo;
-    int ammoStore;
-    int baseDamage;
+    protected int initAmmo;
+    protected int ammoStore;
+    protected int baseDamage;
     int allDamage;
     String type;
 
@@ -13,7 +13,7 @@ public class Aircraft {
     }
 
     public Aircraft() {
-        initAmmo = 0;
+        this.initAmmo = 0;
     }
 
     public String fight(Aircraft another) {
