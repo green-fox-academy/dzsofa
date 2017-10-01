@@ -16,19 +16,23 @@ public class Aircraft {
         initAmmo = 0;
     }
 
-    public int fight() {
-        allDamage = baseDamage * ammoStore;
-        ammoStore = 0;
-        return allDamage;
+    public String fight(Aircraft another) {
+        another.allDamage = another.baseDamage * this.ammoStore;
+        this.ammoStore = 0;
+        return "The damage suffered by " + another.getType() + " is " + another.allDamage + ".";
     }
 
-    public int refill(int amount) {
+    public String refill(int amount) {
         if (amount < maxAmmo - ammoStore) {
             ammoStore += amount;
-            return 0;
-        } else {
+            return "The total amount of ammo in your storage is: " + ammoStore;
+        } else if (amount == maxAmmo - ammoStore) {
+            ammoStore += amount;
+            return "Your storage is full, nothing remains in filling station.";
+        }
+        else {
             ammoStore = maxAmmo;
-            return amount - maxAmmo;
+            return "Your storage is full, " + (amount - maxAmmo) + " in filling station.";
         }
     }
 
