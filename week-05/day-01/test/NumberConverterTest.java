@@ -13,12 +13,17 @@ public class NumberConverterTest {
 
     @Test
     public void convert() throws Exception {
-        assertEquals("one", converter.convert(1));
+        assertEquals("one ", converter.convert(1));
     }
 
     @Test
     public void convert2() throws Exception {
-        assertEquals("two", converter.convert(2));
+        assertEquals("two ", converter.convert(2));
+    }
+
+    @Test
+    public void convert3() throws Exception {
+        assertEquals("twenty ", converter.convert(20));
     }
 
 }
