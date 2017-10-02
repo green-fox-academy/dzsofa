@@ -28,9 +28,14 @@ public class Carrier {
     }
 
     public String getStatus() {
-        String stat = "HP: " + healthPoints + ", Aircraft count: " + aircrafts.size() + ", Ammo Storage: " + ammoStore + ", Total damage: " + getTotalDamage() + "\n";
-        for (int i = 0; i < aircrafts.size(); i++) {
-           stat += aircrafts.get(i).getStatus();
+        String stat = "";
+        if (healthPoints == 0) {
+            stat += "It's dead, Jim.";
+        } else {
+            stat = "HP: " + healthPoints + ", Aircraft count: " + aircrafts.size() + ", Ammo Storage: " + ammoStore + ", Total damage: " + getTotalDamage() + "\n" + "Aircrafts: \n";
+            for (int i = 0; i < aircrafts.size(); i++) {
+                stat += aircrafts.get(i).getStatus();
+            }
         }
         return stat;
     }
@@ -59,10 +64,15 @@ public class Carrier {
         System.out.println(one.getStatus());
 
 
-        Carrier two = new Carrier(200, 2500);
+        Carrier two = new Carrier(200, 1000);
+        two.addAircraft(new F35());
         two.addAircraft(new F16());
         two.addAircraft(new F16());
-        two.addAircraft(new F16());
-        two.addAircraft(new F16());
+        two.addAircraft(new F35());
+        two.fill();
+
+        one.fight(two);
+        System.out.println(one.getStatus());
+        System.out.println(two.getStatus());
     }
 }
