@@ -26,7 +26,7 @@ public class Animal {
     }
 
     public void printStatus() {
-        System.out.println(hunger + ", " + thirst);
+        System.out.println("Hunger is: " + hunger + ", thirst is: " + thirst);
     }
 
     public static void main(String[] args) {
