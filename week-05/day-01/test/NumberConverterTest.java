@@ -16,4 +16,9 @@ public class NumberConverterTest {
         assertEquals("one", converter.convert(1));
     }
 
+    @Test
+    public void convert2() throws Exception {
+        assertEquals("two", converter.convert(2));
+    }
+
 }
