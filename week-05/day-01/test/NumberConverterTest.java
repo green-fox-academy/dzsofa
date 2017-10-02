@@ -23,7 +23,12 @@ public class NumberConverterTest {
 
     @Test
     public void convert3() throws Exception {
-        assertEquals("twenty ", converter.convert(20));
+        assertEquals("twenty one ", converter.convert(21));
+    }
+
+    @Test
+    public void convert91() throws Exception {
+        assertEquals("ninety nine ", converter.convert(99));
     }
 
 }
