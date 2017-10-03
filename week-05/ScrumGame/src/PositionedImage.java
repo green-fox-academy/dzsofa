@@ -21,31 +21,10 @@ public class PositionedImage {
 
     }
 
-    public PositionedImage() {
-
-    }
-
-    public static void floorPositioning(PositionedImage image, int value, Graphics graphics) {
-        for (int i = 0; i < value; i++) {
-            for (int j = 0; j < value; j++) {
-                image.posX = i * 72;
-                image.posY = j * 72;
-                image.draw(graphics);
-            }
-        }
-    }
-
-    public static void wallPositioning(PositionedImage image, ArrayList<Integer> Xcoord, ArrayList<Integer> Ycoord, Graphics graphics) {
-        for (int i = 0; i < Xcoord.size(); i++) {
-            image.posX = Xcoord.get(i) * 72;
-            image.posY = Ycoord.get(i) * 72;
-            image.draw(graphics);
-        }
-    }
 
     public void draw(Graphics graphics) {
         if (image != null) {
-            graphics.drawImage(image, posX, posY, null);
+            graphics.drawImage(image, posX * 72, posY * 72, null);
         }
     }
 }

@@ -1,18 +1,23 @@
+import javafx.geometry.Pos;
+
 import javax.swing.*;
+import javax.swing.text.Position;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
-
     int testBoxX;
     int testBoxY;
+    int[][] boardMap;
 
     public Board() {
-        testBoxX = 300;
-        testBoxY = 300;
+        testBoxX = 0;
+        testBoxY = 0;
+        boardMap = new int[10][10];
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -25,26 +30,33 @@ public class Board extends JComponent implements KeyListener {
 //        graphics.fillRect(testBoxX, testBoxY, 100, 100);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
-        PositionedImage floorImage = new PositionedImage("src/assets/floor.png", 0, 0);
 
-        //positioning floor tile
-        PositionedImage.floorPositioning(floorImage, 10, graphics);
+        int[][] boardMap = new int[][]{
+                {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+                {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+                {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+                {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+                {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+                {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+                {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
+        };
 
-        //import wall image
-        PositionedImage wallImage = new PositionedImage("src/assets/wall.png", 0, 0);
-
-        ArrayList<Integer> wallTilesX = new ArrayList<>(Arrays.asList(3, 5, 3, 5, 7, 8, 1, 2, 3, 5, 7, 8, 5, 0, 1, 2, 3, 5, 6, 7, 8, 1, 3, 8, 1, 3, 5, 6, 8, 5, 6, 8, 1, 2, 3, 8, 3, 5, 6));
-        ArrayList<Integer> wallTilesY = new ArrayList<>(Arrays.asList(0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9));
-
-        for (int i = 0; i < wallTilesX.size(); i++) {
-            for (int j = 0; j < wallTilesY.size(); j++) {
-                wallImage.posX = wallTilesX.get(i) * 72;
-                wallImage.posY = wallTilesY.get(i) * 72;
-                wallImage.draw(graphics);
+        for (int i = 0; i < boardMap.length; i++) {
+            for (int j = 0; j < boardMap.length; j++) {
+                if (boardMap[i][j] == 0) {
+                    Floor floor = new Floor(j, i);
+                    floor.draw(graphics);
+                } else {
+                    Wall wall = new Wall(j, i);
+                    wall.draw(graphics);
+                }
             }
         }
 
-        PositionedImage hero = new PositionedImage("src/assets/hero-down.png", 0, 0);
+        PositionedImage hero = new PositionedImage("src/assets/hero-down.png", testBoxX, testBoxY);
         hero.draw(graphics);
     }
 
@@ -80,13 +92,13 @@ public class Board extends JComponent implements KeyListener {
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            testBoxY -= 100;
+            testBoxY -= 72;
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            testBoxY += 100;
+            testBoxY += 72;
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            testBoxX -= 100;
+            testBoxX -= 72;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            testBoxX += 100;
+            testBoxX += 72;
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
