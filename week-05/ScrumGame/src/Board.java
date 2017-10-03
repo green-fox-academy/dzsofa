@@ -26,15 +26,16 @@ public class Board extends JComponent implements KeyListener {
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
         PositionedImage floorImage = new PositionedImage("src/assets/floor.png", 0, 0);
-        floorImage.draw(graphics);
 
+        //positioning floor tile
         PositionedImage.floorPositioning(floorImage, 10, graphics);
 
+        //import wall image
         PositionedImage wallImage = new PositionedImage("src/assets/wall.png", 0, 0);
 
         ArrayList<Integer> wallTilesX = new ArrayList<>(Arrays.asList(3, 5, 3, 5, 7, 8, 1, 2, 3, 5, 7, 8, 5, 0, 1, 2, 3, 5, 6, 7, 8, 1, 3, 8, 1, 3, 5, 6, 8, 5, 6, 8, 1, 2, 3, 8, 3, 5, 6));
         ArrayList<Integer> wallTilesY = new ArrayList<>(Arrays.asList(0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9));
-        
+
         for (int i = 0; i < wallTilesX.size(); i++) {
             for (int j = 0; j < wallTilesY.size(); j++) {
                 wallImage.posX = wallTilesX.get(i) * 72;
@@ -42,6 +43,9 @@ public class Board extends JComponent implements KeyListener {
                 wallImage.draw(graphics);
             }
         }
+
+        PositionedImage hero = new PositionedImage("src/assets/hero-down.png", 0, 0);
+        hero.draw(graphics);
     }
 
     public static void main(String[] args) {
