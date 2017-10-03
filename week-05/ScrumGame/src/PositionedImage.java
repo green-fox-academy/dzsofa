@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class PositionedImage {
 
@@ -31,6 +32,14 @@ public class PositionedImage {
                 image.posY = j * 72;
                 image.draw(graphics);
             }
+        }
+    }
+
+    public static void wallPositioning(PositionedImage image, ArrayList<Integer> Xcoord, ArrayList<Integer> Ycoord, Graphics graphics) {
+        for (int i = 0; i < Xcoord.size(); i++) {
+            image.posX = Xcoord.get(i) * 72;
+            image.posY = Ycoord.get(i) * 72;
+            image.draw(graphics);
         }
     }
 
