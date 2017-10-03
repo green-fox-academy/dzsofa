@@ -62,6 +62,10 @@ public class Board extends JComponent implements KeyListener {
             testBoxY -= 100;
         } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
             testBoxY += 100;
+        } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+            testBoxX -= 100;
+        } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            testBoxX += 100;
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
