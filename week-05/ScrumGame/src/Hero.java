@@ -5,9 +5,11 @@ public class Hero extends Creature {
         this.setMaxHP(20 + 3 * dice);
         this.setDefendPoint(2 * dice);
         this.setStrikePoint(5 + dice);
+        this.setCurrentHP(maxHP);
         System.out.println(getMaxHP());
         System.out.println(getDefendPoint());
         System.out.println(getStrikePoint());
+        System.out.println(getCurrentHP());
     }
 
     public void walkUp() {
