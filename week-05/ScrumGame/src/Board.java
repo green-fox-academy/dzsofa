@@ -11,8 +11,6 @@ import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
     int[][] boardMap;
-    int testBoxX;
-    int testBoxY;
     Hero hero;
 
     public Board() {
@@ -28,8 +26,6 @@ public class Board extends JComponent implements KeyListener {
                 {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
                 {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
         };
-        testBoxX = 0;
-        testBoxY = 0;
         hero = new Hero();
 
         // set the size of your draw board
