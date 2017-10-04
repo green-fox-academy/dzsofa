@@ -62,7 +62,9 @@ public class Creature extends PositionedImage {
         if (this.strikeValue > other.defendPoint) {
             other.currentHP -= (this.strikeValue - other.defendPoint);
             return true;
-        } else this.currentHP -= (other.strikeValue - this.defendPoint);
+        } else {
+            this.currentHP -= (other.strikeValue - this.defendPoint);
+        }
         return false;
     }
 }
