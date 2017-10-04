@@ -93,13 +93,13 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
-        if (e.getKeyCode() == KeyEvent.VK_UP && hero.posY > 0) {
+        if (e.getKeyCode() == KeyEvent.VK_UP && hero.posY > 0 && boardMap[hero.posY - 1][hero.posX] != 1) {
             hero.walkUp();
-        } else if (e.getKeyCode() == KeyEvent.VK_DOWN && hero.posY < boardMap.length - 1) {
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN && hero.posY < boardMap.length - 1 && boardMap[hero.posY + 1][hero.posX] != 1) {
             hero.walkDown();
-        } else if (e.getKeyCode() == KeyEvent.VK_LEFT && hero.posX > 0) {
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT && hero.posX > 0 && boardMap[hero.posY][hero.posX - 1] != 1) {
             hero.walkLeft();
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && hero.posX < boardMap.length - 1) {
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && hero.posX < boardMap.length - 1 && boardMap[hero.posY][hero.posX + 1] != 1) {
             hero.walkRight();
         }
         // and redraw to have a new picture with the new coordinates
