@@ -1,11 +1,13 @@
-import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.IOException;
-
-public class Hero extends Character {
+public class Hero extends Creature {
 
     public Hero() {
         super("src/assets/hero-down.png", 0, 0);
+        this.setMaxHP(20 + 3 * dice);
+        this.setDefendPoint(2 * dice);
+        this.setStrikePoint(5 + dice);
+        System.out.println(getMaxHP());
+        System.out.println(getDefendPoint());
+        System.out.println(getStrikePoint());
     }
 
     public void walkUp() {
