@@ -2,7 +2,7 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Hero extends PositionedImage {
+public class Hero extends Character {
 
     public Hero() {
         super("src/assets/hero-down.png", 0, 0);
