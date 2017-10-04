@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class PositionedImage {
-
     BufferedImage image;
     int posX, posY;
 
@@ -18,7 +17,6 @@ public class PositionedImage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
 
