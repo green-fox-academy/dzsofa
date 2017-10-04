@@ -9,6 +9,7 @@ public class Board extends JComponent implements KeyListener {
     Skeleton skeleton;
     Skeleton skeleton2;
     Skeleton skeleton3;
+    Boss boss;
 
     public Board() {
         boardMap = new int[][]{
@@ -27,6 +28,7 @@ public class Board extends JComponent implements KeyListener {
         skeleton = new Skeleton(0, 6);
         skeleton2 = new Skeleton(5, 8);
         skeleton3 = new Skeleton(6, 2);
+        boss = new Boss(7, 8);
 
 
         // set the size of your draw board
@@ -59,6 +61,7 @@ public class Board extends JComponent implements KeyListener {
         skeleton.draw(graphics);
         skeleton2.draw(graphics);
         skeleton3.draw(graphics);
+        boss.draw(graphics);
         hero.draw(graphics);
     }
 
