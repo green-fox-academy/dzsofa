@@ -1,18 +1,14 @@
-import javafx.geometry.Pos;
-
 import javax.swing.*;
-import javax.swing.text.Position;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
     int[][] boardMap;
     Hero hero;
     Skeleton skeleton;
+    Skeleton skeleton2;
+    Skeleton skeleton3;
 
     public Board() {
         boardMap = new int[][]{
@@ -28,7 +24,10 @@ public class Board extends JComponent implements KeyListener {
                 {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
         };
         hero = new Hero();
-        skeleton = new Skeleton();
+        skeleton = new Skeleton(0, 6);
+        skeleton2 = new Skeleton(5, 8);
+        skeleton3 = new Skeleton(6, 2);
+
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -51,13 +50,15 @@ public class Board extends JComponent implements KeyListener {
                 if (boardMap[i][j] == 0) {
                     Floor floor = new Floor(j, i);
                     floor.draw(graphics);
-                    skeleton.draw(graphics);
                 } else {
                     Wall wall = new Wall(j, i);
                     wall.draw(graphics);
                 }
             }
         }
+        skeleton.draw(graphics);
+        skeleton2.draw(graphics);
+        skeleton3.draw(graphics);
         hero.draw(graphics);
     }
 

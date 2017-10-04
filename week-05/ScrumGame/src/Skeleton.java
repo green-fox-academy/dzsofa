@@ -1,6 +1,6 @@
 public class Skeleton extends Creature {
 
-    public Skeleton() {
-        super("src/assets/skeleton.png", (int) (Math.random() * 10), (int) (Math.random() * 10));
+    public Skeleton(int posX, int posY) {
+        super("src/assets/skeleton.png", posX, posY);
     }
 }
