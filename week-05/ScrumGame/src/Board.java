@@ -12,6 +12,7 @@ import java.util.List;
 public class Board extends JComponent implements KeyListener {
     int[][] boardMap;
     Hero hero;
+    Skeleton skeleton;
 
     public Board() {
         boardMap = new int[][]{
@@ -27,6 +28,7 @@ public class Board extends JComponent implements KeyListener {
                 {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
         };
         hero = new Hero();
+        skeleton = new Skeleton();
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -49,6 +51,7 @@ public class Board extends JComponent implements KeyListener {
                 if (boardMap[i][j] == 0) {
                     Floor floor = new Floor(j, i);
                     floor.draw(graphics);
+                    skeleton.draw(graphics);
                 } else {
                     Wall wall = new Wall(j, i);
                     wall.draw(graphics);
