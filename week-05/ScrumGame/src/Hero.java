@@ -10,38 +10,22 @@ public class Hero extends Character {
 
     public void walkUp() {
         posY--;
-        try {
-            image = ImageIO.read(new File("src/assets/hero-up.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeImage("src/assets/hero-up.png");
     }
 
     public void walkDown() {
         posY++;
-        try {
-            image = ImageIO.read(new File("src/assets/hero-down.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeImage("src/assets/hero-down.png");
     }
 
     public void walkLeft() {
         posX--;
-        try {
-            image = ImageIO.read(new File("src/assets/hero-left.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeImage("src/assets/hero-left.png");
     }
 
     public void walkRight() {
         posX++;
-        try {
-            image = ImageIO.read(new File("src/assets/hero-right.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        changeImage("src/assets/hero-right.png");
     }
 
 }
