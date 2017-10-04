@@ -10,14 +10,27 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
+    int[][] boardMap;
     int testBoxX;
     int testBoxY;
-    int[][] boardMap;
+    Hero hero;
 
     public Board() {
+        boardMap = new int[][]{
+                {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
+                {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
+                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+                {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
+                {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
+                {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
+                {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
+                {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
+                {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
+        };
         testBoxX = 0;
         testBoxY = 0;
-        boardMap = new int[10][10];
+        hero = new Hero();
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -31,19 +44,10 @@ public class Board extends JComponent implements KeyListener {
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
 
-        int[][] boardMap = new int[][]{
-                {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0, 1, 0, 1, 1, 0},
-                {0, 1, 1, 1, 0, 1, 0, 1, 1, 0},
-                {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-                {1, 1, 1, 1, 0, 1, 1, 1, 1, 0},
-                {0, 1, 0, 1, 0, 0, 0, 0, 1, 0},
-                {0, 1, 0, 1, 0, 1, 1, 0, 1, 0},
-                {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-                {0, 1, 1, 1, 0, 0, 0, 0, 1, 0},
-                {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
-        };
+        drawBoard(graphics);
+    }
 
+    private void drawBoard(Graphics graphics) {
         for (int i = 0; i < boardMap.length; i++) {
             for (int j = 0; j < boardMap.length; j++) {
                 if (boardMap[i][j] == 0) {
@@ -55,8 +59,6 @@ public class Board extends JComponent implements KeyListener {
                 }
             }
         }
-
-        PositionedImage hero = new PositionedImage("src/assets/hero-down.png", testBoxX, testBoxY);
         hero.draw(graphics);
     }
 
@@ -91,14 +93,14 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
-        if (e.getKeyCode() == KeyEvent.VK_UP) {
-            testBoxY -= 72;
-        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            testBoxY += 72;
-        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            testBoxX -= 72;
-        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            testBoxX += 72;
+        if (e.getKeyCode() == KeyEvent.VK_UP && hero.posY > 0) {
+            hero.walkUp();
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN && hero.posY < boardMap.length - 1) {
+            hero.walkDown();
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT && hero.posX > 0) {
+            hero.walkLeft();
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && hero.posX < boardMap.length - 1) {
+            hero.walkRight();
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
