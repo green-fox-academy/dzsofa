@@ -47,7 +47,7 @@ public class Creature extends PositionedImage {
     }
 
     public void setStrikeValue(int strikeValue) {
-        this.strikeValue = this.strikePoint * (2 * dice);
+        this.strikeValue = this.strikePoint + (2 * dice);
     }
 
     public int getLevel() {
