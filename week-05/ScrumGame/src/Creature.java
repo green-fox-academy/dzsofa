@@ -4,6 +4,7 @@ public class Creature extends PositionedImage {
     protected int strikePoint;
     protected int level;
     protected int dice = 1 + (int) (Math.random() * ((6 - 1) + 1));
+    protected int strikeValue;
 
     public Creature(String filename, int posX, int posY) {
         super(filename, posX, posY);
@@ -41,6 +42,14 @@ public class Creature extends PositionedImage {
         this.strikePoint = strikePoint;
     }
 
+    public int getStrikeValue() {
+        return strikeValue;
+    }
+
+    public void setStrikeValue(int strikeValue) {
+        this.strikeValue = this.strikePoint * (2 * dice);
+    }
+
     public int getLevel() {
         return level;
     }
@@ -49,4 +58,11 @@ public class Creature extends PositionedImage {
         this.level = level;
     }
 
+    public boolean strike(Creature other) {
+        if (this.strikeValue > other.defendPoint) {
+            other.currentHP -= (this.strikeValue - other.defendPoint);
+            return true;
+        } else this.currentHP -= (other.strikeValue - this.defendPoint);
+        return false;
+    }
 }
