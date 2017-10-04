@@ -12,6 +12,10 @@ public class Hero extends Creature {
         System.out.println(getCurrentHP());
     }
 
+    public String showStats() {
+        return "Hero HP: " + getCurrentHP() + "/" + getMaxHP() + " | DP: " + getDefendPoint() + " | SP: " +getStrikePoint();
+    }
+
     public void walkUp() {
         posY--;
         changeImage("src/assets/hero-up.png");

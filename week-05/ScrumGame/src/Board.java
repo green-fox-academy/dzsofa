@@ -32,7 +32,7 @@ public class Board extends JComponent implements KeyListener {
 
 
         // set the size of your draw board
-        setPreferredSize(new Dimension(720, 720));
+        setPreferredSize(new Dimension(720, 780));
         setVisible(true);
     }
 
@@ -63,6 +63,11 @@ public class Board extends JComponent implements KeyListener {
         skeleton3.draw(graphics);
         boss.draw(graphics);
         hero.draw(graphics);
+
+        graphics.setColor(Color.WHITE);
+        graphics.fillRect(0, 690, 250, 30);
+        graphics.setColor(Color.BLACK);
+        graphics.drawString(hero.showStats(), 10, 707);
     }
 
     public static void main(String[] args) {
