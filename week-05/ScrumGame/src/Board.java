@@ -109,6 +109,8 @@ public class Board extends JComponent implements KeyListener {
             hero.walkLeft();
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && hero.posX < boardMap.length - 1 && boardMap[hero.posY][hero.posX + 1] != 1) {
             hero.walkRight();
+        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            hero.strike(skeleton);
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
