@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class Hero extends PositionedImage {
-    String heroImage;
 
     public Hero() {
         super("src/assets/hero-down.png", 0, 0);
