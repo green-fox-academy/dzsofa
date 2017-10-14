@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
@@ -21,11 +20,17 @@ public class Deck {
         Collections.shuffle(deck);
     }
 
-    public void draw() {
-
+    public void shuffle() {
+        Collections.shuffle(deck);
     }
 
-    public int countColor( String color) {
+    public Card draw() {
+        Card temp = deck.get(0);
+        deck.remove(0);
+        return temp;
+    }
+
+    public int countColor(String color) {
         int count = 0;
         for (int i = 0; i < deck.size(); i++) {
             if (deck.get(i).color.equals(color)) {

@@ -3,8 +3,12 @@ public class Card {
     String value;
 
     public Card(String color, String value) {
-       this.color = color;
-       this.value = value;
+        this.color = color;
+        this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return value + " " + color;
+    }
 }
