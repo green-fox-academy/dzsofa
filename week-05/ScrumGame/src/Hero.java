@@ -2,18 +2,11 @@ public class Hero extends Creature {
 
     public Hero() {
         super("src/assets/hero-down.png", 0, 0);
-        this.setMaxHP(20 + 3 * dice);
-        this.setDefendPoint(2 * dice);
-        this.setStrikePoint(5 + dice);
+        this.setMaxHP(20 + rollDice(3));
+        this.setDefendPoint(rollDice(2));
+        this.setStrikePoint(5 + rollDice(1));
         this.setCurrentHP(maxHP);
-        System.out.println(getMaxHP());
-        System.out.println(getDefendPoint());
-        System.out.println(getStrikePoint());
-        System.out.println(getCurrentHP());
-    }
-
-    public String showStats() {
-        return "Hero HP: " + getCurrentHP() + "/" + getMaxHP() + " | DP: " + getDefendPoint() + " | SP: " +getStrikePoint();
+        this.level = 1;
     }
 
     public void walkUp() {
@@ -36,4 +29,10 @@ public class Hero extends Creature {
         changeImage("src/assets/hero-right.png");
     }
 
+    public void leveling() {
+        this.maxHP += rollDice(1);
+        this.defendPoint += rollDice(1);
+        this.strikePoint += rollDice(1);
+        level++;
+    }
 }
