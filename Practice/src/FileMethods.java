@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,17 +34,12 @@ public class FileMethods {
     }
 
     public static String getMostFrequent(Map<String, Integer> words) {
-        Integer frequency = null;
-        String mostFrequent = null;
-        for (String s : words.keySet()) {
-            Integer i = words.get(s);
-            if (frequency == null)
-                frequency = i;
-            if (i > frequency) {
-                frequency = i;
-                mostFrequent = s;
+        Map.Entry<String, Integer> maxEntry = null;
+        for (Map.Entry<String, Integer> word : words.entrySet()) {
+            if (maxEntry == null || word.getValue() > maxEntry.getValue()) {
+                maxEntry = word;
             }
         }
-        return mostFrequent;
+        return maxEntry.getKey().toString();
     }
 }
