@@ -6,10 +6,9 @@ import java.awt.event.KeyListener;
 public class Board extends JComponent implements KeyListener {
     int[][] boardMap;
     Hero hero;
-    Skeleton skeleton;
-    Skeleton skeleton2;
-    Skeleton skeleton3;
-    Boss boss;
+    Creature[] enemies;
+    boolean gameOver = false;
+    int level = 0;
 
     public Board() {
         boardMap = new int[][]{
@@ -25,15 +24,28 @@ public class Board extends JComponent implements KeyListener {
                 {0, 0, 0, 1, 0, 1, 1, 0, 0, 0},
         };
         hero = new Hero();
-        skeleton = new Skeleton(0, 6);
-        skeleton2 = new Skeleton(5, 8);
-        skeleton3 = new Skeleton(6, 2);
-        boss = new Boss(7, 8);
+        generateNextLevel();
 
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 780));
         setVisible(true);
+    }
+
+    private void generateNextLevel() {
+        level++;
+        enemies = new Creature[4];
+        GeneratePosition generatePosition = new GeneratePosition().invoke();
+        enemies[0] = new Skeleton(generatePosition.randX, generatePosition.randY, level, true);
+        generatePosition = new GeneratePosition().invoke();
+        enemies[1] = new Skeleton(generatePosition.randX, generatePosition.randY, level, false);
+        generatePosition = new GeneratePosition().invoke();
+        enemies[2] = new Skeleton(generatePosition.randX, generatePosition.randY, level, false);
+        generatePosition = new GeneratePosition().invoke();
+        enemies[3] = new Boss(generatePosition.randX, generatePosition.randY, level);
+        hero.posX = 0;
+        hero.posY = 0;
+        hero.key = false;
     }
 
     @Override
@@ -58,16 +70,28 @@ public class Board extends JComponent implements KeyListener {
                 }
             }
         }
-        skeleton.draw(graphics);
-        skeleton2.draw(graphics);
-        skeleton3.draw(graphics);
-        boss.draw(graphics);
+        for (int i = 0; i < enemies.length; i++) {
+            enemies[i].draw(graphics);
+        }
         hero.draw(graphics);
 
         graphics.setColor(Color.WHITE);
-        graphics.fillRect(0, 690, 250, 30);
+        graphics.fillRect(0, 690, 720, 30);
         graphics.setColor(Color.BLACK);
+        if (getEnemyID() > -1) {
+            graphics.setColor(Color.WHITE);
+            graphics.fillRect(300, 690, 250, 30);
+            graphics.setColor(Color.BLACK);
+            graphics.drawString(enemies[getEnemyID()].showStats(), 400, 707);
+        }
         graphics.drawString(hero.showStats(), 10, 707);
+
+        if (gameOver) {
+            graphics.setColor(Color.WHITE);
+            graphics.fillRect(0, 300, 720, 150);
+            graphics.setColor(Color.BLACK);
+            graphics.drawString("You lose", 300, 350);
+        }
     }
 
     public static void main(String[] args) {
@@ -110,9 +134,52 @@ public class Board extends JComponent implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT && hero.posX < boardMap.length - 1 && boardMap[hero.posY][hero.posX + 1] != 1) {
             hero.walkRight();
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            hero.strike(skeleton);
+            int enemyID = getEnemyID();
+            if (enemyID > -1) {
+                if (hero.strike(enemies[enemyID]) == false) {
+                    this.gameOver = true;
+                } else if (enemies[enemyID].key) {
+                    hero.key = true;
+                }
+            }
+            if (hero.key && enemies[3].currentHP <= 0) {
+                this.generateNextLevel();
+            }
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
+    }
+
+    private int getEnemyID() {
+        int enemyID = -1;
+        for (int i = 0; i < enemies.length; i++) {
+            if (enemies[i].posX == hero.posX && enemies[i].posY == hero.posY && enemies[i].currentHP > 0) {
+                enemyID = i;
+            }
+        }
+        return enemyID;
+    }
+
+    private class GeneratePosition {
+        private int randX;
+        private int randY;
+
+        public int getRandX() {
+            return randX;
+        }
+
+        public int getRandY() {
+            return randY;
+        }
+
+        public GeneratePosition invoke() {
+            randX = (int) (Math.random() * 9);
+            randY = (int) (Math.random() * 9);
+            while (boardMap[randY][randX] == 1) {
+                randX = (int) (Math.random() * 9);
+                randY = (int) (Math.random() * 9);
+            }
+            return this;
+        }
     }
 }
