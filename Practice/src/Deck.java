@@ -7,17 +7,26 @@ public class Deck {
     String[] color = {"Spades", "Hearts", "Diamonds", "Clubs"};
     String[] value = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     private Random rand = new Random();
+    ArrayList<ArrayList<Card>> cards = new ArrayList<ArrayList<Card>>();
 
     public Deck(int amount) {
         deck = new ArrayList<>();
+        createDeck();
         int count = 0;
-        for (int i = 0; i < value.length && count < amount; i++) {
-            for (int j = 0; j < color.length; j++) {
-                deck.add(new Card(color[j], value[rand.nextInt(value.length)]));
-                count++;
+        while (count < amount) {
+            deck.add(cards.get(count % 4).remove(rand.nextInt(cards.get(count % 4).size())));
+            count++;
+        }
+        shuffle();
+    }
+
+    public void createDeck() {
+        for (int i = 0; i < color.length; i++) {
+            cards.add(new ArrayList<Card>());
+            for (int j = 0; j < value.length; j++) {
+                cards.get(i).add(new Card(color[i], value[j]));
             }
         }
-        Collections.shuffle(deck);
     }
 
     public void shuffle() {
