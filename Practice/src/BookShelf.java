@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BookShelf {
     ArrayList<Book> books;
@@ -48,7 +50,23 @@ public class BookShelf {
     }
 
     public void favorite() {
-
+        Map<String, Integer> countTitles = new HashMap<>();
+        for (int i = 0; i < books.size(); i++) {
+            String author = books.get(i).author;
+            if (countTitles.containsKey(author)) {
+                int count = countTitles.get(author);
+                countTitles.put(author, ++count);
+            } else {
+                countTitles.put(author, 1);
+            }
+        }
+        Map.Entry<String, Integer> favAuthor = null;
+        for (Map.Entry<String, Integer> bookEntry : countTitles.entrySet()) {
+            if (favAuthor == null || bookEntry.getValue() > favAuthor.getValue()) {
+                favAuthor = bookEntry;
+            }
+        }
+        System.out.println("Your favorite author is: " + favAuthor.getKey());
     }
 
     @Override
@@ -62,6 +80,7 @@ public class BookShelf {
             System.out.println(isThereAny);
             earliest();
             latest();
+            favorite();
         }
         return isThereAny;
 
