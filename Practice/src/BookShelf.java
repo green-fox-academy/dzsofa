@@ -19,6 +19,34 @@ public class BookShelf {
         }
     }
 
+    public void earliest() {
+        int min = 2000;
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).releaseYear < min) {
+                min = books.get(i).releaseYear;
+            }
+        }
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).releaseYear == min) {
+                System.out.println("Earliest book in your library is: " + books.get(i).toString());
+            }
+        }
+    }
+
+    public void latest() {
+        int max = 1900;
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).releaseYear > max) {
+                max = books.get(i).releaseYear;
+            }
+        }
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).releaseYear == max) {
+                System.out.println("Latest book in your library is: " + books.get(i).toString());
+            }
+        }
+    }
+
     public void favorite() {
 
     }
@@ -32,6 +60,8 @@ public class BookShelf {
         } else {
             isThereAny = "You have " + this.books.size() + " books.";
             System.out.println(isThereAny);
+            earliest();
+            latest();
         }
         return isThereAny;
 
