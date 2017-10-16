@@ -23,6 +23,6 @@ public class PokeBag {
         // Should return the pokemon with the highest strength value
 
         Pokemon pokemon = new Pikachu();
-        System.out.println(pokemon.strength);
+        System.out.println(pokemon.speak());
     }
 }
