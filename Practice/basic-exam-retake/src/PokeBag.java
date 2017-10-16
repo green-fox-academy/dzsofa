@@ -21,5 +21,8 @@ public class PokeBag {
         //
         // Pokemon stongestPokemon = pokeBag.getStrongest();
         // Should return the pokemon with the highest strength value
+
+        Pokemon pokemon = new Pikachu();
+        System.out.println(pokemon.strength);
     }
 }
