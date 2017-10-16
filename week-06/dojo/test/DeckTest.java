@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 
 public class DeckTest {
     Deck deck;
+    Hand hand;
 
     @Before
     public void setUp() throws Exception {
@@ -16,6 +17,12 @@ public class DeckTest {
     @Test
     public void generateDeck() throws Exception {
         assertEquals(52, deck.deck.size());
+    }
+
+    @Test
+    public void remainingDeck() throws Exception {
+        hand = new Hand("s", deck);
+        assertEquals(47, hand.deck.deck.size());
     }
 
 }

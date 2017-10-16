@@ -1,10 +1,17 @@
 import java.util.ArrayList;
 
 public class Hand {
+    String playerName;
     ArrayList<Card> player;
-    Deck deck = new Deck();
+    Deck deck;
 
-    public Hand() {
+    public Hand(String playerName, Deck deck) {
+        this.playerName = playerName;
+        player = new ArrayList<>();
+        this.deck = deck;
+    }
+
+    public void dealCards() {
         player = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             player.add(deck.deck.get(i));
@@ -22,6 +29,6 @@ public class Hand {
                 playerCards += player.get(i) + ", ";
             }
         }
-        return playerCards;
+        return this.playerName + "'s cards are: \n" + playerCards;
     }
 }
