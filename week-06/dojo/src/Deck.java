@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
     String[] color = {"S", "H", "D", "C"};
@@ -16,5 +17,10 @@ public class Deck {
                 deck.add(new Card(color[i], value[j]));
             }
         }
+        shuffle();
+    }
+
+    public void shuffle() {
+        Collections.shuffle(deck);
     }
 }
