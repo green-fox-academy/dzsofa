@@ -1,6 +1,6 @@
 package Homework;
 
-public abstract class Animal {
+public class Animal {
     String name;
     int age;
     String gender;
@@ -13,11 +13,17 @@ public abstract class Animal {
         return name;
     }
 
-    public abstract void greet();
+    public void greet() {
 
-    public abstract String reproduce();
+    }
 
-    public abstract void move();
+    public String reproduce() {
+        return "reproducing";
+    }
+
+    public void move() {
+
+    }
 
     public void eat() {
         System.out.println("omnomnomnom");
