@@ -28,5 +28,7 @@ public class Main {
 
         Pokemon pokemon = new Pikachu();
         System.out.println(pokemon.speak());
+
+        System.out.println(pokeBag.toString());
     }
 }

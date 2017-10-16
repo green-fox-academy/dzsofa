@@ -1,7 +1,7 @@
 public class Pokemon implements Comparable<Pokemon> {
     int healthPoint;
     protected int strength;
-    String type;
+    protected String type;
 
     public Pokemon() {
         healthPoint = 0;
@@ -25,7 +25,7 @@ public class Pokemon implements Comparable<Pokemon> {
 
     @Override
     public String toString() {
-        return getType();
+        return "Pokemon type: " + getType() + ", HP: " + healthPoint + ", strength: " + strength;
     }
 }
 
