@@ -3,7 +3,7 @@ import java.util.Collections;
 
 public class Deck {
     String[] color = {"S", "H", "D", "C"};
-    String[] value = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    String[] value = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"};
     ArrayList<Card> deck;
 
     public Deck() {
