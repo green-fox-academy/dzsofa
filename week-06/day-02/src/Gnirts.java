@@ -24,7 +24,7 @@ public class Gnirts implements CharSequence {
 
     public static void main(String[] args) {
 
-        Gnirts string = new Gnirts("yggod");
+        Gnirts string = new Gnirts("megszentsegtelenithetetlen");
 
         System.out.println(string.length());
         System.out.println(string.charAt(2));
