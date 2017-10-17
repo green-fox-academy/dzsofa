@@ -13,7 +13,7 @@ public class Mammal extends Animal{
 
     @Override
     public String reproduce() {
-        return "gives birth to baby mammal";
+        return "gives birth to baby mammal.";
     }
 
     @Override
