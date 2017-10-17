@@ -22,16 +22,6 @@ public class Gnirts implements CharSequence {
         return myWord.subSequence((myWord.length() - 1 - end), (myWord.length() - 1 - start));
     }
 
-    @Override
-    public IntStream chars() {
-        return null;
-    }
-
-    @Override
-    public IntStream codePoints() {
-        return null;
-    }
-
     public static void main(String[] args) {
 
         Gnirts string = new Gnirts("yggod");
