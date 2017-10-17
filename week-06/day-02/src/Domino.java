@@ -2,7 +2,7 @@ import com.sun.java.browser.plugin2.DOM;
 
 import java.util.*;
 
-public class Domino implements Comparable<Domino> {
+public class Domino implements Comparable<Domino>, Printable {
     private final int[] values;
 
     public Domino(int valueA, int valueB) {
@@ -29,6 +29,11 @@ public class Domino implements Comparable<Domino> {
                 .compare(this, domino);
     }
 
+    @Override
+    public void printAllFields() {
+        System.out.println(this.toString());
+    }
+
     public static void main(String[] args) {
 
         List<Domino> dominoes = new ArrayList<>();
@@ -44,6 +49,8 @@ public class Domino implements Comparable<Domino> {
         Collections.sort(dominoes);
         System.out.println(dominoes.toString());
 
+        for(Domino d : dominoes) {
+            d.printAllFields();
+        }
     }
-
 }
