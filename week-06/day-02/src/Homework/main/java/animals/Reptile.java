@@ -1,4 +1,4 @@
-package Homework;
+package Homework.main.java.animals;
 
 public class Reptile extends Animal {
 

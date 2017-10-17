@@ -1,5 +1,7 @@
 package Homework;
 
+import Homework.main.java.animals.*;
+
 public class Zoo {
 
     public static void main(String[] args) {
