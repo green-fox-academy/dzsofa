@@ -14,13 +14,12 @@ public class Gnirts implements CharSequence {
 
     @Override
     public char charAt(int index) {
-        char[] array = myWord.toCharArray();
-        return array[array.length - 1 - index];
+        return myWord.charAt(myWord.length() - 1 - index);
     }
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        return null;
+        return myWord.subSequence((myWord.length() - 1 - end), (myWord.length() - 1 - start));
     }
 
     @Override
@@ -39,5 +38,6 @@ public class Gnirts implements CharSequence {
 
         System.out.println(string.length());
         System.out.println(string.charAt(2));
+        System.out.println(string.subSequence(1, 4));
     }
 }
