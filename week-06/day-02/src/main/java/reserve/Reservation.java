@@ -1,6 +1,5 @@
 package main.java.reserve;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Reservation implements Reserving {

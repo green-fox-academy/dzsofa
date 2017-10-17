@@ -10,10 +10,6 @@ public class ReservationApp {
         book.addReservation("17:30", 6);
         System.out.println(book.toString());
 
-//        System.out.println(reservation.getCodeBooking());
-//        System.out.println(reservation.getDowBooking());
-//        System.out.println(reservation.toString());
-
     }
 
 }
