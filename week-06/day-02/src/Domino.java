@@ -1,9 +1,6 @@
 import com.sun.java.browser.plugin2.DOM;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Domino implements Comparable<Domino> {
     private final int[] values;
@@ -12,8 +9,12 @@ public class Domino implements Comparable<Domino> {
         this.values = new int[]{valueA, valueB};
     }
 
-    public int[] getValues() {
-        return values;
+    public int getValueA() {
+        return values[0];
+    }
+
+    public int getValueB() {
+        return values[1];
     }
 
     @Override
@@ -23,8 +24,9 @@ public class Domino implements Comparable<Domino> {
 
     @Override
     public int compareTo(Domino domino) {
-        int valueA = domino.values[0];
-        return values[0] - valueA;
+        return Comparator.comparingInt(Domino::getValueA)
+                .thenComparingInt(Domino::getValueB)
+                .compare(this, domino);
     }
 
     public static void main(String[] args) {
@@ -34,6 +36,7 @@ public class Domino implements Comparable<Domino> {
         dominoes.add(new Domino(4, 6));
         dominoes.add(new Domino(1, 5));
         dominoes.add(new Domino(6, 7));
+        dominoes.add(new Domino(7, 3));
         dominoes.add(new Domino(2, 4));
         dominoes.add(new Domino(7, 1));
 
