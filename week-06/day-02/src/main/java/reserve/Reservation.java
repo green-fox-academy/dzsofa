@@ -9,6 +9,9 @@ public class Reservation implements Reserving {
     Random random = new Random();
     String time;
     int nrOfPpl;
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_BLUE = "\u001B[34m";
 
 
     public Reservation(String time, int nrOfPpl) {
@@ -32,11 +35,15 @@ public class Reservation implements Reserving {
         return sb.toString();
     }
 
+//    public boolean isFirstNumber() {
+//        if (this.getDowBooking().charAt(0).ALPHABET[9])
+//    }
+
     @Override
     public String toString() {
         if (this.nrOfPpl < 2) {
-            return this.getCodeBooking() + " for " + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl + ". Give customer a free drink to cheer up!";
+            return this.getCodeBooking() + ANSI_RED + " for " + ANSI_RESET + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl + ". Give customer a free drink to cheer up!";
         }
-        return this.getCodeBooking() + " for " + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl + ".";
+        return this.getCodeBooking() + ANSI_RED + " for " + ANSI_RESET + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl + ".";
     }
 }
