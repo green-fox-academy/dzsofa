@@ -35,6 +35,9 @@ public class Reservation implements Reserving {
 
     @Override
     public String toString() {
-        return this.getCodeBooking() + " for " + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl;
+        if (this.nrOfPpl < 2) {
+            return this.getCodeBooking() + " for " + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl + ". Give customer a free drink to cheer up!";
+        }
+        return this.getCodeBooking() + " for " + this.getDowBooking() + ", at " + this.time + ". Table for " + this.nrOfPpl + ".";
     }
 }

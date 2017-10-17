@@ -16,12 +16,12 @@ public class Book {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Upcoming reservations are: \n");
         for (int i = 0; i < bookingList.size(); i++) {
             sb.append("Booking#" + (i + 1) + " ");
             sb.append(bookingList.get(i));
             sb.append("\n");
         }
-        sb.append("Upcoming reservations are: \n");
         return sb.toString();
     }
 }
