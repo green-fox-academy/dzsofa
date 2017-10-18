@@ -40,11 +40,10 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
         LocalDate today = LocalDate.now();
         if (today.getDayOfYear() == date.getDayOfYear()) {
             return 0;
-        }
-        if (today.getDayOfYear() > date.getDayOfYear()) {
-            return date.getDayOfYear() - LocalDate.now().getDayOfYear());
+        } else if (today.getDayOfYear() > date.getDayOfYear()) {
+            return LocalDate.of(today.getDayOfYear(), 12, 31).getDayOfYear() - today.getDayOfYear() + date.getDayOfYear();
         } else {
-            return LocalDate.now().getDayOfYear() - date.getDayOfYear();
+            return date.getDayOfYear() - today.getDayOfYear();
         }
         // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)/
     }
