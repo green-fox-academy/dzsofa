@@ -9,11 +9,11 @@ repositories {
     mavenCentral()
 }
 
-//jar {
-//    manifest {
-//        attributes 'Main-Class':
-//    }
-//}
+jar {
+    manifest {
+        attributes 'Main-Class': 'date.BirthdayWithLocalDate'
+    }
+}
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
