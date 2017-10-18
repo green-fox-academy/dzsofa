@@ -3,6 +3,7 @@ package date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Date;
 import java.util.Scanner;
 
 public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
@@ -15,27 +16,37 @@ public class BirthdayWithLocalDate implements BirthdayCalculator<LocalDate> {
 
     @Override
     public String printMonthAndDay(LocalDate date) {
-        date.
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM. dd.");
+        return date.format(formatter);
         // TODO - return the date formatted: month & day (MM. dd.)
-        return null;
     }
 
     @Override
     public boolean isAnniversaryToday(LocalDate date) {
         // TODO - return with true if today is the same month+day as date
-        return true;
+        return (date.getDayOfYear() == (LocalDate.now()).getDayOfYear());
     }
+
 
     @Override
     public int calculateAgeInYears(LocalDate birthday) {
+        return LocalDate.now().getYear() - birthday.getYear();
+
         // TODO - return how many years age the input date 'birthday' was
-        return 0;
     }
 
     @Override
     public int calculateDaysToNextAnniversary(LocalDate date) {
-        // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-        return 0;
+        LocalDate today = LocalDate.now();
+        if (today.getDayOfYear() == date.getDayOfYear()) {
+            return 0;
+        }
+        if (today.getDayOfYear() > date.getDayOfYear()) {
+            return date.getDayOfYear() - LocalDate.now().getDayOfYear());
+        } else {
+            return LocalDate.now().getDayOfYear() - date.getDayOfYear();
+        }
+        // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)/
     }
 
     public static void main(String[] args) {

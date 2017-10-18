@@ -44,7 +44,7 @@ public class TestBirthdayCalculatorWithLocalDate {
     @Test
     public void testIsAnniversaryToday() throws Exception {
         String pattern = "MM. dd.";
-        boolean expected = EXPECTED_DATE.toString().equals(LocalDate.now().toString());
+        boolean expected = EXPECTED_DATE.getDayOfYear() == (LocalDate.now().getDayOfYear());
         assertEquals(expected, birthdayCalculator.isAnniversaryToday(EXPECTED_DATE));
     }
 
