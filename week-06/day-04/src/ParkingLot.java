@@ -38,7 +38,7 @@ public class ParkingLot {
             }
         }
         for (Map.Entry entry : typeCount.entrySet()) {
-            System.out.print(entry + " ");
+            System.out.println(entry.getValue() + " " + entry.getKey().toString() + " cars in parking lot.");
         }
         System.out.println();
     }
@@ -56,7 +56,7 @@ public class ParkingLot {
             }
         }
         for (Map.Entry entry : colorCount.entrySet()) {
-            System.out.println(entry + ", ");
+            System.out.println(entry.getValue() + " " + entry.getKey().toString().toLowerCase() + " cars in parking lot.");
         }
         System.out.println();
     }
@@ -76,8 +76,13 @@ public class ParkingLot {
         for (Map.Entry<String, Integer> cars : carCount.entrySet()) {
             if (mostFrequent == null || cars.getValue() > mostFrequent.getValue()) {
                 mostFrequent = cars;
-            }z
+            }
         }
         System.out.println("The most frequent car is: " + mostFrequent.getKey());
+    }
+
+    @Override
+    public String toString() {
+        return "There are " + this.parkingLot.size() + " cars in the parking lot.\n";
     }
 }
