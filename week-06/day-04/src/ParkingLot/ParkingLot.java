@@ -31,9 +31,9 @@ public class ParkingLot {
 
     //counts occurrence of car types
     public void countTypes() {
-        Map<String, Integer> typeCount = new HashMap<>();
+        Map<Car.Type, Integer> typeCount = new HashMap<>();
         for (int i = 0; i < this.parkingLot.size(); i++) {
-            String carType = this.parkingLot.get(i).getType();
+            Car.Type carType = this.parkingLot.get(i).getType();
             if (typeCount.containsKey(carType)) {
                 int count = typeCount.get(carType);
                 typeCount.put(carType, ++count);
@@ -49,9 +49,9 @@ public class ParkingLot {
 
     //counts occurrence of colors
     public void countColors() {
-        Map<String, Integer> colorCount = new HashMap<>();
+        Map<Car.Color, Integer> colorCount = new HashMap<>();
         for (int i = 0; i < this.parkingLot.size(); i++) {
-            String carColor = this.parkingLot.get(i).getColor();
+            Car.Color carColor = this.parkingLot.get(i).getColor();
             if (colorCount.containsKey(carColor)) {
                 int count = colorCount.get(carColor);
                 colorCount.put(carColor, ++count);

@@ -1,13 +1,11 @@
 package ParkingLot;
 
-import java.util.Random;
-
 public class Car {
-    public enum CarType {OPEL, MAZDA, RENAULT, HONDA, PACKARD, CITROEN, HYUNDAI}
+    public enum Type {OPEL, MAZDA, RENAULT, HONDA, PACKARD, CITROEN, HYUNDAI}
 
     public enum Color {BLUE, SILVER, GRAY, RED, YELLOW}
 
-    CarType type;
+    Type type;
     Color color;
 
     public Car() {
@@ -15,26 +13,26 @@ public class Car {
         this.color = getRandomColor();
     }
 
-    public static CarType getRandomType() {
-        return CarType.values()[(int) (Math.random() * CarType.values().length)];
+    public static Type getRandomType() {
+        return Type.values()[(int) (Math.random() * Type.values().length)];
     }
 
     public static Color getRandomColor() {
         return Color.values()[(int) (Math.random() * Color.values().length)];
     }
 
-    public String getType() {
-        return this.type.toString();
+    public Type getType() {
+        return this.type;
     }
 
-    public String getColor() {
-        return this.color.toString();
+    public Color getColor() {
+        return this.color;
     }
 
 
     @Override
     public String toString() {
-        return getColor() + " " + getType();
+        return getColor().toString() + " " + getType().toString();
 
     }
 }
