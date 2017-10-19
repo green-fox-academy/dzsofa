@@ -33,6 +33,12 @@ public class Card {
         this.rank = randomRank();
     }
 
+    public Card(Color color, Suit suit, Rank rank) {
+        this.color = color;
+        this.suit = suit;
+        this.rank = rank;
+    }
+
     public Color randomColor() {
         return Color.values()[(int) (Math.random() * Color.values().length)];
     }
