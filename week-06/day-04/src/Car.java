@@ -3,12 +3,12 @@ import java.util.Random;
 public class Car {
     public enum CarType{OPEL, MAZDA, RENAULT, HONDA, PACKARD, CITROEN, HYUNDAI}
     public enum Color{BLUE, SILVER, GRAY, RED, YELLOW}
-    Random random = new Random();
-
+    CarType type;
+    Color color;
 
     public Car() {
-        CarType type = getRandomType();
-        Color color = getRandomColor();
+        this.type = getRandomType();
+        this.color = getRandomColor();
     }
 
     public static CarType getRandomType() {
@@ -17,5 +17,19 @@ public class Car {
 
     public static Color getRandomColor() {
         return Color.values()[(int) (Math.random() * Color.values().length)];
+    }
+
+    public String getType() {
+        return this.type.toString();
+    }
+
+    public String getColor() {
+        return this.color.toString();
+    }
+
+    @Override
+    public String toString() {
+        return this.color.toString() + " " + this.type.toString();
+
     }
 }
