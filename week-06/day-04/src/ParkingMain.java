@@ -5,10 +5,11 @@ public class ParkingMain {
         ParkingLot parkingLot = new ParkingLot();
 
         parkingLot.addCars();
-//        parkingLot.getCars();
+        parkingLot.getCars();
 
-//        parkingLot.countTypes();
+        parkingLot.countTypes();
 
         parkingLot.countColors();
+        parkingLot.countSame();
     }
 }

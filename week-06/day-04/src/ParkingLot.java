@@ -51,14 +51,33 @@ public class ParkingLot {
             if (colorCount.containsKey(carColor)) {
                 int count = colorCount.get(carColor);
                 colorCount.put(carColor, ++count);
-            } else  {
+            } else {
                 colorCount.put(carColor, 1);
             }
         }
         for (Map.Entry entry : colorCount.entrySet()) {
-            System.out.println(entry + " ");
+            System.out.println(entry + ", ");
         }
         System.out.println();
     }
 
+    public void countSame() {
+        Map<String, Integer> carCount = new HashMap<>();
+        for (int i = 0; i < this.parkingLot.size(); i++) {
+            String car = this.parkingLot.get(i).toString();
+            if (carCount.containsKey(car)) {
+                int count = carCount.get(car);
+                carCount.put(car, ++count);
+            } else {
+                carCount.put(car, 1);
+            }
+        }
+        Map.Entry<String, Integer> mostFrequent = null;
+        for (Map.Entry<String, Integer> cars : carCount.entrySet()) {
+            if (mostFrequent == null || cars.getValue() > mostFrequent.getValue()) {
+                mostFrequent = cars;
+            }z
+        }
+        System.out.println("The most frequent car is: " + mostFrequent.getKey());
+    }
 }

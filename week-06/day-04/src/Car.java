@@ -27,6 +27,7 @@ public class Car {
         return this.color.toString();
     }
 
+
     @Override
     public String toString() {
         return getColor() + " " + getType();
