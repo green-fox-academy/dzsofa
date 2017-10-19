@@ -9,7 +9,7 @@ public class Deck {
     public Deck() {
         deck = new ArrayList<>();
         createDeck();
-        shuffle();
+        shuffleDeck();
     }
 
     private void createDeck() {
@@ -22,12 +22,31 @@ public class Deck {
         }
     }
 
-    private void shuffle() {
+    private void shuffleDeck() {
         Collections.shuffle(this.deck);
     }
 
     public Card pullFirst() {
-        
+        Card temp = this.deck.get(0);
+        this.deck.remove(0);
+        return temp;
+    }
+
+    public Card pullLast() {
+        Card temp = this.deck.get(this.deck.size() - 1);
+        this.deck.remove(this.deck.size() - 1);
+        return temp;
+    }
+
+    public Card pullRandom() {
+        int random = (int) (Math.random() * deckSize());
+        Card temp = this.deck.get(random);
+        this.deck.remove(random);
+        return temp;
+    }
+
+    public int deckSize() {
+        return this.deck.size();
     }
 
     @Override
