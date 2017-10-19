@@ -1,3 +1,5 @@
+package ParkingLot;
+
 public class ParkingMain {
     public static void main(String[] args) {
 
@@ -5,8 +7,11 @@ public class ParkingMain {
 
         parkingLot.addCars();
         System.out.println(parkingLot.toString());
+
         parkingLot.countTypes();
+
         parkingLot.countColors();
-        parkingLot.countSame();
+
+        parkingLot.countAlike();
     }
 }

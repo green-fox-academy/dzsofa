@@ -1,8 +1,12 @@
+package ParkingLot;
+
 import java.util.Random;
 
 public class Car {
-    public enum CarType{OPEL, MAZDA, RENAULT, HONDA, PACKARD, CITROEN, HYUNDAI}
-    public enum Color{BLUE, SILVER, GRAY, RED, YELLOW}
+    public enum CarType {OPEL, MAZDA, RENAULT, HONDA, PACKARD, CITROEN, HYUNDAI}
+
+    public enum Color {BLUE, SILVER, GRAY, RED, YELLOW}
+
     CarType type;
     Color color;
 

@@ -1,3 +1,5 @@
+package ParkingLot;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -63,7 +65,7 @@ public class ParkingLot {
         System.out.println();
     }
 
-    public void countSame() {
+    public void countAlike() {
         Map<String, Integer> carCount = new HashMap<>();
         for (int i = 0; i < this.parkingLot.size(); i++) {
             String car = this.parkingLot.get(i).toString();
