@@ -34,15 +34,15 @@ public class Card {
     }
 
     public Color randomColor() {
-        return Color.values()[(int) Math.random() * Color.values().length];
+        return Color.values()[(int) (Math.random() * Color.values().length)];
     }
 
     public Suit randomSuit() {
-        return Suit.values()[(int) Math.random() * Suit.values().length];
+        return Suit.values()[(int) (Math.random() * Suit.values().length)];
     }
 
     private Rank randomRank() {
-        return Rank.values()[(int) Math.random() * Rank.values().length];
+        return Rank.values()[(int) (Math.random() * Rank.values().length)];
     }
 
     public Color getColor() {
