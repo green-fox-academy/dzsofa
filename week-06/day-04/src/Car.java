@@ -29,7 +29,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return this.color.toString() + " " + this.type.toString();
+        return getColor() + " " + getType();
 
     }
 }
