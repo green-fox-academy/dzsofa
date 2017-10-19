@@ -1,14 +1,11 @@
 public class ParkingMain {
     public static void main(String[] args) {
 
-
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = new ParkingLot(256);
 
         parkingLot.addCars();
-        parkingLot.getCars();
-
+        System.out.println(parkingLot.toString());
         parkingLot.countTypes();
-
         parkingLot.countColors();
         parkingLot.countSame();
     }

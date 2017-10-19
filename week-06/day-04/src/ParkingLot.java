@@ -4,9 +4,11 @@ import java.util.Map;
 
 public class ParkingLot {
     ArrayList<Car> parkingLot;
+    int nrOfCars;
 
-    public ParkingLot() {
+    public ParkingLot(int nrOfCars) {
         parkingLot = new ArrayList<>();
+        this.nrOfCars = nrOfCars;
     }
 
     private void add() {
@@ -14,8 +16,8 @@ public class ParkingLot {
     }
 
     public void addCars() {
-        for (int i = 0; i < 256; i++) {
-            this.parkingLot.add(new Car());
+        for (int i = 0; i < this.nrOfCars; i++) {
+            add();
         }
     }
 
