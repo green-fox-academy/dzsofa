@@ -1,10 +1,11 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Todo {
     private int id;
     String description;
-    private LocalDate createdDate;
-    LocalDate completedDate;
+    protected LocalDate createdDate;
+    private LocalDate completedDate;
 
     private static int nrOfTodos = 0;
 
@@ -25,11 +26,20 @@ public class Todo {
     }
 
     public LocalDate getCompletedDate() {
-        return completedDate;
+       return completedDate;
+    }
+
+    public void setComplete() {
+        completedDate = LocalDate.now();
     }
 
     @Override
     public String toString() {
-        return getId() + " " + description + " " + getCreatedDate().toString() + " " + getCreatedDate().toString();
+        if (completedDate == null) {
+            return getId() + " " + description + " " + getCreatedDate().toString() + " " + getCompletedDate();
+        }
+        else {
+            return getId() + " " + description + " " + getCreatedDate().toString() + " " + getCompletedDate().toString();
+        }
     }
 }

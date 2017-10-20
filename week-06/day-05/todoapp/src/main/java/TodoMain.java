@@ -11,5 +11,7 @@ public class TodoMain {
         System.out.println(myList.todos);
 
         System.out.println(myList.getTodo(1));
+        myList.getTodo(1).setComplete();
+        System.out.println(myList.todos);
     }
 }
