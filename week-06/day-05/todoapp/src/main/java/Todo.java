@@ -33,13 +33,17 @@ public class Todo {
         completedDate = LocalDate.now();
     }
 
+    public int timeToComplete() {
+        return getCompletedDate().getDayOfYear() - getCreatedDate().getDayOfYear();
+    }
+
     @Override
     public String toString() {
         if (completedDate == null) {
-            return getId() + " " + description + " " + getCreatedDate().toString() + " " + getCompletedDate();
+            return getId() + " " + description + ", created on: " + getCreatedDate().toString() + " not finished yet";
         }
         else {
-            return getId() + " " + description + " " + getCreatedDate().toString() + " " + getCompletedDate().toString();
+            return getId() + " " + description + ", created on: " + getCreatedDate().toString() + ", finished on: " + getCompletedDate().toString() + ". It took you " + timeToComplete() + " days to complete the task.";
         }
     }
 }
