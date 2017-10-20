@@ -24,8 +24,12 @@ public class Todo {
         return createdDate;
     }
 
+    public LocalDate getCompletedDate() {
+        return completedDate;
+    }
+
     @Override
     public String toString() {
-        return getId() + " " + description + " " + getCreatedDate().toString() + " " + completedDate;
+        return getId() + " " + description + " " + getCreatedDate().toString() + " " + getCreatedDate().toString();
     }
 }

@@ -9,5 +9,7 @@ public class TodoMain {
         myList.add("whatap");
 
         System.out.println(myList.todos);
+
+        System.out.println(myList.getTodo(1));
     }
 }

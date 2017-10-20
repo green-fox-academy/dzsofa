@@ -11,4 +11,8 @@ public class TodoList {
         this.todos.add(new Todo(description));
     }
 
+    public Todo getTodo(int index) {
+        return this.todos.get(index - 1);
+    }
+
 }
