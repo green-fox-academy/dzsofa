@@ -1,6 +1,7 @@
 package ParkingLot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,13 +77,17 @@ public class ParkingLot {
                 carCount.put(car, 1);
             }
         }
+//        for (Map.Entry entry : carCount.entrySet()) {
+//            System.out.println(entry.getValue() + " " + entry.getKey().toString() + " cars in parking lot.");
+//        }
+//        System.out.println();
         Map.Entry<String, Integer> mostFrequent = null;
         for (Map.Entry<String, Integer> cars : carCount.entrySet()) {
             if (mostFrequent == null || cars.getValue() > mostFrequent.getValue()) {
                 mostFrequent = cars;
             }
         }
-        System.out.println("The most frequent car is: " + mostFrequent.getKey());
+        System.out.println("The most frequent car is: " + mostFrequent.getKey() + " with occurrence of: " + mostFrequent.getValue());
     }
 
     @Override
