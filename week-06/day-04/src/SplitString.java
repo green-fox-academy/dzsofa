@@ -1,7 +1,7 @@
 public class SplitString {
     public static void main(String[] args) {
 
-        String[] myArray = splitString("lovebarbara", 4);
+        String[] myArray = splitString("lovebarbara", 12);
 
         for (String s : myArray) {
             if (s == myArray[0]) {
@@ -17,8 +17,8 @@ public class SplitString {
         try {
             output[0] = input.substring(0, index);
             output[1] = input.substring(index);
-        }catch (IndexOutOfBoundsException e) {
-            System.out.println("Out of bounds");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Out of bounds, try another number");
         }
         return output;
     }
