@@ -1,5 +1,5 @@
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+
 
 public class Todo {
     private int id;
@@ -26,7 +26,7 @@ public class Todo {
     }
 
     public LocalDate getCompletedDate() {
-       return completedDate;
+        return completedDate;
     }
 
     public void setComplete() {
@@ -37,13 +37,16 @@ public class Todo {
         return getCompletedDate().getDayOfYear() - getCreatedDate().getDayOfYear();
     }
 
+    public void updateDesc(String newDesc) {
+        description = newDesc;
+    }
+
     @Override
     public String toString() {
         if (completedDate == null) {
             return getId() + " " + description + ", created on: " + getCreatedDate().toString() + " not finished yet";
-        }
-        else {
-            return getId() + " " + description + ", created on: " + getCreatedDate().toString() + ", finished on: " + getCompletedDate().toString() + ". It took you " + timeToComplete() + " days to complete the task.";
+        } else {
+            return getId() + " " + description + ", created on: " + getCreatedDate().toString() + ", finished on: " + getCompletedDate().toString() + ".\t\tIt took you " + timeToComplete() + " days to complete the task.";
         }
     }
 }

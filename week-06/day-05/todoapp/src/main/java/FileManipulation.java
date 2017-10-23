@@ -6,7 +6,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class FileManipulation {
 
     public static void printLines(String path, boolean printNr) {

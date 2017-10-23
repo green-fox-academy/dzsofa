@@ -1,17 +1,17 @@
-import java.util.ArrayList;
-
 public class TodoMain {
     public static void main(String[] args) {
 
-        TodoList myList = new TodoList();
+        TodoList myTodos = new TodoList();
 
-        myList.add("dododo");
-        myList.add("whatap");
+        myTodos.add("dododo");
+        myTodos.add("whatap");
+        myTodos.add("Etesd meg a horcsogot te nyommer!");
 
-        System.out.println(myList.todos);
+        System.out.println(myTodos.toString());
+        myTodos.setComplete(1);
+        System.out.println(myTodos.toString());
+        myTodos.updateDesc(1, "dododododo");
+        System.out.println(myTodos.toString());
 
-        System.out.println(myList.getTodo(1));
-        myList.getTodo(1).setComplete();
-        System.out.println(myList.todos);
     }
 }
