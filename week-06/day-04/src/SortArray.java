@@ -5,9 +5,8 @@ import java.util.List;
 public class SortArray {
     public static void main(String[] args) {
 
-        Integer[] intArray = { 1, 2, 3, 4, 5 };
-        Double[] doubleArray = { 1.1, 2.2, 3.3, 4.4 };
-        Character[] charArray = { 'H', 'E', 'L', 'L', 'O' };
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
 
         System.out.println("Array integerArray contains:");
         sortArray(intArray);   // pass an Integer array
@@ -18,7 +17,12 @@ public class SortArray {
     }
 
     public static <T extends Number> void sortArray(T[] myArray) {
-        Arrays.sort(myArray, Collections.reverseOrder());
-        System.out.println(Arrays.toString(myArray));
+        try {
+            Arrays.sort(myArray, Collections.reverseOrder());
+        } catch (Exception x) {
+            System.out.println("Not valid type");
+        } finally {
+            System.out.println(Arrays.toString(myArray));
+        }
     }
 }
