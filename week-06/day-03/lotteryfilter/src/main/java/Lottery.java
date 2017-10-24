@@ -31,10 +31,10 @@ public class Lottery {
         if (options.has("y")) {
             try {
                 if (options.has("f")) {
-                    CSVReader reader = new CSVReader(new FileReader("src/main/java/" + inputFile));
+                    CSVReader reader = new CSVReader(new FileReader("../../src/main/java/" + inputFile));
                 }
-                CSVReader otosreader = new CSVReader(new FileReader("src/main/java/otos.csv"));
-                CSVWriter writer = new CSVWriter(new FileWriter("src/main/java/output.csv"));
+                CSVReader otosreader = new CSVReader(new FileReader("../../src/main/java/otos.csv"));
+                CSVWriter writer = new CSVWriter(new FileWriter("../../src/main/java/output.csv"));
                 List<String[]> otosLines = otosreader.readAll();
                 List<String[]> temp = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class Lottery {
                     }
                 }
                 if (options.has("o")) {
-                    writer = new CSVWriter(new FileWriter("src/main/java/" + inputFile));
+                    writer = new CSVWriter(new FileWriter("../../src/main/java/" + outputFile));
                     writer.writeAll(temp);
                     writer.close();
                 }
