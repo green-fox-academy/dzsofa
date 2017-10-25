@@ -14,13 +14,13 @@
         <th th:style="'border: 2px solid black;'">IS KING?</th>
         <th th:style="'border: 2px solid black;'">IS GOOD GUY?</th>
     </tr>
-    <tr th:each="acc : ${bank}" th:style="${acc.isKing} ? 'color:deeppink; font-style:bold; font-size:18px;'">
-        <td th:text="${accStat.index + 1}"></td>
-        <td th:text="${acc.getName()}"></td>
-        <td th:text="${#numbers.formatDecimal(acc.getBalance(), 0, 2)}"></td>
-        <td th:text="${acc.getAnimalType()}"></td>
-        <td th:text="${acc.isKing} ? 'KING' : 'NOT KING'"></td>
-        <td th:text="${acc.isGood} ? 'Good guy' : 'Bad guy'"></td>
+    <tr th:each="acc : ${bank}" th:style="${acc.isKing} ? 'color:deeppink; font-weight: bold; font-style: italic;'">
+        <td th:style="'border: 1px solid black; text-align:center;'" th:text="${accStat.index + 1}"></td>
+        <td th:style="'border: 1px solid black;'" th:text="${acc.getName()}"></td>
+        <td th:style="'border: 1px solid black;'" th:text="${#numbers.formatDecimal(acc.getBalance(), 0, 2)}"></td>
+        <td th:style="'border: 1px solid black; text-align:center; font-weight:bold;'" th:text="${acc.getAnimalType()}"></td>
+        <td th:style="'border: 1px solid black; text-align:center;'" th:text="${acc.isKing} ? 'KING' : 'NOT KING'"></td>
+        <td th:style="'border: 1px solid black; text-align:center;'" th:text="${acc.isGood} ? 'Good guy' : 'Bad guy'"></td>
     </tr>
 </table>
 </body>
