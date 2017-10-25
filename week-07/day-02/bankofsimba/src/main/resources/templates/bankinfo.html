@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HTMLception</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<table>
+    <tr>
+        <th>NAME (of acc. owner)</th>
+        <th>BALANCE (in Alpacas)</th>
+        <th>ANIMAL TYPE (of acc. owner)</th>
+    </tr>
+    <tr th:each="acc : ${bank}">
+        <td th:text="${acc.name}"></td>
+        <td th:text="${#numbers.formatDecimal(acc.balance, 0, 2)}"></td>
+        <td th:text="${acc.animalType}"></td>
+    </tr>
+</table>
+</body>
+</html>
