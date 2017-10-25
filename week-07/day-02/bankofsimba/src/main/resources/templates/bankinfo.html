@@ -7,16 +7,16 @@
 <body>
 <table>
     <tr>
+        <th>INDEX</th>
         <th>NAME</th>
         <th>BALANCE</th>
         <th>ANIMAL TYPE</th>
-        <th>INDEX</th>
     </tr>
     <tr th:each="acc : ${bank}">
+        <td th:text="${accStat.index + 1}"></td>
         <td th:text="${acc.getName()}"></td>
         <td th:text="${#numbers.formatDecimal(acc.getBalance(), 0, 2)}"></td>
         <td th:text="${acc.getAnimalType()}"></td>
-        <td th:text="${accStat.index + 1}"></td>
     </tr>
 </table>
 </body>
