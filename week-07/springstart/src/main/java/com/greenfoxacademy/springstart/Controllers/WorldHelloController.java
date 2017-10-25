@@ -14,8 +14,11 @@ public class WorldHelloController {
             "Guten Tag", "Gia'sou", "Aloha", "Shalom", "Namaste", "Namaste", "Jó napot", "Halló", "Helló", "Góðan daginn", "Halo", "Aksunai", "Qanuipit", "Dia dhuit",
             "Salve", "Ciao", "Kon-nichiwa", "An-nyong Ha-se-yo", "Salvëte", "Ni hao", "Dzien' dobry", "Olá", "Bunã ziua", "Zdravstvuyte", "Hola", "Jambo", "Hujambo", "Hej",
             "Sa-wat-dee", "Merhaba", "Selam", "Vitayu", "Xin chào", "Hylo", "Sut Mae", "Sholem Aleychem", "Sawubona"};
+
     String[] colors = {"pink", "magenta", "blue", "green", "purple", "yellow", "red"};
+
     String[] fontsize = { "12px", "14px", "16px", "18px", "20px", "24px", "32px", "40px"};
+
     Random random = new Random();
 
     @RequestMapping("/web/greeting/allangs")
