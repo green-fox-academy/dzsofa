@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AccountController {
-    BankAccount simbAccount = new BankAccount("Simba", "2000", "lion");
+    BankAccount simbAccount = new BankAccount("Simba", "2000", "lion", true);
 
     @RequestMapping("/accinf")
     public String accountInfo(Model model) {
