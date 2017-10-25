@@ -5,14 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<table>
+<table th:style="'border-collapse:collapse; width:80%'">
     <tr>
-        <th>INDEX</th>
-        <th>NAME</th>
-        <th>BALANCE</th>
-        <th>ANIMAL TYPE</th>
-        <th>IS KING?</th>
-        <th>IS GOOD GUY?</th>
+        <th th:style="'border: 2px solid black;'">INDEX</th>
+        <th th:style="'border: 2px solid black;'">NAME</th>
+        <th th:style="'border: 2px solid black;'">BALANCE</th>
+        <th th:style="'border: 2px solid black;'">ANIMAL TYPE</th>
+        <th th:style="'border: 2px solid black;'">IS KING?</th>
+        <th th:style="'border: 2px solid black;'">IS GOOD GUY?</th>
     </tr>
     <tr th:each="acc : ${bank}" th:style="${acc.isKing} ? 'color:deeppink; font-style:bold; font-size:18px;'">
         <td th:text="${accStat.index + 1}"></td>
