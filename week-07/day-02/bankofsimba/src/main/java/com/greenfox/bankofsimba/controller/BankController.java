@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 @Controller
 public class BankController {
-    ArrayList<BankAccount> bank = new ArrayList<>(Arrays.asList(new BankAccount("Scar", "0", "lion", false), (new BankAccount("Timon", "1500", "meerkat", false)), (new BankAccount("Rafiki", "15000", "mandrill", false)), (new BankAccount("Mufasa", "5000", "lion", false)), (new BankAccount("Simba", "2000", "lion", true))));
+    ArrayList<BankAccount> bank = new ArrayList<>(Arrays.asList(new BankAccount("Scar", "0", "lion", false, false), (new BankAccount("Timon", "1500", "meerkat", false, true)), (new BankAccount("Rafiki", "15000", "mandrill", false, true)), (new BankAccount("Mufasa", "5000", "lion", false, true)), (new BankAccount("Simba", "2000", "lion", true, true))));
 
 
     @RequestMapping("/bank")

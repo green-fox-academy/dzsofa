@@ -5,12 +5,14 @@ public class BankAccount {
     public String balance;
     public String animalType;
     public boolean isKing;
+    public boolean isGood;
 
-    public BankAccount(String name, String balance, String animalType, boolean isKing) {
+    public BankAccount(String name, String balance, String animalType, boolean isKing, boolean isGood) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.isKing = isKing;
+        this.isGood = isGood;
     }
 
 

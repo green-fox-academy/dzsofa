@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>HTMLception</title>
+    <title>Bank information</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -12,6 +12,7 @@
         <th>BALANCE</th>
         <th>ANIMAL TYPE</th>
         <th>IS KING?</th>
+        <th>IS GOOD GUY?</th>
     </tr>
     <tr th:each="acc : ${bank}" th:style="${acc.isKing} ? 'color:deeppink; font-style:bold; font-size:18px;'">
         <td th:text="${accStat.index + 1}"></td>
@@ -19,6 +20,10 @@
         <td th:text="${#numbers.formatDecimal(acc.getBalance(), 0, 2)}"></td>
         <td th:text="${acc.getAnimalType()}"></td>
         <td th:text="${acc.isKing} ? 'KING' : 'NOT KING'"></td>
+        <td th:switch="${acc.isGood}">
+            <span th:case="true">Good Guy</span>
+            <span th:case="false">Bad Guy</span>
+        </td>
     </tr>
 </table>
 </body>
