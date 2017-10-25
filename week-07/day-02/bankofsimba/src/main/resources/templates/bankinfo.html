@@ -20,10 +20,7 @@
         <td th:text="${#numbers.formatDecimal(acc.getBalance(), 0, 2)}"></td>
         <td th:text="${acc.getAnimalType()}"></td>
         <td th:text="${acc.isKing} ? 'KING' : 'NOT KING'"></td>
-        <td th:switch="${acc.isGood}">
-            <span th:case="true">Good Guy</span>
-            <span th:case="false">Bad Guy</span>
-        </td>
+        <td th:text="${acc.isGood} ? 'Good guy' : 'Bad guy'"></td>
     </tr>
 </table>
 </body>
