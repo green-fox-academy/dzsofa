@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<table th:style="'border-collapse:collapse; width:80%'">
+<table th:style="'border-collapse:collapse; width:80%; margin: 0 auto;'">
     <tr>
         <th th:style="'border: 2px solid black;'">INDEX</th>
         <th th:style="'border: 2px solid black;'">NAME</th>
@@ -23,5 +23,9 @@
         <td th:style="'border: 1px solid black; text-align:center;'" th:text="${acc.isGood} ? 'Good guy' : 'Bad guy'"></td>
     </tr>
 </table>
+
+
+<iframe th:style="'display: block; margin: 100px auto;'" width="560" height="315" th:src="@{https://www.youtube.com/embed/7KtHYTbQ2wE?autoplay=1}" frameborder="0" allowfullscreen="1">HAKUNA MATATA</iframe>
+
 </body>
 </html>
