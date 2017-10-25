@@ -18,14 +18,17 @@
         <td th:style="'border: 1px solid black; text-align:center;'" th:text="${accStat.index + 1}"></td>
         <td th:style="'border: 1px solid black;'" th:text="${acc.getName()}"></td>
         <td th:style="'border: 1px solid black;'" th:text="${#numbers.formatDecimal(acc.getBalance(), 0, 2)}"></td>
-        <td th:style="'border: 1px solid black; text-align:center; font-weight:bold;'" th:text="${acc.getAnimalType()}"></td>
+        <td th:style="'border: 1px solid black; text-align:center; font-weight:bold;'"
+            th:text="${acc.getAnimalType()}"></td>
         <td th:style="'border: 1px solid black; text-align:center;'" th:text="${acc.isKing} ? 'KING' : 'NOT KING'"></td>
-        <td th:style="'border: 1px solid black; text-align:center;'" th:text="${acc.isGood} ? 'Good guy' : 'Bad guy'"></td>
+        <td th:style="'border: 1px solid black; text-align:center;'"
+            th:text="${acc.isGood} ? 'Good guy' : 'Bad guy'"></td>
     </tr>
 </table>
 
 <div th:style="'text-align: center; margin: 80px auto 20px auto; font-size: 32px'">HAKUNA MATATA!</div>
-<iframe th:style="'display: block; margin: 0px auto;'" width="560" height="315" th:src="@{https://www.youtube.com/embed/7KtHYTbQ2wE?autoplay=1}" frameborder="0" allowfullscreen="1"></iframe>
+<iframe th:style="'display: block; margin: 0px auto;'" width="560" height="315"
+        th:src="@{https://www.youtube.com/embed/7KtHYTbQ2wE?autoplay=1}" frameborder="0" allowfullscreen="1"></iframe>
 
 </body>
 </html>
