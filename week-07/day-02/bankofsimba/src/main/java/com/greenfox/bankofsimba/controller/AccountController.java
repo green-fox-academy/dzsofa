@@ -7,13 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AccountController {
-    BankAccount simbAccount = new BankAccount("Simba", 2000, "lion");
+    BankAccount simbAccount = new BankAccount("Simba", "2000", "lion");
 
     @RequestMapping("/accinf")
     public String accountInfo(Model model) {
-        model.addAttribute("name", simbAccount.getName());
-        model.addAttribute("balance", simbAccount.getBalance());
-        model.addAttribute("animal", simbAccount.getAnimalType());
+        model.addAttribute("simbAccount", simbAccount);
         return "accinfo";
     }
 }

@@ -5,6 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<p th:text="'Account: ' + ${name} + ', Balance: ' + ${balance} + ', Animal type: ' + ${animal}" />
+<p th:object="${simbAccount}" th:text="'Account: ' + *{name} + ', Balance: ' + *{#numbers.formatDecimal(balance, 0, 2)} + ' Alpacas, Animal type: ' + *{animalType}" />
 </body>
 </html>
