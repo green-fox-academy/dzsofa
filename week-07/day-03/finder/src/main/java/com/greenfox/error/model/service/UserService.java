@@ -1,6 +1,6 @@
-package service;
+package com.greenfox.error.model.service;
 
-import com.greenfox.error.model.User;
+import com.greenfox.error.model.model.User;
 
 import java.util.ArrayList;
 
@@ -21,9 +21,5 @@ public class UserService {
 
     public void save(User user) {
         users.add(user);
-    }
-
-    public UserService service() {
-        return new UserService();
     }
 }

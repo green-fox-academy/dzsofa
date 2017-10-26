@@ -7,10 +7,10 @@
 <body>
 <h1>User Database</h1>
 <h2>Add a new User</h2>
-<form action="#" th:action="@{/app}" th:object="${user}" method="post">
-    <p>First Name: <input type="text" th:field="*{firstName}" /></p>
-    <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
-    <p><input type="submit" value="Submit" /></p>
+<form action="#" th:action="@{/createuser}" th:object="${new_user}" method="post">
+    <p>First Name: <input type="text" th:field="*{firstName}"/></p>
+    <p>Last Name: <input type="text" th:field="*{lastName}"/></p>
+    <p><input type="submit" value="Submit"/></p>
 </form>
 <h2>Existing users</h2>
 <table>
@@ -19,8 +19,8 @@
         <th>Last name</th>
     </tr>
     <tr th:each="swag : ${yolo}">
-        <td th:text="${yolo.firstName}">Lacika</td>
-        <td th:text="${yolo.lastName}">Kovács</td>
+        <td th:text="${swag.getFirstName()}">Lacika</td>
+        <td th:text="${swag.getLastName()}">Kovács</td>
     </tr>
 </table>
 </body>
