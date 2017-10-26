@@ -19,7 +19,7 @@ public class Gnirts implements CharSequence {
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        return myWord.subSequence((myWord.length() - 1 - end), (myWord.length() - 1 - start));
+        return myWord.subSequence((myWord.length() - 1 - end), (myWord.length() - start));
     }
 
     public static void main(String[] args) {
@@ -28,6 +28,6 @@ public class Gnirts implements CharSequence {
 
         System.out.println(string.length());
         System.out.println(string.charAt(2));
-        System.out.println(string.subSequence(1, 4));
+        System.out.println(string.subSequence(0, 25));
     }
 }
