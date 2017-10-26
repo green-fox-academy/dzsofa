@@ -2,17 +2,21 @@ package com.greenfox.bankofsimba.model;
 
 public class BankAccount {
     public String name;
-    public String balance;
+    public float balance;
     public String animalType;
     public boolean isKing;
     public boolean isGood;
 
-    public BankAccount(String name, String balance, String animalType, boolean isKing, boolean isGood) {
+    public BankAccount(String name, float balance, String animalType, boolean isKing, boolean isGood) {
         this.name = name;
         this.balance = balance;
         this.animalType = animalType;
         this.isKing = isKing;
         this.isGood = isGood;
+    }
+
+    public BankAccount() {
+
     }
 
 
@@ -24,11 +28,11 @@ public class BankAccount {
         this.name = name;
     }
 
-    public String getBalance() {
+    public float getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(float balance) {
         this.balance = balance;
     }
 

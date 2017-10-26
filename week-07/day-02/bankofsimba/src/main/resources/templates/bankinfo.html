@@ -26,6 +26,10 @@
     </tr>
 </table>
 
+<form action="#" th:action="@{/increasebalance}" th:object="${account}" method="post">
+<p><input type="submit" value="Increase balance" /></p>
+</form>
+
 <div th:style="'text-align: center; margin: 80px auto 20px auto; font-size: 32px'">HAKUNA MATATA!</div>
 <iframe th:style="'display: block; margin: 0px auto;'" width="560" height="315"
         th:src="@{https://www.youtube.com/embed/7KtHYTbQ2wE?autoplay=1}" frameborder="0" allowfullscreen="1"></iframe>
