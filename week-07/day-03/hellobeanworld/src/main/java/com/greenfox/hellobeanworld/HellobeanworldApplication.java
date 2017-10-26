@@ -15,7 +15,7 @@ public class HellobeanworldApplication {
 
         HelloWorld helloWorld = appContext.getBean(HelloWorld.class);
         helloWorld.setMessage("Hello World");
-        helloWorld.getMessage();
+        System.out.println(helloWorld.getMessage());
 
     }
 }
