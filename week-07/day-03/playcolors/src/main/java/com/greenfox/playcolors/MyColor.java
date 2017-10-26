@@ -1,6 +1,6 @@
 package com.greenfox.playcolors;
 
-public interface myColors {
+public interface MyColor {
 
     void printColor();
 }
