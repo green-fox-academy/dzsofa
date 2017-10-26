@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by aze on 25/10/17.
  */
 @Controller
-//@RequestMapping("/app")
+@RequestMapping("/app")
 public class AppController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class AppController {
     public String index(Model model) {
         model.addAttribute("new_user", new User());
         model.addAttribute("yolo", service.getAll());
-        return "main";
+        return "index";
     }
 
     @PostMapping("/app")
