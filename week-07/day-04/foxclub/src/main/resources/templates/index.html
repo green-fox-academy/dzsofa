@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Fox Info</title>
 </head>
 <body>
 <section>
     <ul>
-        <li><a>Information</a></li>
+        <li><a th:href="'#'">Information</a></li>
+        <li><a th:href="'/nutritionstore'">Nutrition Store</a></li>
     </ul>
 </section>
 <section>
     <img src="images/greenfox.png" th:marginheight="'20px'"/>
 </section>
-<p>This is Mr Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
-<h1>Known tricks</h1>
-<ul>
+<p th:text="'This is ' + ${fox.getName()} + '. Currently living on ' + ${fox.getMyFood()} + ' and ' + ${fox.getMyDrink()} + '. He knows ' + ${fox.getKnownTricks()} + ' tricks.'"></p>
+<h1 th:text="${fox.getKnownTricks()} == 0 ? 'No tricks in your pocket :(' : 'Known tricks:'">Known tricks</h1>
+<ul th:each="trick : ${fox.getMyTricks()}">
     <li>write HTML</li>
     <li>code in Java</li>
 </ul>
