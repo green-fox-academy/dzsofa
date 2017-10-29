@@ -13,14 +13,14 @@
     </ul>
 </section>
 <section>
-    <form th:action="@{/changeFood}" th:object="${food}" method="post">
+    <form th:action="@{/changeFood}" th:object="${myFox}" method="post">
         <label>Food</label>
         <select>
-            <option th:each="type : ${foods}" th:text="${type}"></option>
+            <option th:each="type : ${foods}" th:text="${type}" th:value="${type}"></option>
         </select>
         <label>Drink</label>
         <select>
-            <option th:each="type : ${drinks}" th:text="${type}"></option>
+            <option th:each="type : ${drinks}" th:text="${type}" th:value="${type}"></option>
         </select>
         <button type="submit">Change</button>
     </form>
