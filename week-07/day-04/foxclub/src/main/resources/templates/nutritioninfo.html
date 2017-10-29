@@ -13,12 +13,17 @@
     </ul>
 </section>
 <section>
-    <p th:text="'Food'"><select th:field="*{type}">
-        <option th:each="type : ${food}"
-                th:value="${type}"
-                th:text="#{${'seedstarter.type.' + type}}">Wireframe
-        </option>
-    </select></p>
+    <form th:action="@{/changeFood}" th:object="${food}" method="post">
+        <label>Food</label>
+        <select>
+            <option th:each="type : ${foods}" th:text="${type}"></option>
+        </select>
+        <label>Drink</label>
+        <select>
+            <option th:each="type : ${drinks}" th:text="${type}"></option>
+        </select>
+        <button type="submit">Change</button>
+    </form>
 </section>
 
 </body>
