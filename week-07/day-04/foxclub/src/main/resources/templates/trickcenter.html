@@ -17,12 +17,12 @@
 </section>
 <h1 th:text="${fox.getKnownTricks()} == 0 ? 'No tricks in your pocket :(' : 'Known tricks:'">Known tricks</h1>
 <ul th:each="trick : ${fox.getMyTricks()}">
-    <li>write HTML</li>
-    <li>code in Java</li>
+    <li th:text="${trick}"></li>
 </ul>
-<form action="#" th:action="@{/addTrick}" th:object="${fox}" method="post">
-    <input type="text" th:field="*{addTrick()}"/>
-    <p><input type="submit" value="Add trick" /></p>
+<form action="#" th:action="@{/addTrick}" th:object="${tricky}" method="post">
+    <label for="trick">Trick:</label>
+    <input type="text" id="trick"/>
+    <p><input type="submit" value="Learn"/></p>
 </form>
 </body>
 </html>
