@@ -10,13 +10,19 @@
         <li><a th:href="'/'">Information</a></li>
         <li><a th:href="'/nutritionstore'">Nutrition Store</a></li>
         <li><a th:href="'#'">Trick center</a></li>
-
     </ul>
 </section>
-<h2>Add new trick</h2>
-<!--<form action="#" th:action="@{/trickcenter}" th:object="${myFox}" method="post">-->
-    <!--<p>First Name: <input type="text" th:field="*{addTrick()}"/></p>-->
-    <!--<p><input type="submit" value="Submit"/></p>-->
-<!--</form>-->
+<section>
+    <img src="images/trick.jpg" th:marginheight="'20px'"/>
+</section>
+<h1 th:text="${fox.getKnownTricks()} == 0 ? 'No tricks in your pocket :(' : 'Known tricks:'">Known tricks</h1>
+<ul th:each="trick : ${fox.getMyTricks()}">
+    <li>write HTML</li>
+    <li>code in Java</li>
+</ul>
+<form action="#" th:action="@{/addTrick}" th:object="${fox}" method="post">
+    <input type="text" th:field="*{addTrick()}"/>
+    <p><input type="submit" value="Add trick" /></p>
+</form>
 </body>
 </html>
