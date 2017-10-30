@@ -13,13 +13,13 @@
     </ul>
 </section>
 <section>
-    <form th:action="@{/changeFood}" th:object="${myFox}" method="post">
+    <form th:action="@{/changeFood}" th:object="${fox}" method="post">
         <label>Food</label>
-        <select>
+        <select th:field="*{myFood}">
             <option th:each="type : ${foods}" th:text="${type}" th:value="${type}"></option>
         </select>
         <label>Drink</label>
-        <select>
+        <select th:field="*{myDrink}">
             <option th:each="type : ${drinks}" th:text="${type}" th:value="${type}"></option>
         </select>
         <button type="submit">Change</button>
