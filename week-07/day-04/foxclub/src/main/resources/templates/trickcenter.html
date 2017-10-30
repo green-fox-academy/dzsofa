@@ -20,8 +20,8 @@
     <li th:text="${trick.toString()}" th:value="${trick}"></li>
 </ul>
 <form action="#" th:action="@{/addTrick}" th:object="${tricky}" method="post">
-    <label for="trick">Trick:</label>
-    <input th:field="*{trickName}" type="text" id="trick"/>
+    <label for="trick">Add new trick:</label>
+    <input th:field="*{trickName}" type="text"/>
     <p><input type="submit" value="Learn"/></p>
 </form>
 </body>
