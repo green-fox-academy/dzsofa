@@ -19,7 +19,7 @@
    th:text="'This is ' + *{getName()} + '. Currently living on ' + *{getMyFood()} + ' and ' + *{getMyDrink()} + '. He knows ' + *{getKnownTricks()} + ' tricks.'"></p>
 <h1 th:text="${fox.getKnownTricks()} == 0 ? 'No tricks in your pocket :(' : 'Known tricks:'">Known tricks</h1>
 <ul th:each="trick : ${fox.myTricks}">
-    <li th:text="${trick}"></li>
+    <li th:text="${trick}" th:value="${trick.toString()}"></li>
 </ul>
 </body>
 </html>

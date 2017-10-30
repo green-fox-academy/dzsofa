@@ -12,10 +12,15 @@ public class Fox {
     private int knownTricks;
 
     public Fox() {
-        this.name = "Fixi-foxi";
-        this.myTricks = new ArrayList<>();
-        myFood = null;
-        myDrink = null;
+
+    }
+
+    public Fox(String name, ArrayList<Trick> myTricks, Food myFood, Drink myDrink, int knownTricks) {
+        this.name = name;
+        this.myTricks = myTricks;
+        this.myFood = myFood;
+        this.myDrink = myDrink;
+        this.knownTricks = knownTricks;
     }
 
     public String getName() {
@@ -34,8 +39,8 @@ public class Fox {
         return myTricks.size();
     }
 
-    public void addTrick(Trick trick) {
-        this.myTricks.add(trick);
+    public void addTrick(String desc) {
+        this.myTricks.add(new Trick(desc));
     }
 
     public Food getMyFood() {
