@@ -4,9 +4,7 @@ import com.greenfox.foxclub.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -25,6 +23,7 @@ public class MainController {
 
     @GetMapping("/nutritionstore")
     public String nutrition(Model model) {
+        model.addAttribute("fox", myFox);
         model.addAttribute("foods", Food.values());
         model.addAttribute("drinks", Drink.values());
         return "nutritioninfo";
