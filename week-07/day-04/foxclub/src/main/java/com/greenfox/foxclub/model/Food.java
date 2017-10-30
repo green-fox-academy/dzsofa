@@ -9,5 +9,10 @@ public enum Food {
     MOUSE;
 
     Food() {
+
+    }
+
+    public String getName() {
+        return Food.values().toString();
     }
 }

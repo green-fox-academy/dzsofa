@@ -11,4 +11,8 @@ public enum Drink {
     Drink() {
     }
 
+    public String getName() {
+        return Drink.values().toString();
+    }
+
 }
