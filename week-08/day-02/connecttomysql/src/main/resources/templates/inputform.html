@@ -2,11 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Todos</title>
+    <title>Adding todo</title>
 </head>
 <body>
 <ul>
-    <li><a th:href="'/'">Return to homepage</a></li>
+    <li><a th:href="'list'">Return to homepage</a></li>
 </ul>
+<h2>Add your todo here:</h2>
+<form action="/todo/addnew" method="post">
+    <input name="title"/>
+    <button type="submit" value="Submit">Submit</button>
+</form>
 </body>
 </html>
