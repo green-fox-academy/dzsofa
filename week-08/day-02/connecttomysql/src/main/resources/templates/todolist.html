@@ -6,18 +6,18 @@
 </head>
 <body>
 <h1>Todos for today</h1>
-<table th:style="'font-weight: normal'">
-    <tr th:style="'font-weight: bold'">
+<table th:style="'border-collapse:collapse; width:50%; margin: 40px auto auto 40px;'">
+    <tr>
         <th>ID</th>
         <th>ACTION</th>
         <th>DONE</th>
         <th>URGENT</th>
     </tr>
-    <tr th:each="todo : ${todos}" th:style="'font-weight: normal'">
-        <th th:text="${todo.getId()}"></th>
-        <th th:text="${todo.getTitle()}"></th>
-        <th th:text="${todo.isDone()}"></th>
-        <th th:text="${todo.isUrgent()}"></th>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.getId()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getTitle()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.isDone()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.isUrgent()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
     </tr>
 </table>
 </body>
