@@ -18,11 +18,11 @@ public class Todo {
     private boolean isUrgent;
     private boolean isDone;
 
-    public Todo(String title) {
+    public Todo(String title, boolean isUrgent, boolean isDone) {
         this.id = id;
         this.title = title;
-        this.isUrgent = false;
-        this.isDone = false;
+        this.isUrgent = isUrgent;
+        this.isDone = isDone;
     }
 
 
