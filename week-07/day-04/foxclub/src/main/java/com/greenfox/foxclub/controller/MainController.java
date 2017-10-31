@@ -38,8 +38,10 @@ public class MainController {
 
     @GetMapping("/trickcenter")
     public String tricks(Model model) {
+        trick.setTrickName("");
         model.addAttribute("fox", myFox);
         model.addAttribute("tricky", trick);
+//        model.addAttribute("trickname", trick.getTrickName());
         return "trickcenter";
     }
 
