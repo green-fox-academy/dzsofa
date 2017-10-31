@@ -1,12 +1,12 @@
-package com.greenfox.todos.models;
+package com.greenfox.connecttomysql.models;
 
-import com.greenfox.todos.repository.TodoRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.ResourceProperties;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.lang.reflect.Method;
 
 @Entity
 public class Todo {
