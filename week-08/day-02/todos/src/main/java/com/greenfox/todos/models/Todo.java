@@ -1,16 +1,27 @@
 package com.greenfox.todos.models;
 
+import com.greenfox.todos.repository.TodoRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Todo {
+
+    @Id
+    @GeneratedValue
     private int id;
     private String title;
     private boolean isUrgent;
     private boolean isDone;
 
-    public Todo(int id, String title, boolean isUrgent, boolean isDone) {
+    public Todo(String title) {
         this.id = id;
         this.title = title;
-        this.isUrgent = isUrgent;
-        this.isDone = isDone;
+        this.isUrgent = false;
+        this.isDone = false;
     }
 
 
