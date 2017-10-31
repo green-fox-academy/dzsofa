@@ -5,14 +5,10 @@ import com.greenfox.connecttomysql.repository.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -34,8 +30,6 @@ public class TodoController {
                 if (todo.isDone()) {
                     todos.add(todo);
                 }
-            } else {
-                todos.add(todo);
             }
         }
         model.addAttribute("todos", todos);
@@ -49,25 +43,13 @@ public class TodoController {
 
     @PostMapping("/addnew")
     public String addTodo(@RequestParam String title) {
-
-        return "redirect:todo/list";
+        todoRepo.save(new Todo(title));
+        return "redirect:/todo/list";
     }
 
-//    @GetMapping("/")
-//    public String listActive(@RequestParam boolean isActive, Model model) {
-//        List<Todo> todos = new ArrayList<>();
-//        for (Todo todo : todoRepo.findAll()) {
-//            if (isActive == true) {
-//                if (todo.isDone() == false) {
-//                    todos.add(todo);
-//                }
-//            }
-//            if (isActive == false) {
-//                todos.add(todo);
-//            }
-//        }
-//        model.addAttribute("todos", todos);
-//        return "todolist";
-//    }
-
+    @GetMapping("/{id}/delete")
+    public ModelAndView delete(@PathVariable long id) {
+        todoRepo.delete(id);
+        return new ModelAndView("redirect:/todo/list");
+    }
 }
