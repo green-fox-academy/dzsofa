@@ -17,10 +17,10 @@
         <th>URGENT</th>
     </tr>
     <tr th:each="todo : ${todos}">
-        <td th:text="${todo.getId()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getTitle()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.isDone()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.isUrgent()}" th:style="'border-width: 1px; padding: 1px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getId()}" th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getTitle()}" th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.isDone()}" th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.isUrgent()}" th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
     </tr>
 </table>
 </body>
