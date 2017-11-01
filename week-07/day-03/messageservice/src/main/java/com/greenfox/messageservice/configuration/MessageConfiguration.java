@@ -6,8 +6,6 @@ import com.greenfox.messageservice.service.MessageService;
 import com.greenfox.messageservice.service.TwitterService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
 
 @Configuration
 public class MessageConfiguration {
@@ -21,6 +19,7 @@ public class MessageConfiguration {
     public MessageService email() {
         return new EmailService();
     }
+
 
     public MessageService twitter() {
         return new TwitterService();

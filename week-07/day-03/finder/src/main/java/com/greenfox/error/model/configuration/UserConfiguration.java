@@ -1,6 +1,5 @@
 package com.greenfox.error.model.configuration;
 
-import com.greenfox.error.model.controller.*;
 import com.greenfox.error.model.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,8 +12,4 @@ public class UserConfiguration {
         return new UserService();
     }
 
-    @Bean
-    public AppController appController() {
-        return new AppController();
-    }
 }
