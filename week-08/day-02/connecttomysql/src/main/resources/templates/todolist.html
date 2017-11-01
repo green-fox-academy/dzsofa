@@ -7,7 +7,7 @@
 <body>
 <h1>Todos for today</h1>
 <ul>
-    <li><a th:href="@{/todo/addnew}">Add new todo</a></li>
+    <li><a th:href="@{/todo/list/addnew}">Add new todo</a></li>
 </ul>
 <table th:style="'border-collapse:collapse; width:50%; margin: 40px auto auto 40px;'">
     <tr>
@@ -21,16 +21,20 @@
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
         <td th:text="${todo.getTitle()}"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getIsDone()}"
+        <td th:text="${todo.getIsDone()} ? 'Good job, you\'re done!' : 'Still have to do that'"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getIsUrgent()}"
+        <td th:text="${todo.getIsUrgent()} ? 'Urgent!' : 'Laziness buttON'"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td><a th:href="@{/todo/{id}/delete(id=${todo.id})}">Delete</a></td>
-        <!--<td>-->
-            <!--<form action="#" th:action="@{'/todo/{id}/delete'(id=${todo.id})}">-->
-                <!--<button type="submit" id="submitButton">Delete</button>-->
-            <!--</form>-->
-        <!--</td>-->
+        <td>
+            <form action="#" th:action="@{'/todo/{id}/delete'(id=${todo.id})}">
+                <button type="submit" id="submitButton">Delete</button>
+            </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{'/todo/list/{id}/edit'(id=${todo.id})}">
+                <button type="submit" id="submitButton">Edit</button>
+            </form>
+        </td>
     </tr>
 </table>
 </body>

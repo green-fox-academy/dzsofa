@@ -6,15 +6,24 @@
 </head>
 <body>
 <ul>
-    <li><a th:href="'list'">Return to homepage</a></li>
+    <li><a th:href="@{/todo/list}">Return to homepage</a></li>
 </ul>
 <h2>Add your todo here:</h2>
-<form action="@{/todo/addnew}" th:object="${newTodo}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    <input type="text" th:field="*{title}"/>
-    <input type="checkbox" th:field="*{isUrgent}" th:value="'Urgent?'" />
-    <input type="checkbox" th:field="*{isDone}" th:value="'Done?'"/>
-    <button type="submit" value="Submit">Submit</button>
-</form>
+<table>
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Urgent?</th>
+        <th></th>
+    </tr>
+    <tr>
+    <form action="/todo/list/addnew" th:object="${newTodo}" method="post">
+        <td><input type="hidden" th:field="*{id}"/></td>
+        <td><input type="text" th:field="*{title}"/></td>
+        <td><input type="checkbox" th:field="*{isUrgent}" th:="'Urgent?'"/></td>
+        <td><button type="submit" value="Submit">Submit</button></td>
+    </form>
+    </tr>
+</table>
 </body>
 </html>

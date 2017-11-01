@@ -39,22 +39,37 @@ public class TodoController {
         return "todolist";
     }
 
-    @GetMapping("/addnew")
+    @GetMapping("/list/addnew")
     public String input(Model model) {
         model.addAttribute("newTodo", new Todo());
         return "inputform";
     }
 
-    @PostMapping("/addnew")
+    @PostMapping("/list/addnew")
     public String addTodo(@ModelAttribute Todo todo) {
         todoRepo.save(todo);
-        return "redirect:/todo/list";
+        return "redirect:/todo/";
     }
 
     @GetMapping("/{id}/delete")
     public String deleteing(@PathVariable long id, Model model) {
-        model.addAttribute("todo", todoRepo.findOne(id));
+        Todo todo = todoRepo.findOne(id);
+        model.addAttribute("todo", todo);
         todoRepo.delete(id);
         return "redirect:/todo/";
     }
+
+    @GetMapping("/list/{id}/edit")
+    public String editPage(@PathVariable long id, Model model) {
+        Todo todo = todoRepo.findOne(id);
+        model.addAttribute("editedTodo", todo);
+        return "edittodo";
+    }
+
+    @PostMapping("/list/{id}/edit")
+    public String edit(@ModelAttribute Todo todo) {
+        todoRepo.save(todo);
+        return "redirect:/todo/";
+    }
+
 }
