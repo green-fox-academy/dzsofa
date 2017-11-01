@@ -1,12 +1,9 @@
 package com.greenfox.connecttomysql.models;
 
-import org.springframework.boot.autoconfigure.web.ResourceProperties;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.lang.reflect.Method;
 
 @Entity
 public class Todo {
@@ -18,11 +15,10 @@ public class Todo {
     private boolean isUrgent;
     private boolean isDone;
 
-    public Todo(String title, boolean isUrgent, boolean isDone) {
-        this.id = id;
+    public Todo(String title) {
         this.title = title;
-        this.isUrgent = isUrgent;
-        this.isDone = isDone;
+        this.isUrgent = false;
+        this.isDone = false;
     }
 
 
@@ -35,7 +31,7 @@ public class Todo {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -47,19 +43,19 @@ public class Todo {
         this.title = title;
     }
 
-    public boolean isUrgent() {
+    public boolean getIsUrgent() {
         return isUrgent;
     }
 
-    public void setUrgent(boolean urgent) {
+    public void setIsUrgent(boolean urgent) {
         isUrgent = urgent;
     }
 
-    public boolean isDone() {
+    public boolean getIsDone() {
         return isDone;
     }
 
-    public void setDone(boolean done) {
+    public void setIsDone(boolean done) {
         isDone = done;
     }
 }
