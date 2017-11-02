@@ -18,14 +18,14 @@
         <th></th>
     </tr>
     <tr>
-        <form th:action="@{'/todo/list/{id}/edit'(id=${editedTodo.id})}" th:object="${editedTodo}" method="post" >
-        <td><input type="hidden" th:field="*{id}"/></td>
-        <td><input type="text" th:field="*{title}" id="title" name="title"/></td>
-        <td><input type="checkbox" th:field="*{isUrgent}" id="urgency" name="urgency"/></td>
-        <td><input type="checkbox" th:field="*{isDone}" id="done" name="done"/></td>
-        <td>
-            <button type="submit" value="Submit">Submit</button>
-        </td>
+        <form th:action="@{'/todo/list/{id}/edit'(id=${editedTodo.id})}" th:object="${editedTodo}" method="post">
+            <td><input type="hidden" th:field="*{id}"/></td>
+            <td><input type="text" th:field="*{title}"/></td>
+            <td><input type="checkbox" th:field="*{isUrgent}" th:checked="*{isUrgent}"/></td>
+            <td><input type="checkbox" th:field="*{isDone}" th:checked="*{isDone}" th:onclick="${isDone} ? false"/></td>
+            <td>
+                <button type="submit" value="Submit">Submit</button>
+            </td>
         </form>
     </tr>
 </table>
