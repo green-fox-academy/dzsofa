@@ -54,4 +54,11 @@ public class AssigneeController {
         return "redirect:/assignees";
     }
 
+    @GetMapping("/{id}/todos")
+    public String assTodos(@PathVariable long id, Model model) {
+        Assignee assignee = assigneeRepo.findOne(id);
+        model.addAttribute("assTodos", assignee.getTodos());
+        return "asstodos";
+    }
+
 }

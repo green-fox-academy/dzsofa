@@ -20,7 +20,7 @@
         <th>Edit</th>
     </tr>
     <tr th:each="assignee : ${assignees}">
-        <td th:text="${assignee.getName()}"></td>
+        <td><a th:href="@{/assignees/{id}/todos(id=${assignee.id})}" th:text="${assignee.getName()}"></a></td>
         <td th:text="${assignee.getEmail()}"></td>
         <td>
             <form action="#" th:action="@{'/assignees/{id}/delete'(id=${assignee.id})}">
