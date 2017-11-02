@@ -24,13 +24,13 @@ public class AssigneeController {
     @GetMapping("/addnew")
     public String input(Model model) {
         model.addAttribute("newAss", new Assignee());
-        return "addnew";
+        return "addassignee";
     }
 
     @PostMapping("/addnew")
     public String addTodo(@ModelAttribute Assignee assignee) {
         assigneeRepo.save(assignee);
-        return "redirect:/assignees";
+        return "redirect:/assignees/";
     }
 
     @GetMapping("/{id}/delete")
