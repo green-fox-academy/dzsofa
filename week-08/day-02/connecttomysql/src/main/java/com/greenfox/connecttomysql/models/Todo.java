@@ -1,9 +1,6 @@
 package com.greenfox.connecttomysql.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Todo {
@@ -58,4 +55,7 @@ public class Todo {
     public void setIsDone(boolean done) {
         isDone = done;
     }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Assignee assignee;
 }

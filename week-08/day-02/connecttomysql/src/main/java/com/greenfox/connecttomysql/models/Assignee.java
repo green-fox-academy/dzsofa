@@ -1,5 +1,8 @@
 package com.greenfox.connecttomysql.models;
 
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+
 public class Assignee {
     private String name;
     private String email;
@@ -27,4 +30,7 @@ public class Assignee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private Todo todo;
 }
