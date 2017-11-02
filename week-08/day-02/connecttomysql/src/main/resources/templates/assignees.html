@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Assignees</title>
+</head>
+<body>
+<ul>
+    <li><a th:href="@{/todo/list}">Return to homepage</a></li>
+</ul>
+<h2>Assignees</h2>
+<table th:style="'border-collapse:collapse; width:50%; margin: 40px auto auto 40px;'">
+    <tr>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    <tr th:each="assignee : ${assignees}">
+        <td th:text="${assignee.getName()}"></td>
+        <td th:text="${assignee.getEmail()}"></td>
+        <td>
+            <form action="#" th:action="@{'/assignees/{id}/delete'(id=${assignee.id})}">
+                <button type="submit" id="submitButton">Delete</button>
+            </form>
+        </td>
+        <td>
+            <form action="#" th:action="@{'/assignees/{id}/edit'(id=${assignee.id})}">
+                <button type="submit" id="submitButton">Edit</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

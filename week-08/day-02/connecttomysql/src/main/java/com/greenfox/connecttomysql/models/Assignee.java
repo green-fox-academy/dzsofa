@@ -1,9 +1,16 @@
 package com.greenfox.connecttomysql.models;
 
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.List;
 
+@Entity
+@Table(name = "assignees")
 public class Assignee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    long id;
+
     private String name;
     private String email;
 
@@ -23,6 +30,14 @@ public class Assignee {
         this.name = name;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -31,6 +46,6 @@ public class Assignee {
         this.email = email;
     }
 
-    @OneToMany(fetch = FetchType.EAGER)
-    private Todo todo;
+    @OneToMany(mappedBy = "assignee", fetch = FetchType.EAGER)
+    private List<Todo> todos;
 }
