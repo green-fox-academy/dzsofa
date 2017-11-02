@@ -13,6 +13,8 @@
     <tr>
         <th></th>
         <th>Title</th>
+        <th>Description</th>
+        <th>Due date</th>
         <th>Urgent?</th>
         <th>Done?</th>
         <th>Assignee</th>
@@ -22,6 +24,8 @@
         <form th:action="@{'/todo/list/{id}/edit'(id=${editedTodo.id})}" th:object="${editedTodo}" method="post">
             <td><input type="hidden" th:field="*{id}"/></td>
             <td><input type="text" th:field="*{title}"/></td>
+            <td><input type="text" th:field="*{description}"/></td>
+            <td><input type="date" th:field="*{dueDate}" th:value="(dueDate)"/></td>
             <td><input type="checkbox" th:field="*{isUrgent}" th:checked="*{isUrgent}"/></td>
             <td><input type="checkbox" th:field="*{isDone}" th:checked="*{isDone}" th:onclick="${isDone} ? false"/></td>
             <td>

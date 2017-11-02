@@ -12,15 +12,19 @@
 <table>
     <tr>
         <th></th>
+        <th></th>
         <th>Title</th>
         <th>Urgent?</th>
+        <th>Due date</th>
         <th></th>
     </tr>
     <tr>
         <form action="/todo/list/addnew" th:object="${newTodo}" method="post">
             <td><input type="hidden" th:field="*{id}"/></td>
-            <td><input type="text" th:field="*{title}"/></td>
+            <td><input type="hidden" th:field="*{createdAt}" th:value="*{createdAt}"/></td>
+            <td><input type="text" placeholder="Todo title" th:field="*{title}"/></td>
             <td><input type="checkbox" th:field="*{isUrgent}" th:="'Urgent?'"/></td>
+            <td><input type="date" placeholder="Due date (yyyy-mm-dd)" th:field="*{dueDate}" th:value="(dueDate)"/></td>
             <td>
                 <button type="submit" value="Submit">Submit</button>
             </td>

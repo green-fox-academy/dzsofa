@@ -14,6 +14,14 @@ public class Assignee {
     private String name;
     private String email;
 
+    public List<Todo> getTodos() {
+        return todos;
+    }
+
+    public void setTodos(List<Todo> todos) {
+        this.todos = todos;
+    }
+
     @OneToMany(mappedBy = "assignee", fetch = FetchType.EAGER)
     private List<Todo> todos;
 

@@ -14,10 +14,13 @@
 <div><a th:href="@{/todo/list?isActive=false}">Only show inactive</a></div>
 
 
-<table th:style="'border-collapse:collapse; width:50%; margin: 40px auto auto 40px;'">
+<table th:style="'border-collapse:collapse; width:80%; margin: 40px auto auto 40px;'">
     <tr>
         <th>ID</th>
         <th>ACTION</th>
+        <th>DESCRIPTION</th>
+        <th>CREATED AT</th>
+        <th>DUE DATE</th>
         <th>DONE</th>
         <th>URGENT</th>
         <th>ASSIGNEE</th>
@@ -26,6 +29,11 @@
         <td th:text="${todo.getId()}"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
         <td th:text="${todo.getTitle()}"
+            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getDescription()}"
+            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getCreatedAt()}" th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getDueDate()}"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
         <td th:text="${todo.getIsDone()} ? 'Good job, you\'re done!' : 'Still have to do that'"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>

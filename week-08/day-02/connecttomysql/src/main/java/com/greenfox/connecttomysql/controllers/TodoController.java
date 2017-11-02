@@ -24,7 +24,7 @@ public class TodoController {
     private AssigneeRepo assigneeRepo;
 
     @GetMapping({"/", "/list"})
-    public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
+    public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model, Todo todo) {
         model.addAttribute("todos", todoService.listThem(isActive));
         return "todolist";
     }
@@ -54,7 +54,6 @@ public class TodoController {
         Todo todo = todoRepo.findOne(id);
         model.addAttribute("editedTodo", todo);
         model.addAttribute("assignees", assigneeRepo.findAll());
-
         return "edittodo";
     }
 

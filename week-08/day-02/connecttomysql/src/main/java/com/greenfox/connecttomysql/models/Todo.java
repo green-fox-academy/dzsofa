@@ -1,6 +1,10 @@
 package com.greenfox.connecttomysql.models;
 
+import org.apache.tomcat.jni.Local;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "todos")
@@ -10,30 +14,34 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String title;
+    private String description;
     private boolean isUrgent;
     private boolean isDone;
 
-    public Assignee getAssignee() {
-        return assignee;
-    }
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate createdAt;
 
-    public void setAssignee(Assignee assignee) {
-        this.assignee = assignee;
-    }
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate dueDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Assignee assignee;
 
-    public Todo(String title) {
+    public Todo(String title, LocalDate dueDate) {
         this.title = title;
+        this.description = "";
         this.isUrgent = false;
         this.isDone = false;
+        createdAt = LocalDate.now();
+        this.dueDate = dueDate;
     }
 
-
     public Todo() {
+        this.description = "";
         isUrgent = false;
         isDone = false;
+        createdAt = LocalDate.now();
+        dueDate = null;
     }
 
     public long getId() {
@@ -52,6 +60,15 @@ public class Todo {
         this.title = title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
     public boolean getIsUrgent() {
         return isUrgent;
     }
@@ -68,5 +85,28 @@ public class Todo {
         isDone = done;
     }
 
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public Assignee getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
+    }
 
 }
