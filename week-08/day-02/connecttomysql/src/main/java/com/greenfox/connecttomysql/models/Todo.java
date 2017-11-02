@@ -3,6 +3,7 @@ package com.greenfox.connecttomysql.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "todos")
 public class Todo {
 
     @Id
