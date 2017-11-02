@@ -17,12 +17,14 @@
         <th></th>
     </tr>
     <tr>
-    <form action="/todo/list/addnew" th:object="${newTodo}" method="post">
-        <td><input type="hidden" th:field="*{id}"/></td>
-        <td><input type="text" th:field="*{title}"/></td>
-        <td><input type="checkbox" th:field="*{isUrgent}" th:="'Urgent?'"/></td>
-        <td><button type="submit" value="Submit">Submit</button></td>
-    </form>
+        <form action="/todo/list/addnew" th:object="${newTodo}" method="post">
+            <td><input type="hidden" th:field="*{id}"/></td>
+            <td><input type="text" th:field="*{title}"/></td>
+            <td><input type="checkbox" th:field="*{isUrgent}" th:="'Urgent?'"/></td>
+            <td>
+                <button type="submit" value="Submit">Submit</button>
+            </td>
+        </form>
     </tr>
 </table>
 </body>

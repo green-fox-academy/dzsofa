@@ -9,6 +9,8 @@
 <ul>
     <li><a th:href="@{/todo/list/addnew}">Add new todo</a></li>
 </ul>
+<div><a th:href="@{/todo/list?isActive=true}"> Show active</a></div>
+<div><a th:href="@{/todo/list?isActive=false}">Only show inactive</a></div>
 <table th:style="'border-collapse:collapse; width:50%; margin: 40px auto auto 40px;'">
     <tr>
         <th>ID</th>
@@ -37,5 +39,7 @@
         </td>
     </tr>
 </table>
+
 </body>
+
 </html>
