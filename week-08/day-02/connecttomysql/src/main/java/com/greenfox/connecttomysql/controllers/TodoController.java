@@ -1,5 +1,6 @@
 package com.greenfox.connecttomysql.controllers;
 
+import com.greenfox.connecttomysql.Service.TodoService;
 import com.greenfox.connecttomysql.models.Todo;
 import com.greenfox.connecttomysql.repository.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,23 +20,12 @@ public class TodoController {
     @Autowired
     private TodoRepo todoRepo;
 
+    @Autowired
+    TodoService todoService;
+
     @GetMapping({"/", "/list"})
     public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
-        List<Todo> todos = new ArrayList<>();
-        for (Todo todo : todoRepo.findAll()) {
-            if (isActive == null) {
-                todos.add(todo);
-            } else if (isActive) {
-                if (!todo.getIsDone()) {
-                    todos.add(todo);
-                }
-            } else if (!isActive) {
-                if (todo.getIsDone()) {
-                    todos.add(todo);
-                }
-            }
-        }
-        model.addAttribute("todos", todos);
+        model.addAttribute("todos", todoService.listThem(isActive));
         return "todolist";
     }
 
@@ -52,7 +42,7 @@ public class TodoController {
     }
 
     @GetMapping("/{id}/delete")
-    public String deleteing(@PathVariable long id, Model model) {
+    public String deleting(@PathVariable long id, Model model) {
         Todo todo = todoRepo.findOne(id);
         model.addAttribute("todo", todo);
         todoRepo.delete(id);
