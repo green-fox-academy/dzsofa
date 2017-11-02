@@ -14,6 +14,9 @@ public class Assignee {
     private String name;
     private String email;
 
+    @OneToMany(mappedBy = "assignee", fetch = FetchType.EAGER)
+    private List<Todo> todos;
+
     public Assignee() {
     }
 
@@ -46,6 +49,4 @@ public class Assignee {
         this.email = email;
     }
 
-    @OneToMany(mappedBy = "assignee", fetch = FetchType.EAGER)
-    private List<Todo> todos;
 }

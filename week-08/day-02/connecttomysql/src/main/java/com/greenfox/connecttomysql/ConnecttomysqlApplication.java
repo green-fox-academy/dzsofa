@@ -18,7 +18,6 @@ public class ConnecttomysqlApplication implements CommandLineRunner {
     @Autowired
     AssigneeRepo assigneeRepo;
 
-
     public static void main(String[] args) {
         SpringApplication.run(ConnecttomysqlApplication.class, args);
     }

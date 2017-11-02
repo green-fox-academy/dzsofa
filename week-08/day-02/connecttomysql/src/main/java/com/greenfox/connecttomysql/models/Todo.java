@@ -13,6 +13,17 @@ public class Todo {
     private boolean isUrgent;
     private boolean isDone;
 
+    public Assignee getAssignee() {
+        return assignee;
+    }
+
+    public void setAssignee(Assignee assignee) {
+        this.assignee = assignee;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Assignee assignee;
+
     public Todo(String title) {
         this.title = title;
         this.isUrgent = false;
@@ -57,6 +68,5 @@ public class Todo {
         isDone = done;
     }
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Assignee assignee;
+
 }

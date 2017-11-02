@@ -20,6 +20,7 @@
         <th>ACTION</th>
         <th>DONE</th>
         <th>URGENT</th>
+        <th>ASSIGNEE</th>
     </tr>
     <tr th:each="todo : ${todos}">
         <td th:text="${todo.getId()}"
@@ -29,6 +30,8 @@
         <td th:text="${todo.getIsDone()} ? 'Good job, you\'re done!' : 'Still have to do that'"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
         <td th:text="${todo.getIsUrgent()} ? 'Urgent!' : 'Laziness buttON'"
+            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getAssignee()}"
             th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
         <td>
             <form action="#" th:action="@{'/todo/{id}/delete'(id=${todo.id})}">
