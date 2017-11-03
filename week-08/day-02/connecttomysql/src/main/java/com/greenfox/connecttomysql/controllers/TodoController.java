@@ -29,6 +29,12 @@ public class TodoController {
         return "todolist";
     }
 
+    @GetMapping({"/list/title"})
+    public String filterTitle(@RequestParam(value = "title", required = false) String title, Model model, Todo todo) {
+        model.addAttribute("todos", todoRepo.findAllByTitle(title));
+        return "todolist";
+    }
+
     @GetMapping("/list/addnew")
     public String input(Model model) {
         model.addAttribute("newTodo", new Todo());

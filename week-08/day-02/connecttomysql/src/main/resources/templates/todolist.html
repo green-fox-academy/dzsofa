@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <meta charset="UTF-8"/>
     <title>Todos</title>
 </head>
-<body>
-<h1>Todos for today</h1>
-<ul>
-    <li><a th:href="@{/todo/list/addnew}">Add new todo</a></li>
-    <li><a th:href="@{/assignees}">List assignees</a></li>
+<body th:style="'margin: 20px'">
+<h1 class="page-header">Todos</h1>
+<ul class="list-group" th:style="'width: 200px'">
+    <li class="list-group-item"><a th:href="@{/todo/list/addnew}">Add new todo</a></li>
+    <li class="list-group-item"><a th:href="@{/assignees}">List assignees</a></li>
 </ul>
 <div><a th:href="@{/todo/list?isActive=true}"> Show active</a></div>
 <div><a th:href="@{/todo/list?isActive=false}">Only show inactive</a></div>
 
-
-<table th:style="'border-collapse:collapse; width:80%; margin: 40px auto auto 40px;'">
+<table class="table-hover">
     <tr>
         <th>ID</th>
         <th>ACTION</th>
@@ -26,29 +33,22 @@
         <th>ASSIGNEE</th>
     </tr>
     <tr th:each="todo : ${todos}">
-        <td th:text="${todo.getId()}"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getTitle()}"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getDescription()}"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getCreatedAt()}" th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getDueDate()}"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getIsDone()} ? 'Good job, you\'re done!' : 'Still have to do that'"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getIsUrgent()} ? 'Urgent!' : 'Laziness buttON'"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
-        <td th:text="${todo.getAssignee()} != null ? ${todo.getAssignee().getName()} : 'Noone assigned'"
-            th:style="'border-width: 1px; padding: 2px; border-style: inset; border-color: gray; background-color: white;'"></td>
+        <td th:text="${todo.getId()}"></td>
+        <td th:text="${todo.getTitle()}"></td>
+        <td th:text="${todo.getDescription()}"></td>
+        <td th:text="${todo.getCreatedAt()}"></td>
+        <td th:text="${todo.getDueDate()}"></td>
+        <td th:text="${todo.getIsDone()} ? 'Good job, you\'re done!' : 'Still have to do that'"></td>
+        <td th:text="${todo.getIsUrgent()} ? 'Urgent!' : 'Laziness buttON'"></td>
+        <td th:text="${todo.getAssignee()} != null ? ${todo.getAssignee().getName()} : 'Noone assigned'"></td>
         <td>
             <form action="#" th:action="@{'/todo/{id}/delete'(id=${todo.id})}">
-                <button type="submit" id="submitButton">Delete</button>
+                <button class="btn" type="submit" id="submitButton"><span class="glyphicon glyphicon-trash"></span></button>
             </form>
         </td>
         <td>
             <form action="#" th:action="@{'/todo/list/{id}/edit'(id=${todo.id})}">
-                <button type="submit" id="submitButton">Edit</button>
+                <button class="btn" type="submit" id="submitButton"><span class="glyphicon glyphicon-edit"></span></button>
             </form>
         </td>
     </tr>
