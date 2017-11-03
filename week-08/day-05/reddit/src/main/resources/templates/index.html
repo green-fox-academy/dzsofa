@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta charset="UTF-8"/>
+    <title>Posts</title>
 </head>
-<body>
+<body th:style="'margin: 30px'">
+
+<h2 class="page-header">Posts</h2>
+<table class="table-hover">
+    <tr>
+        <th th:style="'padding: 8px'">SCORE</th>
+        <th th:style="'padding: 8px'">ACTIONS</th>
+        <th th:style="'padding: 8px'">CONTENT</th>
+    </tr>
+    <tr th:each="post : ${posts}">
+        <td th:style="'padding: 8px'" th:text="${post.getScore()}"></td>
+        <td th:style="'padding: 8px'"></td>
+        <td th:style="'padding: 8px'" th:text="${post.getContent()}"></td>
+
+    </tr>
+</table>
 
 </body>
 </html>

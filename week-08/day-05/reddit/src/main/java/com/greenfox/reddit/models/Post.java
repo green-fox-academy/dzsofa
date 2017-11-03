@@ -1,11 +1,9 @@
 package com.greenfox.reddit.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "reddit")
 public class Post {
 
     @Id
@@ -15,12 +13,14 @@ public class Post {
     int score;
     String content;
 
-    public Post(int score, String content) {
-        this.score = score;
+    public Post(String content) {
+        this.score = 0;
         this.content = content;
     }
 
     public Post() {
+        this.score = 0;
+        this.content = "";
     }
 
 
