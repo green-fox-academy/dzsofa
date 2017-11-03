@@ -1,8 +1,10 @@
 package com.greenfox.reddit.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "reddit")
@@ -16,14 +18,19 @@ public class Post {
     int score;
     String content;
 
+    private LocalDate createdAt;
+
+
     public Post(String content) {
         this.score = 0;
         this.content = content;
+        this.createdAt = LocalDate.now();
     }
 
     public Post() {
         this.score = 0;
         this.content = "";
+        this.createdAt = LocalDate.now();
     }
 
 
@@ -50,4 +57,13 @@ public class Post {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDate createdAt) {
+        this.createdAt = createdAt;
+    }
+
 }
