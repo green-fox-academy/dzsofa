@@ -13,9 +13,9 @@
     <title>Posts</title>
 </head>
 <body th:style="'margin: 30px'">
-
-<h2 class="page-header">Posts</h2>
-<table class="table-hover">
+<a th:href="@{/posts/addnew}">Add new post</a>
+<h1 class="page-header">Posts</h1>
+<table class="table-hover; table-bordered">
     <tr>
         <th th:style="'padding: 8px'">SCORE</th>
         <th th:style="'padding: 8px'">ACTIONS</th>
@@ -23,7 +23,10 @@
     </tr>
     <tr th:each="post : ${posts}">
         <td th:style="'padding: 8px'" th:text="${post.getScore()}"></td>
-        <td th:style="'padding: 8px'"></td>
+        <td th:style="'padding: 8px'">
+            <a th:href="@{/posts/{id}/upvote(id=${post.getId()})}">+</a>
+            <a th:href="@{/posts/{id}/downvote(id=${post.getId()})}">-</a>
+        </td>
         <td th:style="'padding: 8px'" th:text="${post.getContent()}"></td>
 
     </tr>

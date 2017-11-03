@@ -1,9 +1,12 @@
 package com.greenfox.reddit.models;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "reddit")
+@Component
 public class Post {
 
     @Id
