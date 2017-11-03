@@ -24,8 +24,8 @@
     <tr th:each="post : ${posts}">
         <td th:style="'padding: 8px'" th:text="${post.getScore()}"></td>
         <td th:style="'padding: 8px'">
-            <a th:href="@{/posts/{id}/upvote(id=${post.getId()})}">+</a>
-            <a th:href="@{/posts/{id}/downvote(id=${post.getId()})}">-</a>
+            <a th:style="'float:left; font-size: 20px; font-weight: bold;'" th:href="@{/posts/{id}/upvote(id=${post.getId()})}">+</a>
+            <a th:style="'float:right; font-size: 20px; font-weight: bold;'" th:href="@{/posts/{id}/downvote(id=${post.getId()})}">-</a>
         </td>
         <td th:style="'padding: 8px'" th:text="${post.getContent()}"></td>
 

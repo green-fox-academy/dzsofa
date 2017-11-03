@@ -13,42 +13,35 @@ import org.springframework.web.bind.annotation.*;
 public class PostController {
 
     @Autowired
-    PostRepository postRepository;
-
-    @Autowired
     PostService postService;
 
     @GetMapping({"", "/"})
     public String allPosts(Model model) {
-        model.addAttribute("posts", postRepository.findAll());
+        postService.allPosts(model);
         return "index";
     }
 
     @GetMapping("/addnew")
     public String addNew(Model model) {
-        model.addAttribute("newPost", new Post());
+        postService.newPost(model);
         return "newpost";
     }
 
     @PostMapping("/addnew")
     public String saveNew(@ModelAttribute Post post) {
-        postRepository.save(post);
+        postService.save(post);
         return "redirect:/posts";
     }
 
     @GetMapping("/{id}/upvote")
     public String upvote(@PathVariable(value = "id") long id) {
-        Post post = postRepository.findOne(id);
-        postService.upVote(post);
-        postRepository.save(post);
+        postService.upVote(id);
         return "redirect:/posts";
     }
 
     @GetMapping("/{id}/downvote")
     public String downvote(@PathVariable(value = "id") long id) {
-        Post post = postRepository.findOne(id);
-        postService.downVote(post);
-        postRepository.save(post);
+        postService.downVote(id);
         return "redirect:/posts";
     }
 
