@@ -14,15 +14,18 @@ public class PostService {
     PostRepository postRepository;
 
     public void upVote(@PathVariable(value = "id") long id) {
-        Post post = postRepository.findOne(id);
-        post.setScore(post.getScore() + 1);
-        postRepository.save(post);
+        getPost(id).setScore(getPost(id).getScore() + 1);
+        save(getPost(id));
     }
 
     public void downVote(@PathVariable(value = "id") long id) {
+        getPost(id).setScore(getPost(id).getScore() - 1);
+        save(getPost(id));
+    }
+
+    public Post getPost(@PathVariable(value = "id") long id) {
         Post post = postRepository.findOne(id);
-        post.setScore(post.getScore() - 1);
-        postRepository.save(post);
+        return post;
     }
 
     public void allPosts(Model model) {
