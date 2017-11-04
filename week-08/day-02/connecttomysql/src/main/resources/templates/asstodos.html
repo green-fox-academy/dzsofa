@@ -3,7 +3,6 @@
 <head>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <!--<link rel="stylesheet" th:href="${pageContext.request.contextPath}/resources/static/style.css" />-->
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -22,27 +21,6 @@
     <li th:text="${todo.getTitle()}"></li>
 </ul>
 
-<!--<table th:style="'border-collapse:collapse; width:50%; margin: 40px auto auto 40px;'">-->
-<!--<tr>-->
-<!--<th>Name</th>-->
-<!--<th>E-mail</th>-->
-<!--<th>Delete</th>-->
-<!--<th>Edit</th>-->
-<!--</tr>-->
-<!--<tr th:each="assignee : ${assignees}">-->
-<!--<td><a th:href="@{/assignees/{id}/todos(id=${assignee.id})}" th:text="${assignee.getName()}"></a></td>-->
-<!--<td th:text="${assignee.getEmail()}"></td>-->
-<!--<td>-->
-<!--<form action="#" th:action="@{'/assignees/{id}/delete'(id=${assignee.id})}">-->
-<!--<button type="submit" id="submitButton">Delete</button>-->
-<!--</form>-->
-<!--</td>-->
-<!--<td>-->
-<!--<form action="#" th:action="@{'/assignees/{id}/edit'(id=${assignee.id})}">-->
-<!--<button type="submit" id="submitButton">Edit</button>-->
-<!--</form>-->
-<!--</td>-->
-<!--</tr>-->
-<!--</table>-->
+
 </body>
 </html>

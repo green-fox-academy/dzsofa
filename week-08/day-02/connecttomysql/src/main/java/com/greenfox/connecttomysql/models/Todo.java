@@ -1,6 +1,5 @@
 package com.greenfox.connecttomysql.models;
 
-import org.apache.tomcat.jni.Local;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -108,5 +107,7 @@ public class Todo {
     public void setAssignee(Assignee assignee) {
         this.assignee = assignee;
     }
+
+
 
 }

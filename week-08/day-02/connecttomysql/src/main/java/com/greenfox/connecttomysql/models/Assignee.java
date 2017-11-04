@@ -57,4 +57,11 @@ public class Assignee {
         this.email = email;
     }
 
+    @PreRemove
+    private void preRemove() {
+        for (Todo todo : todos) {
+            todo.setAssignee(null);
+        }
+    }
+
 }
