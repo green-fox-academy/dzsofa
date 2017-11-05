@@ -1,7 +1,9 @@
 package com.greenfox.reddit;
 
 import com.greenfox.reddit.models.Post;
+import com.greenfox.reddit.models.User;
 import com.greenfox.reddit.repositories.PostRepository;
+import com.greenfox.reddit.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +14,9 @@ public class RedditApplication implements CommandLineRunner {
 
     @Autowired
     PostRepository postRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(RedditApplication.class, args);
@@ -34,6 +39,8 @@ public class RedditApplication implements CommandLineRunner {
 //        postRepository.save(new Post("lemme out from here!!!"));
 //        postRepository.save(new Post("Keep the change you filthy animal!"));
 //        postRepository.save(new Post("Java 4eva!"));
+
+//        userRepository.save(new User("dzsofa", "12345"));
 
     }
 }

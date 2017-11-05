@@ -1,6 +1,5 @@
 package com.greenfox.reddit.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
