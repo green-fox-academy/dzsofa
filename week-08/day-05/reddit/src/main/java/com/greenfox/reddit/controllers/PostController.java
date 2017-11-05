@@ -2,11 +2,11 @@ package com.greenfox.reddit.controllers;
 
 import com.greenfox.reddit.Service.PostService;
 import com.greenfox.reddit.models.Post;
-import com.greenfox.reddit.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 
 @Controller
 @RequestMapping(value = "/posts")
@@ -16,8 +16,13 @@ public class PostController {
     PostService postService;
 
     @GetMapping({"", "/"})
-    public String allPosts(Model model) {
-        postService.allPosts(model);
+    public String allPosts(@RequestParam(value = "pageId", defaultValue = "0") int pageId, Model model) {
+        if (pageId < 0 || pageId > postService.nrOfRows() / 10 + 1) {
+            return "redirect:/posts";
+        }
+        model.addAttribute("posts", postService.listAllPosts(pageId));
+        model.addAttribute("pageId", pageId);
+        model.addAttribute("nrOfRows", postService.nrOfRows());
         return "index";
     }
 
@@ -44,6 +49,5 @@ public class PostController {
         postService.downVote(id);
         return "redirect:/posts";
     }
-
 
 }
