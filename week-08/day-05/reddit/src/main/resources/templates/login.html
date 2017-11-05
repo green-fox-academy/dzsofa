@@ -16,6 +16,7 @@
     <title>Login</title>
 </head>
 <body>
+<h1 th:if="${username} == null" class="text-center">Login to Dzsofa's Reddit</h1>
 <div th:if="${username} == null" class="text-center" style="padding:50px 0">
     <div class="logo">login</div>
     <!-- Main Form -->
@@ -34,17 +35,9 @@
                         <input type="password" class="form-control" id="lg_password" name="lg_password"
                                placeholder="password"/>
                     </div>
-                    <div class="form-group login-group-checkbox">
-                        <input type="checkbox" id="lg_remember" name="lg_remember"/>
-                        <label for="lg_remember">remember</label>
-                    </div>
                 </div>
                 <button th:action="@{/login}" type="submit" class="login-button"><i class="fa fa-chevron-right"></i>
                 </button>
-            </div>
-            <div class="etc-login-form">
-                <p>forgot your password? <a href="#">click here</a></p>
-                <p>new user? <a href="#">create new account</a></p>
             </div>
         </form>
     </div>
@@ -72,10 +65,7 @@
                     </div>
 
                 </div>
-                <button  type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
-            </div>
-            <div class="etc-login-form">
-                <p>already have an account? <a href="#">login here</a></p>
+                <button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
             </div>
         </form>
     </div>
@@ -83,7 +73,7 @@
 </div>
 
 <div th:unless="${username} == null">
-    <a th:href="@{/logout}">Logout</a>
+    <a th:href="@{/logout}" th:text="${username} + ' - logout'"></a>
 </div>
 
 </body>

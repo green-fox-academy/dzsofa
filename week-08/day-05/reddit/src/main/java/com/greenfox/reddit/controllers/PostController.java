@@ -29,6 +29,7 @@ public class PostController {
         model.addAttribute("posts", postService.listAllPosts(pageId));
         model.addAttribute("pageId", pageId);
         model.addAttribute("nrOfRows", postService.nrOfRows());
+        model.addAttribute("username", UserService.getSession().getAttribute("username"));
         return "index";
     }
 
