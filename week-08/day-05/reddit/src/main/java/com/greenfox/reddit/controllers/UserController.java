@@ -10,11 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpSession;
-import java.io.Console;
 
 @Controller
 public class UserController {
@@ -38,6 +33,14 @@ public class UserController {
     @GetMapping("/logout")
     public String logout() {
         UserService.destroySession();
+        return "redirect:/login";
+    }
+
+    @PostMapping("/register")
+    public String addNewUser(@RequestParam(value = "reg_username", defaultValue = "") String lg_username, @RequestParam(value = "reg_password", defaultValue = "") String lg_password, Model model) {
+        if (!lg_username.equals("") && !lg_password.equals("")) {
+            userService.save(lg_username, lg_password);
+        }
         return "redirect:/login";
     }
 

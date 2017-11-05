@@ -37,4 +37,8 @@ public class UserService {
         }
         return false;
     }
+
+    public void save(String username, String password) {
+        userRepository.save(new User(username, password));
+    }
 }
