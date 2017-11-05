@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TodoRepo extends CrudRepository<Todo, Long>{
 
-    List<Todo> findAllByTitle(String searchTerm);
+    List<Todo> findAllByTitleContaining(String searchTerm);
 
 //    List<Todo> findAllByAssignee(String assignee);
 
