@@ -24,14 +24,15 @@ public class TodoController {
     private AssigneeRepo assigneeRepo;
 
     @GetMapping({"/", "/list"})
-    public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model, Todo todo) {
+    public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
         model.addAttribute("todos", todoService.listThem(isActive));
         return "todolist";
     }
 
     @GetMapping({"/list/search"})
-    public String filterTitle(@RequestParam(value = "title", required = false) String title, Model model, Todo todo) {
-        model.addAttribute("todos", todoRepo.findAllByTitle(title));
+    public String searchTitle(@RequestParam(required = false) String search, Model model) {
+        model.addAttribute("todos", todoRepo.findAllByTitle(search));
+//        model.addAttribute("todos", todoRepo.findAllByAssignee(search));
         return "todolist";
     }
 
