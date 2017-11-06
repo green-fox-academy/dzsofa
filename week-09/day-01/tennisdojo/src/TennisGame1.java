@@ -7,6 +7,7 @@ public class TennisGame1 implements TennisGame {
     private int player2Score = 0;
     private String score = "";
     private int tempScore = 0;
+    private List<String> scoreOptions = Arrays.asList("Love", "Fifteen", "Thirty", "Forty", "Deuce");
 
     public TennisGame1(String player1Name, String player2Name) {
     }
@@ -46,7 +47,6 @@ public class TennisGame1 implements TennisGame {
 
 
     private String getDifferentScores() {
-
         for (int i = 1; i < 3; i++) {
             if (i == 1) {
                 tempScore = player1Score;
@@ -54,43 +54,17 @@ public class TennisGame1 implements TennisGame {
                 score += "-";
                 tempScore = player2Score;
             }
-            switch (tempScore) {
-                case 0:
-                    score += "Love";
-                    break;
-                case 1:
-                    score += "Fifteen";
-                    break;
-                case 2:
-                    score += "Thirty";
-                    break;
-                case 3:
-                    score += "Forty";
-                    break;
-            }
+            score += scoreOptions.get(tempScore);
         }
         return score;
 
     }
 
     public String getEqualScores() {
-        String score = "";
-        switch (player1Score) {
-            case 0:
-                score += "Love-All";
-                break;
-            case 1:
-                score += "Fifteen-All";
-                break;
-            case 2:
-                score += "Thirty-All";
-                break;
-            case 3:
-                score += "Forty-All";
-                break;
-            default:
-                score += "Deuce";
-                break;
+        if (player1Score <= 3) {
+            score += scoreOptions.get(player1Score) + "-All";
+        } else {
+            score += scoreOptions.get(player1Score);
         }
         return score;
     }
