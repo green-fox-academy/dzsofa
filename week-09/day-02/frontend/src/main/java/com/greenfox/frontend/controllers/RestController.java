@@ -1,14 +1,13 @@
 package com.greenfox.frontend.controllers;
 
+import com.greenfox.frontend.exceptions.GlobalExceptionHandler;
 import com.greenfox.frontend.models.*;
-import com.greenfox.frontend.models.Error;
-import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
 @org.springframework.web.bind.annotation.RestController
-public class RestController {
+public class RestController extends GlobalExceptionHandler {
 
     @GetMapping("/doubling")
     public Doubling doubling(@RequestParam(value = "input") int input) {
@@ -49,23 +48,5 @@ public class RestController {
         return result;
     }
 
-    @ExceptionHandler(MissingServletRequestParameterException.class)
-    public Error missingErrorMessage(MissingServletRequestParameterException ex) {
-        Error missingParamError = new Error();
-        if (ex.getParameterName().equals("input")) {
-            missingParamError.setError("Please provide an input!");
-        } else if (ex.getParameterName().equals("name")) {
-            missingParamError.setError("Please provide a name!");
-        } else if (ex.getParameterName().equals("title")) {
-            missingParamError.setError("Please provide a title!");
-        }
-        return missingParamError;
-    }
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
-    public Error missingHttpMessage(HttpMessageNotReadableException ex) {
-        Error missingHttp = new Error();
-        missingHttp.setError("Please provide a number!");
-        return missingHttp;
-    }
 }
