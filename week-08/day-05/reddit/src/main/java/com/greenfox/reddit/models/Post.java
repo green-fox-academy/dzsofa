@@ -1,5 +1,6 @@
 package com.greenfox.reddit.models;
 
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -18,6 +19,9 @@ public class Post {
     String content;
 
     private LocalDate createdAt;
+
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private User user;
 
 
     public Post(String content) {
@@ -63,6 +67,14 @@ public class Post {
 
     public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

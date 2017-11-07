@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpSession;
 
 @Component
@@ -17,11 +16,12 @@ public class UserService {
     UserRepository userRepository;
 
     public User login(String username, String password) {
-        return userRepository.findByUsernameAndAndPassword(username, password);
+        return userRepository.findByUsernameAndPassword(username, password);
     }
 
     public static HttpSession getSession() {
-        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();                  HttpSession session = attr.getRequest().getSession(true);
+        ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+        HttpSession session = attr.getRequest().getSession(true);
         return session;
     }
 
@@ -30,9 +30,8 @@ public class UserService {
     }
 
 
-
     public static boolean isNotLoggedIn() {
-        if (UserService.getSession().getAttribute("username") == null){
+        if (UserService.getSession().getAttribute("username") == null) {
             return true;
         }
         return false;
