@@ -31,7 +31,7 @@ public class TodoController {
 
     @GetMapping({"/list/search"})
     public String searchTitle(@RequestParam(required = false) String search, Model model) {
-        model.addAttribute("todos", todoRepo.findAllByTitleContaining(search));
+        model.addAttribute("todos", todoRepo.findTitleAndAssignee(search));
 //        model.addAttribute("todos", todoRepo.findAllByAssignee(search));
         return "todolist";
     }
