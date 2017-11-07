@@ -1,9 +1,8 @@
 package com.greenfox.frontend.controllers;
 
-import com.greenfox.frontend.models.Appenda;
+import com.greenfox.frontend.models.*;
 import com.greenfox.frontend.models.Error;
-import com.greenfox.frontend.models.Doubling;
-import com.greenfox.frontend.models.Greeting;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +30,25 @@ public class RestController {
         return appenda;
     }
 
+    @PostMapping("/dountil/{what}")
+    public ResultNumber doUntil(@PathVariable String what, @RequestBody DoUntil doUntil) {
+        ResultNumber result = new ResultNumber();
+
+        if (what.equals("sum")) {
+            for (int i = 1; i <= doUntil.getUntil(); i++) {
+                result.setResult(result.getResult() + i);
+            }
+        }
+        if (what.equals("factor")) {
+            result.setResult(1);
+            for (int i = 1; i <= doUntil.getUntil(); i++) {
+                result.setResult(result.getResult() * i);
+            }
+        }
+        System.out.println(result.getResult());
+        return result;
+    }
+
     @ExceptionHandler(MissingServletRequestParameterException.class)
     public Error missingErrorMessage(MissingServletRequestParameterException ex) {
         Error missingParamError = new Error();
@@ -42,5 +60,12 @@ public class RestController {
             missingParamError.setError("Please provide a title!");
         }
         return missingParamError;
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public Error missingHttpMessage(HttpMessageNotReadableException ex) {
+        Error missingHttp = new Error();
+        missingHttp.setError("Please provide a number!");
+        return missingHttp;
     }
 }
