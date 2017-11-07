@@ -1,5 +1,6 @@
 package com.greenfox.frontend.controllers;
 
+import com.greenfox.frontend.models.Appenda;
 import com.greenfox.frontend.models.Error;
 import com.greenfox.frontend.models.Doubling;
 import com.greenfox.frontend.models.Greeting;
@@ -22,6 +23,12 @@ public class RestController {
         Greeting greeting = new Greeting(name, title);
         greeting.setWelcome_message();
         return greeting;
+    }
+
+    @GetMapping("/appenda/{appendable}")
+    public Appenda appenda(@PathVariable String appendable) {
+        Appenda appenda = new Appenda(appendable);
+        return appenda;
     }
 
     @ExceptionHandler(MissingServletRequestParameterException.class)
