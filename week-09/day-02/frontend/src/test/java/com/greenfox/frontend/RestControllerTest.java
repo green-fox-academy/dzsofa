@@ -87,12 +87,21 @@ public class RestControllerTest {
     }
 
     @Test
-    public void successfulDoUntil() throws Exception {
+    public void successfulDoUntilSum() throws Exception {
         mockMvc.perform(post("/dountil/sum")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"until\": \"5\"}"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.result", is(15)));
+    }
+
+    @Test
+    public void successfulDoUntilFactor() throws Exception {
+        mockMvc.perform(post("/dountil/factor")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": \"5\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result", is(120)));
     }
 
     @Test
@@ -104,4 +113,12 @@ public class RestControllerTest {
                 .andExpect(jsonPath("$.error", is("Please provide a number!")));
     }
 
+    @Test
+    public void successfulArrayHandler() throws Exception {
+        mockMvc.perform(post("/arrays")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"what\": \"multiply\", \"numbers\": \"[1, 2, 3, 4]\"}"))
+//                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result", is(24)));
+    }
 }

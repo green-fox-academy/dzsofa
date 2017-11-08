@@ -14,6 +14,7 @@ public class ArrayHandler {
     }
 
     public ArrayHandler(String what, List<Integer> numbers) {
+
         this.what = what;
         this.numbers = new ArrayList<>();
     }
@@ -35,14 +36,19 @@ public class ArrayHandler {
     }
 
     public Object getResult() {
-        if (what.equals("sum")) {
-            return new ResultNumber(this.getSum());
-        } else if (what.equals("multiply")) {
-            return new ResultNumber(this.getMultiply());
-        } else if (what.equals("double")) {
-            return new ResultList(this.getDouble());
-        } else
-            throw new HttpMessageNotReadableException("Please provide a number!");
+        if (what.equals(null)) {
+            throw new HttpMessageNotReadableException("\"Please provide what to do with the numbers!");
+        } else {
+            if (what.equals("sum")) {
+                return new ResultNumber(this.getSum());
+            } else if (what.equals("multiply")) {
+                return new ResultNumber(this.getMultiply());
+            } else if (what.equals("double")) {
+                return new ResultList(this.getDouble());
+            } else
+                throw new HttpMessageNotReadableException("Please provide a number!");
+
+        }
     }
 
     public Integer getSum() {
