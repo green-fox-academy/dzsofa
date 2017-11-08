@@ -2,7 +2,6 @@ package com.greenfox.frontend.controllers;
 
 import com.greenfox.frontend.exceptions.GlobalExceptionHandler;
 import com.greenfox.frontend.models.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
