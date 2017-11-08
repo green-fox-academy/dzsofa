@@ -63,5 +63,45 @@ public class RestControllerTest {
                 .andExpect(jsonPath("$.error", is("Please provide an input!")));
     }
 
+    @Test
+    public void successfulGreeter() throws Exception {
+        mockMvc.perform(get("/greeter/?name=Petike&title=student")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.name", is("Petike")))
+                .andExpect(jsonPath("$.title", is("student")))
+                .andExpect(jsonPath("$.welcome_message", is("Oh, hi there Petike, my dear student!")));
+    }
+
+    @Test
+    public void missingNameGreeter() throws Exception {
+        mockMvc.perform(get("/greeter/?title=student")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.error", is("Please provide a name!")));
+    }
+
+    @Test
+    public void missingTitleGreeter() throws Exception {
+        mockMvc.perform(get("/greeter/?name=Petike")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$.error", is("Please provide a title!")));
+    }
+
+    @Test
+    public void successfulDoUntil() throws Exception {
+        mockMvc.perform(post("/dountil/sum")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"until\": \"5\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result", is(15)));
+    }
+
+    @Test
+    public void unsuccessfulDoUntil() throws Exception {
+        mockMvc.perform(post("/dountil/sum")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(""))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.error", is("Please provide a number!")));
+    }
 
 }
