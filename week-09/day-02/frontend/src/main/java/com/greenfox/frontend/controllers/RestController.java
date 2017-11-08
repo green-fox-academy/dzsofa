@@ -30,22 +30,14 @@ public class RestController extends GlobalExceptionHandler {
 
     @PostMapping("/dountil/{what}")
     public ResultNumber doUntil(@PathVariable String what, @RequestBody DoUntil doUntil) {
-        ResultNumber result = new ResultNumber();
-
-        if (what.equals("sum")) {
-            for (int i = 1; i <= doUntil.getUntil(); i++) {
-                result.setResult(result.getResult() + i);
-            }
-        }
-        if (what.equals("factor")) {
-            result.setResult(1);
-            for (int i = 1; i <= doUntil.getUntil(); i++) {
-                result.setResult(result.getResult() * i);
-            }
-        }
-        System.out.println(result.getResult());
-        return result;
+        ResultNumber resultNumber = doUntil.getResult(what);
+        return resultNumber;
     }
 
+    @PostMapping("/arrays")
+    public Object operateOnArrays(@RequestBody ArrayHandler handler) {
+        Object result = handler.getResult();
+        return result;
+    }
 
 }
