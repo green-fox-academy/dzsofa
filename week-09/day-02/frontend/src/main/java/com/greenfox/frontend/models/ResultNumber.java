@@ -1,21 +1,22 @@
 package com.greenfox.frontend.models;
 
 public class ResultNumber {
-    private int result;
+    private Integer result;
 
 
-    public ResultNumber(int result) {
+    public ResultNumber(Integer result) {
         this.result = result;
     }
 
     public ResultNumber() {
     }
 
-    public int getResult() {
+    public Integer getResult() {
         return result;
     }
 
-    public void setResult(int result) {
+    public void setResult(Integer result) {
         this.result = result;
     }
+
 }
