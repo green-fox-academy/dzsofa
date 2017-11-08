@@ -23,26 +23,31 @@ public class RestController extends GlobalExceptionHandler {
     public Doubling doubling(@RequestParam(value = "input") int input, HttpServletRequest request) {
         Doubling doubling = new Doubling(input);
         doubling.setResult(input * 2);
-        logRepository.save(new Log(request.getServletPath(), request.getRequestURI()));
+        logService.saveGetMappingLog(request);
         return doubling;
     }
 
     @GetMapping("/greeter")
-    public Greeting greeting(@RequestParam(value = "name") String name, @RequestParam(value = "title") String title) {
+    public Greeting greeting(@RequestParam(value = "name") String name, @RequestParam(value = "title") String title, HttpServletRequest request) {
         Greeting greeting = new Greeting(name, title);
         greeting.setWelcome_message();
+        logService.saveGetMappingLog(request);
         return greeting;
     }
 
     @GetMapping("/appenda/{appendable}")
-    public Appenda appenda(@PathVariable String appendable) {
+    public Appenda appenda(@PathVariable String appendable, HttpServletRequest request) {
         Appenda appenda = new Appenda(appendable);
+        logService.saveGetMappingLog(request);
         return appenda;
     }
 
     @PostMapping("/dountil/{what}")
-    public ResultNumber doUntil(@PathVariable String what, @RequestBody DoUntil doUntil) {
+    public ResultNumber doUntil(@PathVariable String what, @RequestBody DoUntil doUntil, HttpServletRequest request) {
         ResultNumber resultNumber = doUntil.getResult(what);
+        String endpoint = request.getServletPath();
+        String data = request.getParameter("keyword");
+        logRepository.save(new Log(endpoint, data));
         return resultNumber;
     }
 
