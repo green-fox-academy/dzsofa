@@ -2,13 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <meta charset="UTF-8"/>
     <title>Todos</title>
 </head>
@@ -56,21 +50,32 @@
         <td th:text="${todo.getDescription()}"></td>
         <td th:text="${todo.getCreatedAt()}"></td>
         <td th:text="${todo.getDueDate()}"></td>
-        <td th:text="${todo.getIsDone()} ? 'Good job, you\'re done!' : 'Still have to do that'"></td>
-        <td th:text="${todo.getIsUrgent()} ? 'Urgent!' : 'Laziness buttON'"></td>
+        <td><span
+                th:class="${todo.getIsDone()} ? 'glyphicon glyphicon-ok-sign' : 'glyphicon glyphicon-remove-sign'"></span>
+        </td>
+        <td><span
+                th:class="${todo.getIsUrgent()} ? 'glyphicon glyphicon-ok-sign' : 'glyphicon glyphicon-remove-sign'"></span>
+        </td>
         <td th:text="${todo.getAssignee()} != null ? ${todo.getAssignee().getName()} : 'Noone assigned'"></td>
         <td>
             <form action="#" th:action="@{'/todo/{id}/delete'(id=${todo.id})}">
-                <button class="btn" type="submit" id="submitButton"><span class="glyphicon glyphicon-trash"></span></button>
+                <button class="btn" type="submit" id="submitButton"><span class="glyphicon glyphicon-trash"></span>
+                </button>
             </form>
         </td>
         <td>
             <form action="#" th:action="@{'/todo/list/{id}/edit'(id=${todo.id})}">
-                <button class="btn" type="submit" id="submitButton"><span class="glyphicon glyphicon-edit"></span></button>
+                <button class="btn" type="submit" id="submitButton"><span class="glyphicon glyphicon-edit"></span>
+                </button>
             </form>
         </td>
     </tr>
 </table>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 
