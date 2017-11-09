@@ -35,6 +35,11 @@ public class ArrayHandler {
         this.numbers = numbers;
     }
 
+    @Override
+    public String toString() {
+        return "what=" + getWhat() + "&numbers=" + getNumbers();
+    }
+
     public Object getResult() {
         if (what.equals(null)) {
             throw new HttpMessageNotReadableException("\"Please provide what to do with the numbers!");

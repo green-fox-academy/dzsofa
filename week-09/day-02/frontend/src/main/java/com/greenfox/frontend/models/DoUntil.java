@@ -22,6 +22,11 @@ public class DoUntil {
         this.until = until;
     }
 
+    @Override
+    public String toString() {
+        return "until=" + String.valueOf(this.getUntil());
+    }
+
     public ResultNumber getResult(String action) {
         if (action.equals("sum")) {
             return new ResultNumber(this.getSum());
@@ -45,4 +50,6 @@ public class DoUntil {
         }
         return result;
     }
+
+
 }
