@@ -4,10 +4,15 @@ import com.greenfox.frontend.exceptions.GlobalExceptionHandler;
 import com.greenfox.frontend.models.*;
 import com.greenfox.frontend.repositories.LogRepository;
 import com.greenfox.frontend.services.LogService;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @org.springframework.web.bind.annotation.RestController
@@ -38,23 +43,31 @@ public class RestController extends GlobalExceptionHandler {
     @GetMapping("/appenda/{appendable}")
     public Appenda appenda(@PathVariable String appendable, HttpServletRequest request) {
         Appenda appenda = new Appenda(appendable);
-        logService.saveGetMappingLog(request);
+        logService.saveGetMappingLogWithPathVariable(request, appendable);
         return appenda;
     }
 
     @PostMapping("/dountil/{what}")
     public ResultNumber doUntil(@PathVariable String what, @RequestBody DoUntil doUntil, HttpServletRequest request) {
         ResultNumber resultNumber = doUntil.getResult(what);
-        String endpoint = request.getServletPath();
-        String data = request.getParameter("keyword");
-        logRepository.save(new Log(endpoint, data));
+        logService.savePostMappingLog(request, doUntil);
         return resultNumber;
     }
 
     @PostMapping("/arrays")
-    public Object operateOnArrays(@RequestBody ArrayHandler handler) {
+    public Object operateOnArrays(@RequestBody ArrayHandler handler, HttpServletRequest request) {
         Object result = handler.getResult();
+        logService.savePostMappingLog(request, handler);
         return result;
+    }
+
+    @GetMapping("/log")
+    public History getAllLog() {
+        List<Log> entries = new ArrayList<>();
+        for (Log entry : logService.getAll()) {
+            entries.add(entry);
+        }
+        return new History(entries);
     }
 
 }

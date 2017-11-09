@@ -2,6 +2,7 @@ package com.greenfox.frontend.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 @Entity
@@ -11,12 +12,12 @@ public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private LocalDateTime createdAt;
+    private String createdAt;
     private String endpoint;
     private String data;
 
     public Log(String endpoint, String data) {
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss"));
         this.endpoint = endpoint;
         this.data = data;
     }
@@ -24,11 +25,11 @@ public class Log {
     public Log() {
     }
 
-    public LocalDateTime getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
