@@ -62,7 +62,7 @@ public class RestController extends GlobalExceptionHandler {
     }
 
     @GetMapping("/log")
-    public History getAllLog() {
+    public History getAllLog(@RequestParam(value = "count", required = false) int count, @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
         List<Log> entries = new ArrayList<>();
         for (Log entry : logService.getAll()) {
             entries.add(entry);
