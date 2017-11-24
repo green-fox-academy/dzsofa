@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "licence_plates")
 public class Car {
     @Id
     private String plate;
