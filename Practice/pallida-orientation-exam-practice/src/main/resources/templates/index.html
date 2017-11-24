@@ -11,23 +11,23 @@
     <input type="submit" value="go"/>
 </form>
 
-<a th:href="" >Show police cars</a>
-<a th:href="">Show diplomats</a>
+<!--<a th:href="" >Show police cars</a>-->
+<!--<a th:href="">Show diplomats</a>-->
 <table>
-    <td>
-    <th>Plate</th>
-    <th>Brand</th>
-    <th>Model</th>
-    <th>Color</th>
-    <th>Year</th>
-    </td>
-    <td>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-    </td>
+    <tr>
+        <th>Plate</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Color</th>
+        <th>Year</th>
+    </tr>
+    <tr th:each="car : ${cars}" th:object="${car}">
+        <td th:text="*{plate}"></td>
+        <td th:text="*{brand}"></td>
+        <td th:text="*{model}"></td>
+        <td th:text="*{color}"></td>
+        <td th:text="*{year}"></td>
+    </tr>
 </table>
 
 </body>
