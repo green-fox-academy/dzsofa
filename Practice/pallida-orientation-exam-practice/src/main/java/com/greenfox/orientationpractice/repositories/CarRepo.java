@@ -8,4 +8,6 @@ import java.util.List;
 public interface CarRepo extends CrudRepository<Car, Long>{
 
     List<Car> findAll();
+
+    List<Car> findAllByPlateIsLike(String q);
 }

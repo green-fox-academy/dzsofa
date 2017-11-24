@@ -16,4 +16,16 @@ public class CarService {
     public List<Car> getCars() {
         return repo.findAll();
     }
+
+    public List<Car> findCarsByPlate(String q) {
+        return repo.findAllByPlateIsLike(q);
+    }
+
+    public List<Car> findPolice() {
+        return repo.findAllByPlateIsLike("RB%");
+    }
+
+    public List<Car> findDiplomat() {
+        return repo.findAllByPlateIsLike("DT%");
+    }
 }
