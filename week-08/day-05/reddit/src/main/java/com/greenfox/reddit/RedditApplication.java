@@ -12,18 +12,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RedditApplication implements CommandLineRunner {
 
-    @Autowired
-    PostRepository postRepository;
+  @Autowired
+  PostRepository postRepository;
 
-    @Autowired
-    UserRepository userRepository;
+  @Autowired
+  UserRepository userRepository;
 
-    public static void main(String[] args) {
-        SpringApplication.run(RedditApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(RedditApplication.class, args);
+  }
 
-    @Override
-    public void run(String... args) throws Exception {
+  @Override
+  public void run(String... args) throws Exception {
 //        postRepository.save(new Post("funny cat picture"));
 //        postRepository.save(new Post("some yo momma joke"));
 //        postRepository.save(new Post("green fox review"));
@@ -42,5 +42,5 @@ public class RedditApplication implements CommandLineRunner {
 
 //        userRepository.save(new User("dzsofa", "12345"));
 
-    }
+  }
 }

@@ -11,70 +11,70 @@ import java.time.LocalDate;
 @Component
 public class Post {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  long id;
 
-    int score;
-    String content;
+  int score;
+  String content;
 
-    private LocalDate createdAt;
+  private LocalDate createdAt;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private User user;
-
-
-    public Post(String content) {
-        this.score = 0;
-        this.content = content;
-        this.createdAt = LocalDate.now();
-    }
-
-    public Post() {
-        this.score = 0;
-        this.content = "";
-        this.createdAt = LocalDate.now();
-    }
+  @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+  private User user;
 
 
-    public long getId() {
-        return id;
-    }
+  public Post(String content) {
+    this.score = 0;
+    this.content = content;
+    this.createdAt = LocalDate.now();
+  }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public Post() {
+    this.score = 0;
+    this.content = "";
+    this.createdAt = LocalDate.now();
+  }
 
-    public int getScore() {
-        return score;
-    }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public String getContent() {
-        return content;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+  public int getScore() {
+    return score;
+  }
 
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
+  public void setScore(int score) {
+    this.score = score;
+  }
 
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
-    }
+  public String getContent() {
+    return content;
+  }
 
-    public User getUser() {
-        return user;
-    }
+  public void setContent(String content) {
+    this.content = content;
+  }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+  public LocalDate getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(LocalDate createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
 
 }

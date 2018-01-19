@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <meta charset="UTF-8"/>
-    <title>Posts</title>
+  <meta charset="UTF-8"/>
+  <title>Posts</title>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Dzsofa's Reddit</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#" th:text="${username}"></a></li>
-            <li><a th:href="@{/logout}">Logout</a></li>
-            <li><a th:href="@{/posts/addnew}">Add new post</a></li>
-        </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Dzsofa's Reddit</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#" th:text="${username}"></a></li>
+      <li><a th:href="@{/logout}">Logout</a></li>
+      <li><a th:href="@{/posts/addnew}">Add new post</a></li>
+    </ul>
+  </div>
 </nav>
 <h1 class="page-header">Posts</h1>
 <table class="table-hover table-bordered" th:style="'margin-left: auto; margin-right: auto;'">
-    <tr>
-        <th th:style="'padding: 8px'">SCORE</th>
-        <th th:style="'padding: 8px'">ACTIONS</th>
-        <th th:style="'padding: 8px'">CONTENT</th>
-        <th th:style="'padding: 8px'">CREATED AT</th>
-    </tr>
-    <tr th:each="post : ${posts}">
-        <td th:style="'padding: 8px'" th:text="${post.getScore()}"></td>
-        <td th:style="'padding: 8px'">
-            <a th:style="'float:left; font-size: 20px; font-weight: bold;'"
-               th:href="@{/posts/{id}/upvote(id=${post.getId()})}">+</a>
-            <a th:style="'float:right; font-size: 20px; font-weight: bold;'"
-               th:href="@{/posts/{id}/downvote(id=${post.getId()})}">-</a>
-        </td>
-        <td th:style="'padding: 8px'" th:text="${post.getContent()}"></td>
-        <td th:style="'padding: 8px'" th:text="${post.getCreatedAt()}"></td>
+  <tr>
+    <th th:style="'padding: 8px'">SCORE</th>
+    <th th:style="'padding: 8px'">ACTIONS</th>
+    <th th:style="'padding: 8px'">CONTENT</th>
+    <th th:style="'padding: 8px'">CREATED AT</th>
+  </tr>
+  <tr th:each="post : ${posts}">
+    <td th:style="'padding: 8px'" th:text="${post.getScore()}"></td>
+    <td th:style="'padding: 8px'">
+      <a th:style="'float:left; font-size: 20px; font-weight: bold;'"
+         th:href="@{/posts/{id}/upvote(id=${post.getId()})}">+</a>
+      <a th:style="'float:right; font-size: 20px; font-weight: bold;'"
+         th:href="@{/posts/{id}/downvote(id=${post.getId()})}">-</a>
+    </td>
+    <td th:style="'padding: 8px'" th:text="${post.getContent()}"></td>
+    <td th:style="'padding: 8px'" th:text="${post.getCreatedAt()}"></td>
 
-    </tr>
+  </tr>
 </table>
 
 <ul class="pager">
-    <li th:if="${pageId} &gt; 0"><a th:href="@{'/posts/?pageId={id}'(id=${pageId - 1})}">Previous</a></li>
-    <li th:if="${pageId} &lt; (${nrOfRows} / 10 - 1)"><a th:href="@{'/posts/?pageId={id}'(id=${pageId + 1})}">Next</a></li>
+  <li th:if="${pageId} &gt; 0"><a th:href="@{'/posts/?pageId={id}'(id=${pageId - 1})}">Previous</a>
+  </li>
+  <li th:if="${pageId} &lt; (${nrOfRows} / 10 - 1)"><a
+      th:href="@{'/posts/?pageId={id}'(id=${pageId + 1})}">Next</a></li>
 </ul>
 </body>
 </html>
